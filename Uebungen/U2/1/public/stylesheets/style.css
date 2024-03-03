@@ -1,0 +1,13 @@
+h1 {
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+ol li:nth-child(2n) {
+    background: lightgray;
+}

@@ -3,8 +3,8 @@ const router = express.Router();
 
 import * as randomController from '../controllers/random-controller.js'
 
-// TODO Routes
 router.get('/',  randomController.index);
-
+router.post('/random', randomController.randomPost);
+router.get('/random', randomController.randomGet);
 
 export const randomRoutes = router;
