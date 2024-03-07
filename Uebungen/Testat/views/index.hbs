@@ -1,1 +1,26 @@
-{{data}}
+<div>
+    <button>Create new todo</button>
+    <button>Toggle Style</button>
+</div>
+<div>
+    <button>Name</button>
+    <button>By Due Date</button>
+    <button>By Creation Date</button>
+    <button>By Importance</button>
+    <button>Filter Completed</button>
+</div>
+<table>
+    {{#each todoList}}
+    <tr>
+        <td> {{this.duedate}} </td>
+        <td> {{this.title}} </td>
+        <td> {{this.importance}} </td>
+        <td rowspan="2"><button>Edit</button></td>
+    </tr>
+        <td> {{this.finished}} </td>
+        <td> {{this.description}} </td>
+        <td></td>
+        <td></td>
+    <tr>
+    {{/each}}
+</table>

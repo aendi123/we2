@@ -1,6 +1,17 @@
+import { todoStore } from "../services/todo-store.js";
+
 export class IndexController {
-    index(req, res) {
-        res.render("index", {data: "Hello World"});
+    async index(req, res) {
+        const todoList = await todoStore.all();
+        for (const todo of todoList) {
+            const daysDifference = Math.ceil((new Date(todo.duedate).getTime() - new Date().getTime()) / (1000 * 3600 * 24));
+            todo.duedate = new Intl.RelativeTimeFormat('en', { style: 'short' }).format(daysDifference, 'day');
+        }
+        res.render("index", {todoList: todoList});
+    };
+
+    createTodo(req, res) {
+        res.render("createTodo");
     };
 }
 
