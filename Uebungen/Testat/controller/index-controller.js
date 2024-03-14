@@ -9,10 +9,6 @@ export class IndexController {
         }
         res.render("index", {todoList: todoList});
     };
-
-    createTodo(req, res) {
-        res.render("createTodo");
-    };
 }
 
 export const indexController = new IndexController();
