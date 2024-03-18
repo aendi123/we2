@@ -37,4 +37,4 @@ export class TodoStore {
 
 export const todoStore = new TodoStore();
 todoStore.add("Do exercises (Default entry)", 1, new Date('June 17, 2024 17:00:00'), false, "Web Engineering 2");
-todoStore.add("Take exam (Default entry)", 5, new Date('January 23, 2024 08:00:00'), false, "Web Engineering 1");
+todoStore.add("Take exam (Default entry)", 5, new Date('January 23, 2024 08:00:00'), true, "Web Engineering 1");

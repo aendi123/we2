@@ -1,20 +1,22 @@
+{{#with todoValues}}
 <form>
     <label for="title">Title</label><br>
-    <input type="text" id="title-input" name="title" required><br>
+    <input type="text" id="title-input" name="title" required value="{{title}}"><br>
 
     <label for="importance">Importance</label><br>
-    <input type="number" id="importance-input" name="importance" min="1" max="5" required><br>
+    <input type="number" id="importance-input" name="importance" min="1" max="5" required value="{{importance}}"><br>
 
     <label for="duedate">Due Date</label><br>
-    <input type="date" id="duedate-input" name="duedate" required><br>
+    <input type="datetime-local" id="duedate-input" name="duedate" required value="{{duedate}}"><br>
 
     <label for="finished">Finished</label><br>
-    <input type="checkbox" id="finished-input" name="finished"><br>
+    <input type="checkbox" id="finished-input" name="finished" {{finished}}><br>
 
     <label for="description">Description</label><br>
-    <input type="text" id="description-input" name="description" required><br>
+    <input type="text" id="description-input" name="description" required value="{{description}}"><br>
 
     <input type="submit" value="Create">
     <input type="submit" value="Create & Overview">
 </form>
+{{/with}}
 <a href="/"><button>Overview</button></a>
