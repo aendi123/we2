@@ -1,10 +1,10 @@
 import { todoStore } from "../services/todo-store.js";
 
 export class TodoController {
-    async todo(req, res) {
+    async todo(req: any, res: any) {
         const todoValues = {
             title: "",
-            importance: "",
+            importance: 0,
             duedate: "",
             finished: "",
             description: ""
@@ -25,7 +25,7 @@ export class TodoController {
         }
 
         res.render("todo", {todoValues: todoValues});
-    };
+    }
 }
 
 export const todoController = new TodoController();
