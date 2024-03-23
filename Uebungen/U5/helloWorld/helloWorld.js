@@ -1,6 +1,5 @@
-"use strict";
 function printHello() {
-    let hws = "hello world";
+    let hws = "Hello World!";
     console.log(hws);
 }
 printHello();
