@@ -1,0 +1,8 @@
+/users?name=hugo&name=peter
+Error 404
+
+/users/7
+You requested info for the user with id: 7 with query parameters {}
+
+/users/7?showedits=true
+You requested info for the user with id: 7 with query parameters {"showedits":"true"}

@@ -1,0 +1,15 @@
+Wo wird der Rest der Umfassenden Seite definiert? Was ist der Default?
+Im defaultTemplate. Der Standardpfad dafür ist views/layouts/main.hbs
+
+Wie kann der generell Ort (Filename/Location) dieser Definition umgestellt werden?
+Das wird im app.js/app.ts gemacht. Beispiel:
+import exphbs from 'express-handlebars';
+...
+const hbs = exphbs.create({
+...
+defaultLayout: "default", // default.hbs anstatt main.hbs verwenden
+layoutsDir: "new-layouts" // views/new-layouts/anstatt views/layouts verwenden
+});
+
+Wie kann für eine einzige Anzeige (render) eine andere Definition genutzt werden?
+Anpassung bei einem einzenen render mit dem Options-Objekt. Also statt res.render("newOrder") neu res.render("newOrder", {defaultLayout: "new-default", layoutsDir: "other-layouts"})

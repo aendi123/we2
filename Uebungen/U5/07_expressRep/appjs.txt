@@ -1,0 +1,5 @@
+app.use(bodyParser.urlencoded({extended: false}));
+Body Parser erwartet url-encoded syntax (nicht json)
+
+app.use(express.static(path.resolve('public')));
+Files im Directory public werden statisch "ge-served"
