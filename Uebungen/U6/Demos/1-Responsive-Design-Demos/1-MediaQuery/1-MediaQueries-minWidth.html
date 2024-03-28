@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Media Queries Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+  <link rel="stylesheet" href="normalize.css"/>
+
+  <style>
+    body:before {
+      top: 30vh;
+      left: 20vw;
+      position: absolute;
+      content: "< 480px";
+      background: lightpink;
+      font-size: 3em;
+    }
+
+    .bar {
+      margin: 0;
+      height: 20px;
+      border: black solid 1px;
+      background-color: lightgoldenrodyellow
+    }
+
+    .fourEighty {
+      width: 30em
+    }
+
+    .sixHundred {
+      width: 600px
+    }
+
+    .sevenHundred {
+      width: 700px
+    }
+
+    .eightHundred {
+      width: 800px
+    }
+
+    @media screen and (min-width: 30em /*480px*/
+    ) {
+      body:before {
+        content: "480px+";
+      }
+      .fourEighty {
+        background-color: #a87796;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      body:before {
+        content: "600px+";
+      }
+      .sixHundred {
+        background-color: #a87796;
+      }
+    }
+
+    @media screen and (min-width: 700px) {
+      body:before {
+        content: "700px+";
+      }
+      .sevenHundred {
+        background-color: #a87796;
+      }
+    }
+
+    @media screen and (min-width: 800px) {
+      body:before {
+        content: "800px+";
+      }
+      .eightHundred {
+        background-color: #a87796;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Media Query Min-Width Demo</h1>
+<p>Demo Resize and Zoom</p>
+<h2>The element below is 30em (480px) wide</h2>
+<div class="bar fourEighty"></div>
+
+<h2>The element below is 600px wide</h2>
+<div class="bar sixHundred"></div>
+
+<h2>The element below is 700px wide</h2>
+<div class="bar sevenHundred"></div>
+
+<h2>The element below is 800px wide</h2>
+<div class="bar eightHundred"></div>
+
+<script src="x-showSize.js"></script>
+</body>
+</html>

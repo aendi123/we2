@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Progessive+Responsive Grid</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="alphabetStyling.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      max-width: 70em;
+      margin: 0 auto;
+    }
+    article > h3 {
+      font-size: 4em;
+      float: left;
+      padding-right: 40px;
+      margin: 0;
+    }
+    #artIntro {
+      text-align: center;
+      font-size: xx-large;
+      padding: 0;
+    }
+    #artIntro > h3 {
+      font-size: inherit;
+      float: none;
+    }
+
+    @supports (grid-area: auto) {
+
+      @media screen and (min-width: 50em) {
+        .articles {
+          display: grid;
+          grid-template-rows: auto;
+          grid-auto-rows: 1fr;
+        }
+        #artIntro {
+          grid-area: title;
+        }
+      }
+
+      @media screen and (min-width: 50em) and (max-width: 75em) {
+        .articles {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-areas:
+              "title title";
+        }
+      }
+      @media screen and (min-width: 75em) and (max-width: 100em) {
+        .articles {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-areas:
+              "title title title";
+        }
+      }
+      @media screen and (min-width: 100em)  {
+        .articles {
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-areas:
+              "title title title title";
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Progessive+Responsive Grid Demo</h1>
+<h2>Checking for Grid support and responding to available screen width</h2>
+<section class="articles">
+  <article id="artIntro">
+    <h3>The 10 First Letters of the Alphabet</h3>
+    <p>Enjoy this great collection of wisdom</p>
+  </article>
+  <article id="artA">
+    <h3>A</h3>
+    <p>A ist the first letter of the alphabet.</p>
+  </article>
+  <article  id="artB">
+    <h3>B</h3>
+    <p>B ist the second letter of the alphabet.</p>
+    <p>Many interesting words start with B. For example:</p>
+    <ul>
+      <li>Ball</li>
+      <li>Baby</li>
+      <li>Boy</li>
+      <li>Bed</li>
+      <li>Bee</li>
+      <li>Beef</li>
+      <li>Bar</li>
+      <li>Bet</li>
+      <li>Bush</li>
+    </ul>
+  </article>
+  <article  id="artC">
+    <h3>C</h3>
+    <p>C ist the third letter of the alphabet.</p>
+  </article>
+  <article  id="artD">
+    <h3>D</h3>
+    <p>D ist the fourth letter of the alphabet.</p>
+    <p>Some really long words start with D. For example:</p>
+    <ul>
+      <li>Deconstructionists</li>
+      <li>Departmentalizations</li>
+      <li>Disadvantageousnesses</li>
+    </ul>
+
+  </article>
+  <article  id="artE">
+    <h3>E</h3>
+    <p>E ist the fifth letter of the alphabet.</p>
+  </article>
+  <article  id="artF">
+  <h3>F</h3>
+    <p>F ist the sixth letter of the alphabet.</p>
+    <p>Many interesting words start with F. For example:</p>
+    <ul>
+      <li>Fox</li>
+      <li>Fan</li>
+      <li>Funk</li>
+      <li>Folk</li>
+      <li>Flaw</li>
+      <li>Frog</li>
+      <li>Flag</li>
+      <li>Farm</li>
+      <li>Fall</li>
+      <li>Featherweight</li>
+      <li>Ferromagnetism</li>
+      <li>Forethoughtfulness</li>
+    </ul>
+  </article>
+  <article  id="artG">
+    <h3>G</h3>
+    <p>G ist the seventh letter of the alphabet.</p>
+  </article>
+  <article  id="artH">
+    <h3>H</h3>
+    <p>H ist the eighth letter of the alphabet.</p>
+  </article>
+  <article  id="artI">
+    <h3>I</h3>
+    <p>I ist the nineth letter of the alphabet.</p>
+  </article>
+  <article  id="artJ">
+    <h3>J</h3>
+    <p>J ist the tenth letter of the alphabet.</p>
+  </article>
+</section>
+
+</body>
+</html>

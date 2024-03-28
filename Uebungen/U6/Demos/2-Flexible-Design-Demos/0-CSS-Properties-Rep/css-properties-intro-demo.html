@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Properties Intro Demo</title>
+  <style>
+      /*.advanced { !*style elements with class advanced*!*/
+      /*    color: grey;*/
+      /*}*/
+
+      /*.advanced::before { !*style 'before' elements with class advanced*!*/
+      /*    content: '[[[';;*/
+      /*}*/
+      /*.advanced::after { !*style 'after' elements with class advanced*!*/
+      /*    content: ']]] ';;*/
+      /*}*/
+
+      /*li:nth-of-type(2n) { !*style every 2nd li-element in parent*!*/
+      /*    background: lightgrey;*/
+      /*}*/
+
+      /*li:hover { !*style li-elements when hovered over*!*/
+      /*    outline: orange solid;*/
+      /*}*/
+
+      /*@media (min-width: 40em) {*/
+      /*    !* activate rules if width 40em or more *!*/
+      /*    ul {  !* style all ul-elements *!*/
+      /*        display: grid;*/
+      /*        grid-column-gap: 25px;*/
+      /*        grid-row-gap: 10px;*/
+      /*        grid-template-columns: 1fr 1fr;*/
+      /*    }*/
+
+      /*    li.overlength { !* style all li-elements with class overlength *!*/
+      /*      grid-column: 1/3;*/
+      /*    }*/
+      /*}*/
+      /*@media print {*/
+      /*    !* activate rules if width 40em or more *!*/
+      /*    ul { !* style all ul-elements *!*/
+      /*        visibility: hidden;*/
+      /*    }*/
+      /*}*/
+  </style>
+</head>
+<body>
+<h1>CSS Properties</h1>
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference">MDN</a>
+  for details, examples and a more complete list of common properties</p>
+<ul>
+  <li style="background: lightpink">background -- background: lightpink</li>
+  <li style="background-color: lightblue">background-color (transparent) -- background-color: lightblue</li>
+  <li class="advanced" style="background-image: url('star.png')">[background-image (none) -- background-image:
+    url('star.png')]
+  </li>
+  <li class="advanced" style="background-image: url('star.png'); background-size: 10px auto;">[background-size (auto
+    auto)--
+    background-image:
+    url('star.png'); background-size: 10px auto]
+  </li>
+  <li class="advanced" style="background-image: url('star.png'); background-repeat: no-repeat; padding-left: 20px">
+    [background-repeat (repeat) -- background-image: url('star.png'); padding-left: 20px; background-repeat: no-repeat]
+  </li>
+  <li style="border: thick hotpink solid ">border -- border: thick hotpink solid</li>
+  <li style="border-bottom: 10px hotpink dotted">border-bottom -- border-bottom: 10px hotpink dotted</li>
+  <li>border-bottom-color (currentcolor)</li>
+  <li>border-bottom-style (none)</li>
+  <li>border-bottom-width (medium)</li>
+  <li>border-color (currentcolor)</li>
+  <li>border-left</li>
+  <li style="border: hotpink solid; border-width: 2px 4px 6px 8px">border-width (medium) -- border: hotpink solid;
+    border-width:
+    2px 4px 6px 8px
+  </li>
+  <li style="color: darkorchid">color (/browser dependent/) -- color: darkorchid</li>
+  <li class="advanced" style="cursor: crosshair">[ cursor (auto) -- cursor: crosshair ]</li>
+  <li style="display: block">display (inline) -- display: block // overwrites display: list-item</li>
+  <li class="advanced" style="float: right">[ float (none) -- float: right]</li>
+  <li style="font: italic small-caps bolder 1.2em sans-serif">font -- font: italic small-caps bolder 1.2em sans-serif
+  </li>
+  <li style="font-family: 'Comic Sans MS' , sans-serif">font-family (/browser dependent/) -- font-family: 'Comic Sans
+    MS' , sans-serif
+  </li>
+  <li style="font-size: 120%">font-size (medium) -- font-size: 120%</li>
+  <li style="font-variant: all-petite-caps">font-variant (normal) -- font-variant: all-petite-caps</li>
+  <li style="font-weight: 700">font-weight (normal) -- font-weight: 700</li>
+  <li style="height: 30px; outline: hotpink solid">height (auto) -- height: 30px; outline: hotpink solid</li>
+  <li style="position: absolute; left: 320px; top: auto; transform: translateY(-18px)">
+    left (auto) -- position: absolute; left: 320px; top: auto; transform: translateY(-18px)
+  </li>
+  <li style="line-height: 30px; outline: hotpink solid">line-height (normal) -- line-height: 30px; outline: hotpink
+    solid
+  </li>
+  <li style="list-style: url('star.png')">list-style -- list-style: url('star.png')</li>
+  <li>list-style-image (none)</li>
+  <li style="list-style-type: decimal">list-style-type (disk) -- list-style-type: decimal</li>
+  <li style="margin: 1em 2em; outline: hotpink solid">margin (0 0 0 0) -- margin: 1em 2em; outline: hotpink solid</li>
+  <li style="margin-bottom: 1em; outline: hotpink solid">margin-bottom (0) -- margin-bottom: 1em; outline: hotpink solid
+  </li>
+  <li style="margin-top: 1em; outline: hotpink solid">margin-top (0) -- margin-top: 1em; outline: hotpink solid
+    [vertical
+    margin collapse]
+  </li>
+    <li class="overlength">
+      <span style="display: inline-block; width: 700px; white-space: nowrap; overflow: hidden">
+      overflow (visible) -- &lt;span style=&quot;display: inline-block; width: 700px; white-space: nowrap; overflow: hidden&quot;&gt;-------
+      </span>
+    </li>
+  <li style="padding: 1em; outline: hotpink solid; background: lightcyan">padding (0) -- padding: 1em; outline: hotpink
+    solid; background: lightcyan
+  </li>
+  <li>padding-bottom (0)</li>
+  <li style="position: static">position (static) -- position: static (= default)</li>
+  <li style="text-align: center">text-align (start) -- text-align: center</li>
+  <li style="text-decoration: line-through hotpink">text-decoration (none currentcolor)-- text-decoration: line-through
+    hotpink
+  </li>
+  <li style="text-indent: 20ch">text-indent (0) -- text-indent: 20ch</li>
+  <li style="text-transform: uppercase">text-transform (none) -- text-transform: uppercase</li>
+  <li style="position: fixed; top: 510px; right: 20px">top (auto) -- position: fixed; top: 510px; right: 0</li>
+  <li style="line-height: 2em; vertical-align: -1em">vertical-align (baseline) --
+    &lt;img style=&quot;vertical-align: -0.5em&quot; src=&quot;star.png&quot;&gt;
+    <img style="vertical-align: -0.5em" src="star.png" alt=""></li>
+  <li style="visibility: visible">visibility (visible) -- visibility: visible (or hidden)</li>
+  <li>width (auto)
+    <span style="display: inline-block; width: 200px; outline: hotpink solid">a span with width 200px</span>
+    display: inline-block; width: 200px; outline: hotpink solid
+  </li>
+</ul>
+</body>
+</html>

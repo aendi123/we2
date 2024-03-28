@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex-wrap</title>
+  <style>
+    body {
+      background-color: lightgoldenrodyellow;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .box {
+      background: powderblue;
+      font-size: 6rem;
+      text-align: center;
+      text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      border: black solid 1px;
+      box-sizing: border-box;
+
+    }
+
+    .container {
+      background-color: #a87796;
+      width: calc(min(50%, 30em));
+      display: flex;
+      /* 0 */
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .box {
+      /*1*/
+      /*flex: 0 1 1.2em;*/
+      /*2*/
+      /*flex: 1 1 1.2em;*/
+
+    }
+
+    .box1 {
+
+    }
+
+    .box2 {
+
+    }
+
+    .box3 {
+      /*3*/
+      /*flex: 0 0 3em;*/
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+  <div class="box box3">3</div>
+  <div class="box box4">4</div>
+  <div class="box box5">5</div>
+  <div class="box box6">6</div>
+  <div class="box box7">7</div>
+  <div class="box box8">8</div>
+  <div class="box box9">9</div>
+  <div class="box box9">10</div>
+</div>
+</body>
+</html>
+
+<!--
+//in .box alternatives
+flex: 1
+flex: 1 1 33%;
+flex: 1 0 33%;
+flex: 0 0 30px;
+
+.box2{
+        flex: 0 0 30px;
+    }
+-->

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexible Standard Layout with position: absolute</title>
+    <style>
+        /* example based on code by Thomas Jaggi (HSR CAS FEE) http://codepen.io/backflip/pen/urCpH
+
+        /* Grundlayout */
+
+        body {
+            font-size: 1.5em;
+        }
+
+        header,
+        main,
+        aside,
+        footer {
+            display: block; /* ältere Browser */
+        }
+
+        .header {
+            background: yellow;
+            padding: 1em;
+        }
+        .content {
+            background: red;
+        }
+        .nav {
+            background: cyan;
+            box-sizing: border-box;
+            padding: 1em;
+            width: 20%;
+        }
+        .main {
+            background: limegreen;
+            box-sizing: border-box;
+            padding: 1em;
+            width: 60%;
+        }
+        .sidebar {
+            background: darkcyan;
+            box-sizing: border-box;
+            padding: 1em;
+            width: 20%;
+        }
+        .footer {
+            background: yellow;
+            padding: 1em;
+        }
+
+
+        /* Ansatz 1: "position: absolute" (optimiert) */
+
+        .content {
+            position: relative;
+        }
+        .nav,
+        .sidebar {
+            position: absolute;
+        }
+        .sidebar {
+            left: 80%;
+        }
+        .main {
+            margin-left: 20%;
+        }
+
+
+        /* Gleich hohe Spalten */
+
+        .nav,
+        .sidebar {
+            bottom: 0;
+            top: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<header class="header" role="banner">Flexible Standard Layout with <code>position: absolute</code></header>
+
+<div class="content">
+    <nav class="nav" role="navigation">Nav<br>Bla<br>Bla<br>Bla<br>Bla<br>Bla<br>Bla<br>Bla<br>Bla<br>Bla<br>Bla</nav>
+
+    <main class="main" role="main">Content<br>Bla<br>Bla<br>Bla<br>Bla<br>Bla<br>Bla<</main>
+
+    <aside class="sidebar" role="complementary">Sidebar</aside>
+</div>
+
+<footer class="footer" role="contentinfo">Footer</footer>
+</body>
+</html>

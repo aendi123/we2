@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Responsive Grid Demo</title>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body > * {
+      border: black solid 1px;
+    }
+
+    @media screen and (min-width: 500px) {
+      body {
+        display: grid;
+        /*height: 100vh;*/
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      aside:nth-of-type(1) {
+        grid-area: aside1;
+      }
+
+      aside:nth-of-type(2) {
+        grid-area: aside2;
+      }
+
+      main {
+        grid-area: main;
+      }
+
+     footer {
+       grid-area: footer;
+      }
+    }
+    @media screen and (min-width: 500px)
+      and (max-width: 700px){
+      /* both asides above main */
+      body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header header"
+            "aside1 aside2"
+            "main   main"
+            "footer footer";
+      }
+    }
+
+    @media screen and (min-width: 700px) {
+      /* 2 Columns */
+      body {
+        grid-template-columns: 100px 1fr 100px;
+        grid-template-areas:
+            "header header header"
+            "aside1 main   aside2"
+            "footer footer footer";
+        grid-template-rows: auto 1fr auto;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>header</header>
+<aside>aside 1</aside>
+<main>main<br>main</main>
+<aside>aside 2</aside>
+<footer>footer</footer>
+</body>
+</html>

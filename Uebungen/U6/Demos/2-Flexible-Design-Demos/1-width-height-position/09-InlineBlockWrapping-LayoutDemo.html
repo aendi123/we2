@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline-Block Wrapping - Layout Demo</title>
+    <style>
+        .box{
+            box-sizing: border-box;
+            display: inline-block;
+
+            border: black solid 2px;
+            width: 300px;
+        }
+
+        .box {
+            vertical-align: top;
+        }
+
+
+
+        .box.box1 {
+            display: inline;
+        }
+
+        /*
+
+
+        // inline and inline-box elements can be combined in the same row - but beware....
+
+        .box.box1 {
+            display: inline;
+        }
+
+
+        // aligh bottom is default - needs to be overridden
+
+        .box {
+            vertical-align: top;
+        }
+
+        // streching box 1
+        .box.box1 {
+            position: absolute;
+            height: 100%;
+            top:0;
+        }
+        .container {
+            position: relative;
+        }
+        .box.box2 {
+            margin-left: 300px;
+        }
+
+
+        // Whitespace between inline boxes requires a few pixels
+
+        .container{
+            width = 600px
+        }
+        // solution / hack: negative margins
+        .box {
+            margin-left = -0.3em;
+        }
+        */
+
+    </style>
+</head>
+<body>
+<h1>Inline-Block Wrapping - Layout Demo: Multiple Elements on the same line</h1>
+<div class="container">
+    <span class="box box1">box1<br>
+        111 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+    </span>
+    <div class="box box2">box2<br>
+        222 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+        ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </div>
+</div>
+<div class="container">
+    <span class="box box3">box1<br>
+        3333 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+        ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </span>
+    <div class="box box4">box2<br>
+        4444 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+    </div>
+</div>
+
+</body>
+</html>

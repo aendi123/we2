@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-Column Layout Inline-Block + Pos Fixed</title>
+    <style>
+        body {
+        }
+
+        header,
+        nav,
+        nav a,
+        article,
+        section,
+        aside,
+        footer {
+            border-radius: 0 0.5em 0.5em;
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        header {
+            background: #F1F3F4;
+            border-color: #d5d5d5;
+        }
+
+        nav,
+        nav ul,
+        nav li {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        nav li {
+            list-style-type: none;
+            margin: 1.3em 0;
+        }
+
+        nav a {
+            display: inline-block;
+            width: 80%;
+            background: #fffbf0;
+            border: 1px solid #dfac20;
+            margin: 0;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #dfac20;
+        }
+
+        footer p {
+            text-align: right;
+        }
+        nav li {
+            margin: 0 10px;
+        }
+        article {
+            background: #ffede0;
+            border-color: #df6c20;
+        }
+        aside {
+            background: #ebf5d7;
+            border-color: #8db243;
+        }
+        footer {
+            background: #e4ebf2;
+            border-color: #8a9da8;
+        }
+
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px; /*needs to be fixed or read out with JS to set actices and asides top margin */
+            margin-top: 0;
+        }
+        nav {
+            display: inline-block;
+            position: fixed;
+            width: 10em;
+            top: 160px;
+            bottom: 20px;
+        }
+        section.articles {
+            display: inline-block;
+            margin-top: 150px; /*space for header*/
+            margin-bottom: 80px; /*space for footer*/
+            margin-left: 10em; /*space for nav*/
+            vertical-align: top;
+            width: calc(60% - 8em);
+        }
+        section.asides {
+            margin-top: 150px; /*space for header*/
+            margin-bottom: 80px; /*space for footer*/
+            margin-right: 0;
+            display: inline-block;
+            vertical-align: top;
+            width: calc(40% - 8em);
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            margin-bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>3-Column Layout <code>display: inline-block + position: fixed</code></h1>
+    fixed header, footer, nav
+</header>
+<main>
+<nav>
+    <ul>
+        <li><a href="#nav-one">Nav Point1</a>
+        <li><a href="#nav-two">Nav Point2</a>
+        <li><a href="#nav-three">Nav Point3</a>
+    </ul>
+</nav>
+<section class="articles">
+<article>
+    <h2>Article 1</h2>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing
+    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+    eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+    dolor sit amet.</p>
+</article>
+
+<article>
+    <h2>Article 2</h2>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+        dolor sit amet.</p>
+</article>
+</section>
+
+<section class="asides">
+    <aside>
+        <h2>Aside 1</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem</p>
+    </aside>
+    <aside>
+        <h2>Aside 2</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem</p>
+    </aside>
+    <aside>
+        <h2>Aside 1</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem</p>
+    </aside>
+    <aside>
+        <h2>Aside 2</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem</p>
+    </aside>
+</section>
+</main>
+
+<footer>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      background-color: lightgoldenrodyellow;
+    }
+
+
+    .container {
+      background-color: #a87796;
+      width: 100%;
+      border: black dotted 1px;
+      box-sizing: border-box;
+      padding: 10px;
+      /*1*/
+      /*display: flex;*/
+    }
+
+    .container > * {
+      background: powderblue;
+      border: black solid 1px;
+      box-sizing: border-box;
+      height: 100px;
+      width: 5%;
+      flex-grow: 1;
+      /*2a/b*/
+      /*width: 20%;*/
+    }
+
+    .special {
+      background: cornflowerblue;
+      flex-grow: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div class="special">3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <span>inline element</span>
+  <span>inline element</span>
+</div>
+</body>
+</html>

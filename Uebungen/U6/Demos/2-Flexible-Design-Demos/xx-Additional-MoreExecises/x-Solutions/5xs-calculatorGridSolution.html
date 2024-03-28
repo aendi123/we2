@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    input {
+      font-size: 10vw;
+      font-weight: bold;
+      border: black 1vw solid;
+      background-color: rgb(154, 153, 148);
+      border-radius: 5vw;
+    }
+    button {
+      font-size: 5vw;
+      font-weight: bold;
+      border: black 1vw solid;
+      border-radius: 3vw;
+
+    }
+    .op {
+      background-color: rgb(243, 146, 72);
+    }
+    .mod {
+      background-color: rgb(153, 153, 153);
+    }
+    .dig {
+      background-color: rgb(214, 214, 214);
+      font-weight: bold;
+    }
+    body {
+      display: grid;
+      height: 70vw; /* alternative: grid-template-rows: 15vw repeat(4, 10vw); */
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1.2fr 1fr 1fr 1fr 1fr;
+      grid-row-gap: 3px;
+      grid-column-gap: 3px;
+      grid-template-areas: "in in in in";
+    }
+    input {
+      grid-area: in;
+    }
+  </style>
+</head>
+<body>
+<input value="00000">
+<button class="dig">7</button><button class="dig">8</button><button class="dig">9</button><button class="op">C</button>
+<button class="dig">4</button><button class="dig">5</button><button class="dig">6</button><button class="op">&divide;</button>
+<button class="dig">1</button><button class="dig">2</button><button class="dig">3</button><button class="op">x</button>
+<button class="mod">-</button><button class="dig">0</button><button class="mod">=</button><button class="op">+</button>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Properties with data* switching</title>
+  <style>
+    :root {
+      /*colors*/
+      --color-light-red: #ffeaea;
+      --color-dark-violet: #47027e;
+    }
+
+    /*variables / switching*/
+    body[data-style='light'] {
+      --color: var(--color-dark-violet);
+      --bg-color: var(--color-light-red);
+    }
+
+    /*variables / switching*/
+    body[data-style='dark'] {
+      --color: var(--color-light-red);
+      --bg-color: var(--color-dark-violet);
+    }
+
+    /*applying variables*/
+    body {
+      color: var(--color);
+      background-color: var(--bg-color);
+    }
+
+    code {
+      font-size: x-large;
+    }
+  </style>
+</head>
+<body data-style="light">
+<h1>CSS Custom Properties / CSS Variables in Action</h1>
+<pre>
+<code>
+  CSS
+    :root {
+      /*colors*/
+      --color-light-red: #ffeaea;
+      --color-dark-violet: #47027e;
+    }
+
+    /*variables / switching*/
+    body[data-style='light'] {
+      --color: var(--color-dark-violet);
+      --bg-color: var(--color-light-red);
+    }
+
+    /*variables / switching*/
+    body[data-style='dark'] {
+      --color: var(--color-light-red);
+      --bg-color: var(--color-dark-violet);
+    }
+
+    /*applying variables*/
+    body {
+      color: var(--color);
+      background-color: var(--bg-color);
+    }
+
+  JS
+  document.querySelector('fieldset').addEventListener('change', (event) => {
+    const style = event.target.value;
+    document.body.setAttribute('data-style', style);
+  })
+</code>
+</pre>
+<h2>Switch Style</h2>
+<fieldset>
+  <legend>Selected Style:</legend>
+  <input id="light" type="radio" name="style" value="light" checked>
+  <label for="light"> Light</label>
+  <input type="radio" id="dark" name="style" value="dark">
+  <label for="dark"> Dark</label>
+</fieldset>
+<script>
+  document.querySelector('fieldset').addEventListener('change', (event) => {
+    const style = event.target.value;
+    document.body.setAttribute('data-style', style);
+  })
+</script>
+</body>
+</html>

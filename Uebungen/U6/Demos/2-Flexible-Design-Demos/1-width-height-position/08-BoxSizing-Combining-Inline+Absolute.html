@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combining Inline-Blocks + Absolute Position </title>
+    <style>
+        aside,
+        main,
+        nav {
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20%
+        }
+        aside{
+            background-color: antiquewhite;
+            width: 20%
+        }
+        main{
+            background-color: aliceblue;
+            width: 50%
+        }
+        nav{
+            background-color: azure;
+        }
+        footer{
+            background-color: lightgreen;
+        }
+        nav li {
+            display: block;
+        }
+
+        main {
+            margin-left: 25%;
+        }
+        nav {
+            position: absolute;
+            top: 100px;
+        }
+        aside {
+            position: absolute;
+            top: 100px;
+            right: 0;
+        }
+        /*
+
+        */
+
+    </style>
+</head>
+<body>
+<h1>Combining Inline-Blocks + Absolute Position</h1>
+Challenge when combining (Inline)-Blocks an Absolute Positioned blocks is that the blocks remaining in the flow need
+<br>
+<nav>
+    <ul>
+        <li>nav1</li>
+        <li>nav1</li>
+        <li>nav1</li>
+    </ul>
+</nav>
+<main>
+    <article>
+        article1<br>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+        </p>
+    </article>
+    <article>
+        article2<br>
+        <p>elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.</p>
+
+    </article>
+    <article>
+        article3 <br>
+        <p>elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.</p>
+    </article>
+</main>
+<aside>
+    <article>
+        aside - by the way<br>
+
+        <!--
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.</p>
+
+        -->
+    </article>
+    <article>
+        article2 - what I did not mention <br>
+        <!--
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.</p>
+
+        -->
+    </article>
+    <article>
+        article3 - hab about the following<br>
+        <!--
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.</p>
+
+        -->
+
+    </article>
+</aside>
+
+
+<footer>
+    I am the footer that needs to be pushed below
+</footer>
+</body>
+</html>

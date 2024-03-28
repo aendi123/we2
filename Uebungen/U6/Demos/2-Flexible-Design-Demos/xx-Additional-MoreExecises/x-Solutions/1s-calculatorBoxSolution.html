@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    input {
+      display: block;
+      font-size: 2rem;
+      font-weight: bold;
+      border: black 3px solid;
+      background-color: rgb(154, 153, 148);
+      border-radius: 20px;
+      margin: 6px 0;
+      width: 98%;
+    }
+    .buttons {
+      margin: 0 auto ;
+      height: 50vw;
+    }
+    .buttons > div {
+      height: 23%;
+      margin: 3px 0;
+    }
+    button {
+      font-size: 1.5rem;
+      font-weight: bold;
+      border: black 3px solid;
+      border-radius: 20px;
+      margin: 0 3px;
+      width: 23%;
+      height: 100%;
+    }
+    button:first-of-type {
+      margin-left: 0;
+    }
+    button:last-of-type {
+      margin-right: 0;
+    }
+    .op {
+      background-color: rgb(243, 146, 72);
+    }
+    .mod {
+      background-color: rgb(153, 153, 153);
+    }
+    .dig {
+      background-color: rgb(214, 214, 214);
+    }
+  </style>
+</head>
+<body>
+<input value="00000">
+<div class="buttons">
+  <div><button class="dig">7</button><button class="dig">8</button><button class="dig">9</button><button class="op">C</button></div>
+  <div><button class="dig">4</button><button class="dig">5</button><button class="dig">6</button><button class="op">&divide;</button></div>
+  <div><button class="dig">1</button><button class="dig">2</button><button class="dig">3</button><button class="op">x</button></div>
+  <div><button class="mod">-</button><button class="dig">0</button><button class="mod">=</button><button class="op">+</button></div>
+</div>
+</body>
+</html>

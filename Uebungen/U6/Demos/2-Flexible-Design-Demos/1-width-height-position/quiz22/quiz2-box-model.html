@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Quiz 2</title>
+  <style>
+    .container {
+      position: relative;
+      margin: 10px;
+      background-image: url("grid.png");
+      background-size: 250px;
+    }
+    .content {
+      width: 50px;
+      height: 50px;
+      background-color: black;
+    }
+    .container-large {
+      width: 250px;
+      height: 250px;
+    }
+    .container-small {
+      width: 125px;
+      height: 125px;
+      background-size: 125px
+    }
+    .content-1 {
+      /*(Opt A)*/
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      /*(Opt B)*/
+      /*nothing*/
+      /*aufgabe (Opt C)*/
+      /*position: absolute;*/
+      /*bottom: calc(20% + 50px);*/
+      /*right: calc(20% + 50px);*/
+    }
+  </style>
+</head>
+<body>
+<h2>Box Model Quiz 2</h2>
+<div class="container container-large">
+  <div class="content content-1"></div>
+</div>
+
+<div class="container container-small">
+  <div class="content content-1"></div>
+</div>
+
+</body>
+</html>

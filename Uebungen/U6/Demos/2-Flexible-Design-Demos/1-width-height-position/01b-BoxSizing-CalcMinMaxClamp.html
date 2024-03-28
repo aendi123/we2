@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>calc, min, max, clamp</title>
+  <style>
+    button {
+        display: block;
+        margin: auto;
+    }
+    .calc-width {
+        width: calc(100vw - 5em);
+    }
+    .min-width {
+        width: min(500px, 100vW - 5em);
+    }
+    .max-width {
+        width: max(400px, 100vw - 5em);
+    }
+    .max-min-width {
+        width: max(400px, min(500px, 100vw - 5em));
+    }
+    .clamp-width {
+        width: clamp(400px, 100vw - 5em, 500px);
+    }
+  </style>
+</head>
+<body>
+<h1>BoxSizing <code>calc(), min(), max(), clamp()</code> Value Functions Demo</h1>
+<p>Below button is sized <code>width: calc(100vW - 5em)</code></p>
+<button class="calc-width">Demo <code>calc()</code> Button</button>
+<p>Below button is sized <code>width: min(500px, 100vW - 5em)</code></p>
+<button class="min-width">Demo <code>min(..., ...)</code> Button</button>
+<p>Below button is sized <code>width: width: max(400px, 100vW - 5em)</code></p>
+<button class="max-width">Demo <code>max(..., ...)</code> Button</button>
+<p>Below button is sized <code>width: max(400px, min(500px, 100vw - 5em))</code></p>
+<button class="max-min-width">Demo <code>max(..., min())</code> Button</button>
+<p>Below button is sized <code>width: clamp(400px, 100vW - 5em, 500px)</code></p>
+<button class="clamp-width">Demo <code>clamp(..., ..., ...)</code> Button</button>
+</body>
+</html>

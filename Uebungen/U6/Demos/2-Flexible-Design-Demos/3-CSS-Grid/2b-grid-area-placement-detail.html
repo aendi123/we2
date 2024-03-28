@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grid Placement - Named Areas Demo</title>
+    <style>
+      article,
+      aside {
+        display: inline-block;
+        padding: 1em;
+        width: 18em;
+        margin: 1em 0;
+      }
+      article {
+        background-color: #bada55;
+      }
+      aside {
+        background-color: lightblue;
+      }
+      main,
+      main ~ section {
+        /*01 init*/
+        display: contents;
+        /*01 end*/
+        /*02*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*align-items: center;*/
+        /*02 end*/
+      }
+      #mainsection {
+        display: grid;
+        grid-template-areas: "header header""article aside" "footer footer";
+      }
+      /*01 init*/
+      article {
+        grid-area: article;
+        justify-self: center;
+      }
+      aside {
+        grid-area: aside;
+        justify-self: center;
+      }
+      header {
+        grid-area: header;
+      }
+      footer {
+        grid-area: footer;
+      }
+      /*01 end*/
+
+      /*02*/
+      /*main {*/
+      /*  grid-area: article;*/
+      /*}*/
+      /*main ~ section {*/
+      /*  grid-area: aside;*/
+      /*}*/
+      /*header {*/
+      /*  grid-area: header;*/
+      /*}*/
+      /*footer {*/
+      /*  grid-area: footer;*/
+      /*}*/
+      /*02 end*/
+
+
+      header,
+      footer {
+        background-color: lightcoral;
+        margin-top: 1em;
+        padding: 1em;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grid Placement - Named Areas Demo</h1>
+    <section id="mainsection">
+      <header><h1>Kopfbereich</h1></header>
+      <main>
+        <article>
+          <h2>Artikel 1</h2>
+          Artikel 1 - Inhalt: Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Aliquam culpa dignissimos earum est expedita fugit,
+          incidunt inventore laborum, laudantium quam quis quisquam rem sed.
+          Dolorem facilis possimus quaerat quibusdam rerum!
+        </article>
+        <article>
+          <h2>Artikel 2</h2>
+          Artikel 2 - Inhalt: laudantium quam quis quisquam rem sed. Dolorem
+          facilis possimus quaerat quibusdam rerum!
+        </article>
+      </main>
+      <section>
+        <aside>
+          <h2>Aside 1</h2>
+          Aside 1 Werbung
+        </aside>
+        <aside>
+          <h2>Aside 2</h2>
+          Aside 2 Noch viel viel viel mehr Werbung: liquam culpa dignissimos
+          earum est expedita fugit, incidunt inventore laborum, laudantium quam
+        </aside>
+      </section>
+      <footer>Fussbereich</footer>
+    </section>
+  </body>
+</html>

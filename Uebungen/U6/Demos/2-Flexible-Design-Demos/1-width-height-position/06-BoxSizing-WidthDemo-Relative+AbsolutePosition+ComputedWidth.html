@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BoxSizing-WidthDemo-Relative+FixedPosition+ComputedWidth</title>
+  <style>
+    .container {
+      position: relative;
+      width: 80%;
+      height: 50vh;
+      background-color: lightgreen;
+    }
+
+    .box {
+      box-sizing: border-box;
+      border: black solid 2px;
+      overflow: scroll;
+    }
+
+    .box1 {
+      margin-left: 10px;
+      /*0 box11 has as reference this box1 */
+      position: relative;
+      /*1 box11 now takes as reference the .container; static = default*/
+      /*position: static;*/
+      width: 50%;
+      height: 50%;
+    }
+
+    .box11 {
+      position: absolute;
+      background-color: lightpink;
+      right: 50px;
+      bottom: 10px;
+      width: 50%;
+      height: 25%;
+    }
+
+    .box2 {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 50%;
+    }
+  </style>
+</head>
+<body>
+<h1>BoxSizing WidthDemo Relative+FixedPosition + ComputedWidth</h1>
+<ul>
+  <li>.container (lightgreen) has width 80% and is defined as relative. When <code>position: relative</code> is removed
+    from .container the new reference for box1 and box2 is the html-element. Thus they become wider.
+  </li>
+  <li>.box1 is positioned initially absolute with reference to .container. .box11 is a child of box1. It is therefore
+    positioned with reference to box1. If box1 is not positioned absolute (removing <code>position: absolute</code>
+    from .box1), then box11 is positioned with reference to the next parent which may serve as a reference point.
+    This is .container
+  </li>
+</ul>
+<div class="container">
+  <div class="box box1">
+    <div class="box box11">box11</div>
+    box1<br>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+    ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  </div>
+
+  <div class="box box2">box2: this box is positioned absolute</div>
+</div>
+</body>
+</html>

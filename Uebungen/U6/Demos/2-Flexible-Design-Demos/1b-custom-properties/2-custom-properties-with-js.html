@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Properties + JS</title>
+  <style>
+    :root {
+      /*colors*/
+      --color-light-red: #ffeaea;
+      --color-dark-violet: #47027e;
+
+      /*variables*/
+      --color: var(--color-dark-violet);
+      --bg-color: var(--color-light-red);
+    }
+
+    /*applying variables*/
+    body {
+      color: var(--color);
+      background-color: var(--bg-color);
+    }
+
+    code {
+      font-size: x-large;
+    }
+  </style>
+</head>
+<body>
+<h1>CSS Custom Properties / CSS Variables in Action</h1>
+<pre>
+<code>
+  CSS
+  :root {
+      /*colors*/
+      --color-light-red: #ffeaea;
+      --color-dark-violet: #47027e;
+
+      /*variables*/
+      --color: var(--color-dark-violet);
+      --bg-color: var(--color-light-red);
+    }
+
+    /*applying variables*/
+    body {
+      color: var(--color);
+      background-color: var(--bg-color);
+    }
+
+  JS
+  document.querySelector('fieldset').addEventListener('change', (event) => {
+    const style = event.target.value;
+
+    const styles = getComputedStyle(document.documentElement);
+    const lightRedColor = String(styles.getPropertyValue('--color-light-red')).trim();
+    const darkVioletColor = String(styles.getPropertyValue('--color-dark-violet')).trim();
+
+    if (style === 'light'){
+      document.documentElement.style.setProperty('--color', darkVioletColor);
+      document.documentElement.style.setProperty('--bg-color', lightRedColor);
+    }else{
+      document.documentElement.style.setProperty('--color', lightRedColor);
+      document.documentElement.style.setProperty('--bg-color', darkVioletColor);
+    }
+  }
+</code>
+</pre>
+<h2>Switch Style</h2>
+<fieldset >
+  <legend>Selected Style:</legend>
+  <input id="light" type="radio" name="style" value="light" checked>
+  <label for="light"> Light</label>
+  <input type="radio" id="dark" name="style" value="dark">
+  <label for="dark"> Dark</label>
+</fieldset>
+<script>
+  document.querySelector('fieldset').addEventListener('change', (event) => {
+    const style = event.target.value;
+
+    const styles = getComputedStyle(document.documentElement);
+    const lightRedColor = String(styles.getPropertyValue('--color-light-red')).trim();
+    const darkVioletColor = String(styles.getPropertyValue('--color-dark-violet')).trim();
+
+    if (style === 'light'){
+      document.documentElement.style.setProperty('--color', darkVioletColor);
+      document.documentElement.style.setProperty('--bg-color', lightRedColor);
+    }else{
+      document.documentElement.style.setProperty('--color', lightRedColor);
+      document.documentElement.style.setProperty('--bg-color', darkVioletColor);
+    }
+  })
+</script>
+</body>
+</html>

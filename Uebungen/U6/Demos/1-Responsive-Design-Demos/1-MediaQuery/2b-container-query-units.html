@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Container-query-units-demo</title>
+  <style>
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      container-type: inline-size;
+    }
+
+    .resizeable {
+      resize: horizontal;
+      overflow: hidden;
+      margin: 5em auto;
+      padding: 1em;
+      border: 2px dashed #d0d0d0;
+      width: 30vw;
+      min-width: 250px;
+    }
+
+    .card {
+      box-sizing: border-box;
+      aspect-ratio: 21/9;
+      padding: 1em;
+      font-size: clamp(1em, 5cqi, 2em);
+      line-height: 1.5em;
+      background: lightblue;
+    }
+  </style>
+</head>
+<body>
+<div class="container resizeable">
+  <div class="card">Wenn du die Größe meines Containers veränderst, ändere ich meine Schriftgröße passend dazu.</div>
+</div>
+<footer>Quelle <a href="https://kulturbanause.de/blog/css-container-queries-mit-container/">kulturbanause.de</a> </footer>
+</body>
+</html>

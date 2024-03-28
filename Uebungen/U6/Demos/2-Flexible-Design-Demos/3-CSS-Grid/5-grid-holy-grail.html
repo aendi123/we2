@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+      .holy-grail {
+          height: 800px;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 100px 60px 1fr 100px 80px;
+          grid-template-areas: 'header' 'navigation' 'main' 'aside-1' 'footer';
+          grid-row-gap: 1px;
+          grid-column-gap: 1px;
+          font-size: 22px;
+          text-align: center;
+      }
+
+      .grail-header {
+          grid-area: header;
+          background-color: #dcd6fe;
+          padding: 20px;
+      }
+
+      .grail-nav {
+          grid-area: navigation;
+          background-color: #c6c0ff;
+          padding: 20px;
+      }
+
+      .grail-main {
+          grid-area: main;
+          background-color: #f9f6d2;
+          padding: 20px;
+      }
+
+      .grail-aside {
+          grid-area: aside-1;
+          background-color: #d4ffd1;
+          padding: 20px;
+      }
+
+      .grail-footer {
+          grid-area: footer;
+          background-color: #ffd1d1;
+          padding: 20px;
+      }
+
+      @media screen and (min-width: 786px) {
+          .holy-grail {
+              grid-template-areas:
+                    'header header header header header'
+                    '. navigation main aside-1 .'
+                    'footer footer footer footer footer';
+              grid-template-columns: 5% minmax(10%, 150px) minmax(70%, 150px) minmax(10%, 150px) 5%;
+              grid-template-rows: minmax(100px, auto) 1fr minmax(60px, auto);
+          }
+      }
+
+      @media screen and (min-width: 1400px) {
+          .holy-grail {
+              grid-template-areas:
+                    'header header header header header'
+                    '. navigation main aside-1 .'
+                    'footer footer footer footer footer';
+              grid-template-columns: 1fr minmax(10%, 150px) 1000px minmax(10%, 150px) 1fr;
+              grid-template-rows: minmax(100px, auto) 1fr minmax(60px, auto);
+          }
+      }
+
+      .caption {
+          font-family: helvetica;
+          font-size: 16px;
+          margin-top: 12px;
+      }
+  </style>
+</head>
+<body>
+<div class="holy-grail">
+  <header class="grail-header">
+    <span>Header</span>
+  </header>
+  <main class="grail-main">
+    <span>Main</span>
+    <h1>Holy Grail !</h1>
+    <p class="caption">This demo is also available for tweaking wih the Visual Grid Editor included in the <a
+        href="https://cssgrid.cc/5-grid-holy-grail.html#get-grid-builder"> CSS Grid Builder app</a>.</p>
+  </main>
+  <nav class="grail-nav">
+    <span>Navigation</span>
+  </nav>
+  <aside class="grail-aside">
+    <span>Aside</span>
+  </aside>
+  <footer class="grail-footer">
+    <span>Footer</span>
+  </footer>
+</div>
+</body>
+</html>

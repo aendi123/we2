@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Element Justification (X-Positioning in Cell)</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="alphabetStyling.css">
+  <style>
+    body {
+      max-width: 80em;
+      margin: 0 auto;
+    }
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto repeat(3, 1fr);
+      grid-template-areas:
+          "title title title title";
+      /*1*/
+      /*grid-gap: 10px;*/
+      /*2*/
+      /*justify-items: start;*/
+    }
+    #artIntro {
+      grid-area: title;
+
+      text-align: center;
+      font-size: x-large;
+    }
+    #artC {
+      /*3*/
+      /*justify-self: end;*/
+    }
+    #artE {
+      /*3*/
+      /*justify-self: center;*/
+    }
+    #artH {
+      /*3*/
+      /*justify-self: stretch;*/
+    }
+  </style>
+</head>
+<body>
+<h1>Grid Basics Demos</h1>
+<h2>Element Justification (X-Positioning in Cell)</h2>
+<section class="articles">
+  <article id="artIntro">
+    <h3>The 10 First Letters of the Alphabet</h3>
+    <p>Enjoy this great collection of wisdom</p>
+  </article>
+  <article id="artA">
+    <h3>Article A</h3>
+    <p>A ist the first letter of the alphabet.</p>
+  </article>
+  <article  id="artB">
+    <h3>Article B</h3>
+    <p>B ist the second letter of the alphabet.</p>
+    <p>Many interesting words start with B. For example:</p>
+    <ul>
+      <li>Ball</li>
+      <li>Baby</li>
+      <li>Boy</li>
+      <li>Bed</li>
+      <li>Bee</li>
+      <li>Beef</li>
+      <li>Bar</li>
+      <li>Bet</li>
+      <li>Bush</li>
+    </ul>
+  </article>
+  <article  id="artC">
+    <h3>Article C</h3>
+    <p>C ist the third letter of the alphabet.</p>
+  </article>
+  <article  id="artD">
+    <h3>Article D</h3>
+    <p>D ist the fourth letter of the alphabet.</p>
+    <p>Some really long words start with D. For example:</p>
+    <ul>
+      <li>Deconstructionists</li>
+      <li>Departmentalizations</li>
+      <li>Disadvantageousnesses</li>
+    </ul>
+
+  </article>
+  <article  id="artE">
+    <h3>Article E</h3>
+    <p>E ist the fifth letter of the alphabet.</p>
+  </article>
+  <article  id="artF">
+  <h3>Article F</h3>
+    <p>F ist the sixth letter of the alphabet.</p>
+    <p>Many interesting words start with F. For example:</p>
+    <ul>
+      <li>Fox</li>
+      <li>Fan</li>
+      <li>Funk</li>
+      <li>Folk</li>
+      <li>Flaw</li>
+      <li>Frog</li>
+      <li>Flag</li>
+      <li>Farm</li>
+      <li>Fall</li>
+      <li>Featherweight</li>
+      <li>Ferromagnetism</li>
+      <li>Forethoughtfulness</li>
+    </ul>
+  </article>
+  <article  id="artG">
+    <h3>Article G</h3>
+    <p>G ist the seventh letter of the alphabet.</p>
+  </article>
+  <article  id="artH">
+    <h3>Article H</h3>
+    <p>H ist the eighth letter of the alphabet.</p>
+  </article>
+  <article  id="artI">
+    <h3>Article I</h3>
+    <p>I ist the nineth letter of the alphabet.</p>
+  </article>
+  <article  id="artJ">
+    <h3>Article J</h3>
+    <p>J ist the tenth letter of the alphabet.</p>
+  </article>
+</section>
+
+</body>
+</html>

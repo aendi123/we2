@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            border: 0;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body  * {
+            border: black solid 1px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .row {
+            display: flex;
+            flex: 1;
+        }
+
+        .row-fixed-size {
+            display: flex;
+            flex: 0 0 auto;
+        }
+
+         main{
+            flex: 1;
+            overflow-y: auto;
+        }
+
+         aside{
+
+         }
+
+
+        @media (max-width: 30em) {
+
+            .row {
+                flex-wrap: wrap;
+                flex-direction: column;
+
+            }
+
+            aside  {
+                float: left;
+                order : -1;
+            }
+
+            main{
+                height: 100%;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <header class="row-fixed-size" >header</header>
+    <div class="row">
+        <aside>aside</aside>
+        <main>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</main>
+        <aside>aside</aside>
+    </div>
+    <footer class="row-fixed-size">footer</footer>
+</body>
+</html>

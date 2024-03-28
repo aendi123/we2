@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Rep 1</title>
+  <style>
+
+    .container {
+      /*1: what will happen? */
+      display: grid;
+
+      /*2: 3 column grid equal width -- which one? */
+      /*grid-template-columns: 1fr 1fr 1fr;*/
+      /*grid-template-rows: 1fr 1fr 1fr;*/
+
+      /*3 what will this do (2 undone) */
+      grid-template-columns: auto 1fr auto;
+
+      /*4 what will this do */
+      /*justify-items: center;*/
+
+      /*6 what will this do */
+      grid-auto-rows: 1fr;
+
+    }
+    div > div {
+      /*5 what will this do (4 undone) */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    div > div:nth-of-type(6){
+      /*7 what will this do */
+      grid-column: 1/-1;
+      grid-row: 2/3;
+    }
+
+    div > div {
+      border: 2px solid black;
+    }
+    div > div:nth-of-type(6){
+      font-size: 2em;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Grid Repetition 1</h1>
+
+<div class="container">
+  <div>test 1</div>
+  <div>test 2</div>
+  <div>test 3</div>
+  <div>test 4</div>
+  <div>test 5</div>
+  <div>test 6</div>
+  <div>test 7</div>
+  <div>test 8</div>
+  <div>test 9</div>
+</div>
+
+</body>
+</html>

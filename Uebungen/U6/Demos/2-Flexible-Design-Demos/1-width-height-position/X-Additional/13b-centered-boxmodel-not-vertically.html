@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Vertical Centering Problem Demo</title>
+  <style>
+    html {
+//      height: 100%;
+    }
+    body {
+//      height: 100%;
+      padding: 20px;
+      font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+    * {box-sizing: border-box;}
+
+    .container {
+//      height: 40%;
+      height: 40vh;
+      width: 80vw;
+      border: 5px solid rgb(111,41,97);
+      border-radius: .5em;
+    }
+
+    .item {
+      padding: 1em;
+      background-color: rgb(111,41,97);
+      color: #fff;
+      border-radius: .5em;
+      margin: auto auto; /* not working */
+      //margin: 50% auto; /* not working */
+      //margin: 16vh auto; /* kinof working */
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+<h1>Box Model Vertical Centering Problem Demo</h1>
+<p>Best solution is to use flexbox</p>
+<p>See
+  <a href="https://stackoverflow.com/questions/12415661/using-marginauto-to-vertically-align-a-div">
+    Stackoverflow for details and more
+  </a>
+</p>
+
+<div class="container">
+  <div class="item">
+    Centered
+  </div>
+</div>
+
+</body>
+</html>

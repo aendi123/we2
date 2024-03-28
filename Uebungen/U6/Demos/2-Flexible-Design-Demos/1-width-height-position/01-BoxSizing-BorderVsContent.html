@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BoxSizingBorderVsContent</title>
+    <style>
+        .box{
+
+            border: 10px solid coral;
+            background: lightgray;
+            padding: 10px;
+            margin: 10px;
+            width: 70px;
+            height: 70px;
+        }
+        .border-box{
+            box-sizing: border-box;
+        }
+        .container{
+            display: inline-block;
+            background: lightgreen;
+
+        }
+    </style>
+</head>
+<body>
+<h1>Value of box-sizing: content-box vs. border-box</h1>
+<ul>
+    <li>.box div (gray background, 10px inner padding, 10px coral border, 10px margin) is sized at 70x70px</li>
+    <li>.container around the .box has a lightgreen background</li>
+    <li>first square has the default box-sizing: content-box (width & height determine size of content, padding+border+margin go on top)</li>
+    <li>second square has box-sizing: border-box (width & height determine size of bounding box of content+padding+border)</li>
+    <li>the text 70x70 appears with padding in the gray area (padding cannot hava specific color)</li>
+    <li>there is no defined standard box-sizing: margin-box </li>
+    <li>Border Box is helpful if a given space should be used (e.g. 3 boxes in line each using 33.3%)</li>
+    <li>Content Box is helpful if the size of the content is known</li>
+</ul>
+
+<div class="container">
+    <div class="box">
+        70x70
+    </div>
+</div>
+<div class="container">
+    <div class="box border-box">
+        70x70
+    </div>
+</div>
+</body>
+</html>

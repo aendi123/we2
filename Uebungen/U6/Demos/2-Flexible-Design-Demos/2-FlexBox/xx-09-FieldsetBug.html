@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chrome Fieldset Bug (fixed since Chrome 84, June 2020)</title>
+  <link rel="stylesheet" href="normalize.css">
+  <style>
+    body{
+      padding-left: 1em;
+    }
+    .container {
+      width: 20rem;
+      display: flex;
+      flex-direction: column;
+      /*align-items: flex-start;*/
+    }
+
+    .nested > label {
+      display: flex;
+    }
+
+    .nested > label > input {
+      flex: 1 1 auto;
+    }
+    .container > * {
+      border: black 2px solid;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Demo Fieldset can not be styled as a flex-container</h1>
+
+<h2>Demo 1: Div as container for flat labels and inputs</h2>
+<div class="container">
+  <label for="ipt1">input1</label>
+  <input id="ipt1" value="input1">
+  <label for="ipt2">input2</label>
+  <input id="ipt2" value="input2">
+</div>
+
+<h2>Demo 2: Div as container for nested labels and inputs</h2>
+<div class="container nested">
+  <label for="ipt3">input3
+    <input id="ipt3" value="input3">
+  </label>
+  <label for="ipt4">input4
+    <input id="ipt4" value="input4">
+  </label>
+</div>
+
+<h2>Demo 3: Fieldset as container for flat labels and inputs (bug: chrome; ok: firefox; ok: safari</h2>
+<fieldset class="container">
+  <label for="ipt5">input5</label>
+  <input id="ipt5" value="input5">
+  <label for="ipt6">input6</label>
+  <input id="ipt6" value="input6">
+</fieldset>
+
+</body>
+</html>

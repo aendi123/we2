@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* css Zen Garden submission 217 - 'Screen Filler', by Elliot Jay Stocks, http://elliotjaystocks.com/  */
+    /* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+    /* TYPEKIT_KIT_ID: lxq7gid */
+
+    /*
+    ================================================
+    CSS Zen Garden theme for Typekit 01
+    ================================================
+    Handcrafted by Elliot Jay Stocks
+    http://elliotjaystocks.com/
+    Last updated on 18.11.2013
+    ================================================
+    01	Sensible Defaults
+    02	Typography
+    03	Layout
+    04	Media Queries
+    ================================================
+    */
+
+    /* ----------------------------------------------------------------------------------------------------------
+    01 Sensible defaults ----------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------- */
+
+    * {
+      margin: 0;
+      padding: 0; /* So sue me */
+    }
+
+    div,
+    article,
+    section,
+    header,
+    footer,
+    nav,
+    figure,
+    li {
+      position: relative;
+    }
+
+    /* For absolutely positioning elements within containers  */
+    .group:after {
+      display: block;
+      height: 0;
+      font-size: 0;
+      content: ".";
+      clear: both;
+      visibility: hidden;
+    }
+
+    /* For clearing */
+    * {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    /* Apply a natural box layout model to all elements â€” see http://paulirish.com/2012/box-sizing-border-box-ftw */
+
+    ::-moz-selection {
+      background: #333;
+      color: #fff;
+    }
+
+    ::selection {
+      background: #333;
+      color: #fff;
+    }
+
+    /* ----------------------------------------------------------------------------------------------------------
+    02 Typography -----------------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------- */
+    /*
+
+    14 / 16	= 		0.875em 		(14px equivalent)
+    16 / 16	= 		1em 			(16px equivalent)
+    18 / 16 = 		1.125em 		(18px equivalent)
+    21 / 16 = 		1.3125em 		(21px equivalent)
+    24 / 16 = 		1.5em 			(24px equivalent)
+    30 / 16 = 		1.875em 		(30px equivalent)
+    36 / 16 = 		2.25em 			(36px equivalent)
+    48 / 16 = 		3em 			(48px equivalent)
+    60 / 16 = 		3.75em 			(60px equivalent)
+    72 / 16 = 		4.5em 			(72px equivalent)
+    96 / 16 = 		6em 			(96px equivalent)
+
+    */
+
+    /* Rendering */
+    body,
+    input,
+    textarea {
+      color: #333; /*-webkit-font-smoothing:antialiased;*/
+    }
+
+    /* Families */
+    body {
+      font-family: "tablet-gothic", verdana, arial, sans-serif; /* Weights from Typekit: 300, 400 */
+    }
+
+    h2,
+    h3 {
+      font-family: "tablet-gothic-condensed", "arial narrow", arial, verdana, sans-serif; /* Weights from Typekit: 200, 900 */
+    }
+
+    /* Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+    }
+
+    h1 {
+      background: #ea2e49;
+      color: #fff;
+      display: inline-block;
+      margin-bottom: 1em;
+      padding: 0.5em 1em;
+    }
+
+    h2 {
+      color: #fff;
+      font-weight: 900; /* Heavy */
+      font-size: 6em;
+      letter-spacing: 1px;
+      line-height: 1em;
+    }
+
+    h3 {
+      font-size: 2.25em;
+      font-weight: 200; /* Thin */
+      letter-spacing: 1px;
+      line-height: 1em;
+      padding: 0.5em 0 0.25em 0;
+    }
+
+    /* Links */
+    a {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      color: #333;
+      text-decoration: none;
+      -moz-transition: border-color 0.2s ease-in-out;
+      -ms-transition: border-color 0.2s ease-in-out;
+      -o-transition: border-color 0.2s ease-in-out;
+      -webkit-transition: border-color 0.2s ease-in-out;
+      transition: border-color 0.2s ease-in-out;
+    }
+
+    a:hover {
+      border-color: #ea2e49;
+    }
+
+    section.intro div.summary p a,
+    div.explanation p a,
+    div.participation p a {
+      color: #fff;
+    }
+
+    div.participation p a:hover {
+      border-color: #fff;
+    }
+
+    /* Paragraph styles */
+    p,
+    li {
+      font-size: 1em;
+      font-weight: 400; /* Regular */
+      line-height: 1.5em;
+      padding: 0.5em 0;
+    }
+
+    h1,
+    section.intro div.summary p,
+    div.requirements p:last-child {
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    section.intro div.summary p:last-child,
+    div.requirements p:last-child {
+      border-top: 1px solid #ea2e49;
+      margin-top: 1em;
+      padding-top: 1.5em;
+    }
+
+    /* Other bits & bobs */
+    em,
+    strong {
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    /* ----------------------------------------------------------------------------------------------------------
+    03 Layout ---------------------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------- */
+
+    html {
+      background: #daede2;
+      padding: 5%;
+    }
+
+    body {
+      background: #77c4d3;
+    }
+
+    div.page-wrapper {
+      z-index: 2;
+    }
+
+    section.intro {
+      padding: 5%;
+    }
+
+    section.intro div.summary {
+      color: #fff;
+      padding: 15% 0;
+    }
+
+    section.intro div.preamble {
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      margin-left: -30%;
+      padding: 5% 5% 5% 30%;
+    }
+
+    div.main {
+      padding: 5%;
+    }
+
+    aside.sidebar {
+      background: rgba(246, 247, 146, 0.9);
+      padding: 5%;
+    }
+
+    aside.sidebar ul {
+      padding: 0.5em 0 2em 0;
+    }
+
+    aside.sidebar ul li {
+      color: rgba(0, 0, 0, 0.4);
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0.825em 0;
+    }
+
+    footer {
+      background: rgba(246, 247, 146, 0.9);
+      clear: both;
+      color: #fff;
+      padding: 1em 5%;
+      width: 50%;
+    }
+
+    footer a {
+      margin-right: 0.5em;
+    }
+
+    div.explanation {
+      color: #fff;
+      padding: 5%;
+    }
+
+    div.participation {
+      background: rgba(234, 46, 73, 0.9);
+      color: #fff;
+      padding: 5%;
+    }
+
+    div.benefits {
+      background: rgba(255, 255, 255, 0.9);
+      margin-top: 10%;
+      padding: 5%;
+    }
+
+    div.requirements {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5%;
+    }
+
+    /* ----------------------------------------------------------------------------------------------------------
+    04 Media queries (using a mobile-first approach) ------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------- */
+
+    /*
+    TODO (currently unchanged)
+    */
+
+    /* 1 and up */
+    @media screen and (min-width: 1px) {
+
+      body {
+        font-size: 85%;
+      }
+
+    }
+
+    /* 550 and up */
+    @media screen and (min-width: 550px) {
+
+      h2 {
+        font-size: 8em;
+      }
+
+      section.intro {
+        width: 66.6%;
+      }
+
+      aside.sidebar {
+        position: absolute;
+        right: 0;
+        top: 2.5%;
+        width: 32.75%;
+      }
+
+      div.extra1 {
+        background: rgba(51, 55, 69, 0.9);
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        top: 0;
+        width: 30%;
+        z-index: 1;
+      }
+
+      div.explanation {
+        float: left;
+        width: 50%;
+      }
+
+      div.participation {
+        float: left;
+        width: 49%;
+      }
+
+      div.benefits {
+        float: left;
+      }
+
+      div.requirements {
+        float: left;
+      }
+    }
+
+    /* 650 and up */
+    @media screen and (min-width: 650px) {
+
+      div.benefits {
+        margin-top: 12%;
+        width: 30%;
+      }
+
+      div.requirements {
+        width: 69%;
+      }
+
+    }
+
+    /* 700 and up */
+    @media screen and (min-width: 700px) {
+
+      body {
+        font-size: 90%;
+      }
+
+    }
+
+    /* 800 and up */
+    @media screen and (min-width: 800px) {
+
+      body {
+        font-size: 100%;
+      }
+
+    }
+
+    /* 900 and up */
+    @media screen and (min-width: 900px) {
+
+      body {
+        font-size: 110%;
+      }
+
+    }
+
+    /* 1500 and up */
+    @media screen and (min-width: 1500px) {
+
+      body {
+        font-size: 125%;
+      }
+
+    }
+
+    /* 1800 and up */
+    @media screen and (min-width: 1800px) {
+
+      body {
+        font-size: 150%;
+      }
+
+    }
+
+    /* 2100 and up */
+    @media screen and (min-width: 2100px) {
+
+      body {
+        font-size: 175%;
+      }
+
+    }
+
+    /* 2500 and up */
+    @media screen and (min-width: 2500px) {
+
+      body {
+        font-size: 200%;
+      }
+
+    }
+
+  </style>
+</head>
+<body id="css-zen-garden">
+<div class="page-wrapper">
+
+  <section class="intro" id="zen-intro">
+    <header role="banner">
+      <h1>CSS Zen Garden</h1>
+      <h2>The Beauty of <abbr title="Cascading Style Sheets">CSS</abbr> Design</h2>
+    </header>
+
+    <div class="summary" id="zen-summary" role="article">
+      <p>A demonstration of what can be accomplished through <abbr title="Cascading Style Sheets">CSS</abbr>-based
+        design. Select any style sheet from the list to load it into this page.</p>
+      <p>Download the example <a href="/examples/index" title="This page's source HTML code, not to be modified.">html
+        file</a> and <a href="/examples/style.css" title="This page's sample CSS, the file you may modify.">css file</a>
+      </p>
+    </div>
+
+    <div class="preamble" id="zen-preamble" role="article">
+      <h3>The Road to Enlightenment</h3>
+      <p>Littering a dark and dreary road lay the past relics of browser-specific tags, incompatible <abbr
+          title="Document Object Model">DOM</abbr>s, broken <abbr title="Cascading Style Sheets">CSS</abbr> support, and
+        abandoned browsers.</p>
+      <p>We must clear the mind of the past. Web enlightenment has been achieved thanks to the tireless efforts of folk
+        like the <abbr title="World Wide Web Consortium">W3C</abbr>, <abbr title="Web Standards Project">WaSP</abbr>,
+        and the major browser creators.</p>
+      <p>The CSS Zen Garden invites you to relax and meditate on the important lessons of the masters. Begin to see with
+        clarity. Learn to use the time-honored techniques in new and invigorating fashion. Become one with the web.</p>
+    </div>
+  </section>
+
+  <div class="main supporting" id="zen-supporting" role="main">
+    <div class="explanation" id="zen-explanation" role="article">
+      <h3>So What is This About?</h3>
+      <p>There is a continuing need to show the power of <abbr title="Cascading Style Sheets">CSS</abbr>. The Zen Garden
+        aims to excite, inspire, and encourage participation. To begin, view some of the existing designs in the list.
+        Clicking on any one will load the style sheet into this very page. The <abbr title="HyperText Markup Language">HTML</abbr>
+        remains the same, the only thing that has changed is the external <abbr
+            title="Cascading Style Sheets">CSS</abbr> file. Yes, really.</p>
+      <p><abbr title="Cascading Style Sheets">CSS</abbr> allows complete and total control over the style of a hypertext
+        document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can
+        truly be, once the reins are placed in the hands of those able to create beauty from structure. Designers and
+        coders alike have contributed to the beauty of the web; we can always push it further.</p>
+    </div>
+
+    <div class="participation" id="zen-participation" role="article">
+      <h3>Participation</h3>
+      <p>Strong visual design has always been our focus. You are modifying this page, so strong <abbr
+          title="Cascading Style Sheets">CSS</abbr> skills are necessary too, but the example files are commented well
+        enough that even <abbr title="Cascading Style Sheets">CSS</abbr> novices can use them as starting points. Please
+        see the <a href="http://www.mezzoblue.com/zengarden/resources/" title="A listing of CSS-related resources"><abbr
+            title="Cascading Style Sheets">CSS</abbr> Resource Guide</a> for advanced tutorials and tips on working with
+        <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
+      <p>You may modify the style sheet in any way you wish, but not the <abbr
+          title="HyperText Markup Language">HTML</abbr>. This may seem daunting at first if you’ve never worked this way
+        before, but follow the listed links to learn more, and use the sample files as a guide.</p>
+      <p>Download the sample <a href="/examples/index"
+                                title="This page's source HTML code, not to be modified.">HTML</a> and <a
+          href="/examples/style.css" title="This page's sample CSS, the file you may modify.">CSS</a> to work on a copy
+        locally. Once you have completed your masterpiece (and please, don’t submit half-finished work) upload your
+        <abbr title="Cascading Style Sheets">CSS</abbr> file to a web server under your control. <a
+            href="http://www.mezzoblue.com/zengarden/submit/" title="Use the contact form to send us your CSS file">Send
+          us a link</a> to an archive of that file and all associated assets, and if we choose to use it we will
+        download it and place it on our server.</p>
+    </div>
+
+    <div class="benefits" id="zen-benefits" role="article">
+      <h3>Benefits</h3>
+      <p>Why participate? For recognition, inspiration, and a resource we can all refer to showing people how amazing
+        <abbr title="Cascading Style Sheets">CSS</abbr> really can be. This site serves as equal parts inspiration for
+        those working on the web today, learning tool for those who will be tomorrow, and gallery of future techniques
+        we can all look forward to.</p>
+    </div>
+
+    <div class="requirements" id="zen-requirements" role="article">
+      <h3>Requirements</h3>
+      <p>Where possible, we would like to see mostly <abbr title="Cascading Style Sheets, levels 1 and 2">CSS 1 &amp;
+        2</abbr> usage. <abbr title="Cascading Style Sheets, levels 3 and 4">CSS 3 &amp; 4</abbr> should be limited to
+        widely-supported elements only, or strong fallbacks should be provided. The CSS Zen Garden is about functional,
+        practical <abbr title="Cascading Style Sheets">CSS</abbr> and not the latest bleeding-edge tricks viewable by 2%
+        of the browsing public. The only real requirement we have is that your <abbr
+            title="Cascading Style Sheets">CSS</abbr> validates.</p>
+      <p>Luckily, designing this way shows how well various browsers have implemented <abbr
+          title="Cascading Style Sheets">CSS</abbr> by now. When sticking to the guidelines you should see fairly
+        consistent results across most modern browsers. Due to the sheer number of user agents on the web these days —
+        especially when you factor in mobile — pixel-perfect layouts may not be possible across every platform. That’s
+        okay, but do test in as many as you can. Your design should work in at least IE9+ and the latest Chrome,
+        Firefox, iOS and Android browsers (run by over 90% of the population).</p>
+      <p>We ask that you submit original artwork. Please respect copyright laws. Please keep objectionable material to a
+        minimum, and try to incorporate unique and interesting visual themes to your work. We’re well past the point of
+        needing another garden-related design.</p>
+      <p>This is a learning exercise as well as a demonstration. You retain full copyright on your graphics (with
+        limited exceptions, see <a href="http://www.mezzoblue.com/zengarden/submit/guidelines/">submission
+          guidelines</a>), but we ask you release your <abbr title="Cascading Style Sheets">CSS</abbr> under a Creative
+        Commons license identical to the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
+                                            title="View the Zen Garden's license information.">one on this site</a> so
+        that others may learn from your work.</p>
+      <p role="contentinfo">By <a href="http://www.mezzoblue.com/">Dave Shea</a>. Bandwidth graciously donated by <a
+          href="http://www.mediatemple.net/">mediatemple</a>. Now available: <a
+          href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/">Zen Garden, the book</a>.</p>
+    </div>
+
+    <footer>
+      <a href="http://validator.w3.org/check/referer" title="Check the validity of this site’s HTML"
+         class="zen-validate-html">HTML</a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site’s CSS"
+         class="zen-validate-css">CSS</a>
+      <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
+         title="View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike."
+         class="zen-license">CC</a>
+      <a href="http://mezzoblue.com/zengarden/faq/#aaa" title="Read about the accessibility of this site"
+         class="zen-accessibility">A11y</a>
+      <a href="https://github.com/mezzoblue/csszengarden.com" title="Fork this site on Github" class="zen-github">GH</a>
+    </footer>
+
+  </div>
+
+
+  <aside class="sidebar" role="complementary">
+    <div class="container">
+
+      <div class="design-selection" id="design-selection">
+        <h3 class="select">Select a Design:</h3>
+        <nav role="navigation">
+          <ul>
+            <li>
+              <a href="/221/" class="design-name">Mid Century Modern</a> by <a href="http://andrewlohman.com/"
+                                                                               class="designer-name">Andrew Lohman</a>
+            </li>
+            <li>
+              <a href="/220/" class="design-name">Garments</a> by <a href="http://danielmall.com/"
+                                                                     class="designer-name">Dan Mall</a>
+            </li>
+            <li>
+              <a href="/219/" class="design-name">Steel</a> by <a href="http://steffen-knoeller.de"
+                                                                  class="designer-name">Steffen Knoeller</a>
+            </li>
+            <li>
+              <a href="/218/" class="design-name">Apothecary</a> by <a href="http://trentwalton.com"
+                                                                       class="designer-name">Trent Walton</a>
+            </li>
+            <li>
+              <a href="/217/" class="design-name">Screen Filler</a> by <a href="http://elliotjaystocks.com/"
+                                                                          class="designer-name">Elliot Jay Stocks</a>
+            </li>
+            <li>
+              <a href="/216/" class="design-name">Fountain Kiss</a> by <a href="http://jeremycarlson.com"
+                                                                          class="designer-name">Jeremy Carlson</a>
+            </li>
+            <li>
+              <a href="/215/" class="design-name">A Robot Named Jimmy</a> by <a href="http://meltmedia.com/"
+                                                                                class="designer-name">meltmedia</a>
+            </li>
+            <li>
+              <a href="/214/" class="design-name">Verde Moderna</a> by <a href="http://www.mezzoblue.com/"
+                                                                          class="designer-name">Dave Shea</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="design-archives" id="design-archives">
+        <h3 class="archives">Archives:</h3>
+        <nav role="navigation">
+          <ul>
+            <li class="next">
+              <a href="/217/page1">
+                Next Designs <span class="indicator">›</span>
+              </a>
+            </li>
+            <li class="viewall">
+              <a href="http://www.mezzoblue.com/zengarden/alldesigns/" title="View every submission to the Zen Garden.">
+                View All Designs </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="zen-resources" id="zen-resources">
+        <h3 class="resources">Resources:</h3>
+        <ul>
+          <li class="view-css">
+            <a href="/217/217.css" title="View the source CSS file of the currently-viewed design.">
+              View This Design’s <abbr title="Cascading Style Sheets">CSS</abbr> </a>
+          </li>
+          <li class="css-resources">
+            <a href="http://www.mezzoblue.com/zengarden/resources/"
+               title="Links to great sites with information on using CSS.">
+              <abbr title="Cascading Style Sheets">CSS</abbr> Resources </a>
+          </li>
+          <li class="zen-faq">
+            <a href="http://www.mezzoblue.com/zengarden/faq/"
+               title="A list of Frequently Asked Questions about the Zen Garden.">
+              <abbr title="Frequently Asked Questions">FAQ</abbr> </a>
+          </li>
+          <li class="zen-submit">
+            <a href="http://www.mezzoblue.com/zengarden/submit/" title="Send in your own CSS file.">
+              Submit a Design </a>
+          </li>
+          <li class="zen-translations">
+            <a href="http://www.mezzoblue.com/zengarden/translations/" title="View translated versions of this page.">
+              Translations </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+</div>
+
+<!--
+
+	These superfluous divs/spans were originally provided as catch-alls to add extra imagery.
+	These days we have full ::before and ::after support, favour using those instead.
+	These only remain for historical design compatibility. They might go away one day.
+
+-->
+<div class="extra1" role="presentation"></div>
+<div class="extra2" role="presentation"></div>
+<div class="extra3" role="presentation"></div>
+<div class="extra4" role="presentation"></div>
+<div class="extra5" role="presentation"></div>
+<div class="extra6" role="presentation"></div>
+
+
+</body>
+</html>

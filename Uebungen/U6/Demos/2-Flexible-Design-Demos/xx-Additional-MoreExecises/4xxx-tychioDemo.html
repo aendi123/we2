@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tychio</title>
+  <style>
+    @font-face {
+      font-family: 'Galatia SIL';
+      src: url("https://www.chenhuijing.com/demos/grids-tycho/fonts/galsilb.eot");
+      src: url("https://www.chenhuijing.com/demos/grids-tycho/fonts/galsilb.eot?#iefix") format("embedded-opentype"), url("https://www.chenhuijing.com/demos/grids-tycho/fonts/galsilb.woff2") format("woff2"), url("https://www.chenhuijing.com/demos/grids-tycho/fonts/galsilb.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    html {
+      box-sizing: border-box;
+      height: 100%;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Avenir Book", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+      color: #282828;
+    }
+
+    main {
+      max-width: 45em;
+      margin: 0 auto;
+      position: relative;
+      padding: 1em;
+    }
+
+    _:-ms-input-placeholder, :root main {
+      display: block;
+    }
+
+    h1 {
+      font-family: "Galatia SIL", Georgia, serif;
+      color: #fe320f;
+      font-size: calc(3em + 7vw);
+      margin-bottom: 0.25em;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: calc(1em + 0.5vw);
+      color: #a8a8a8;
+      margin-bottom: 1em;
+    }
+
+    hr {
+      opacity: 0;
+    }
+
+    .about {
+      line-height: 1.3;
+      margin-bottom: 1em;
+    }
+
+    a {
+      display: block;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #282828;
+      margin-bottom: 2em;
+      font-weight: bold;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+
+    .location {
+      text-transform: uppercase;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+
+    button {
+      border: 0;
+      background-color: #fe320f;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 100%;
+      padding: 1em 2em;
+      position: absolute;
+      right: 1em;
+      bottom: 1em;
+    }
+
+    @supports (display: grid) {
+      @media (min-width: 42em) and (min-height: 27em) {
+        main {
+          max-width: none;
+          padding: 0;
+          display: grid;
+          grid-template-columns: 2fr minmax(10em, max-content) minmax(14em, max-content) minmax(1em, 1fr) fit-content(28em) calc(2em + 0.5vw);
+          grid-template-rows: 35vh 40vh 15vh 10vh;
+        }
+
+        h1 {
+          grid-column: 3 / 6;
+          grid-row: 1 / 2;
+          z-index: 2;
+          padding-left: 0.25em;
+          margin-bottom: initial;
+        }
+
+        h2 {
+          grid-row: 1 / -1;
+          grid-column: 6 / 7;
+          -webkit-writing-mode: vertical-rl;
+          -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+          margin-bottom: initial;
+          color: #282828;
+        }
+
+        hr {
+          grid-column: 5 / 6;
+          grid-row: 2;
+          height: 6px;
+          background-color: #282828;
+          width: 20ch;
+        }
+
+        .about {
+          grid-column: 5 / 6;
+          grid-row: 2;
+          align-self: end;
+          padding-bottom: 4vh;
+          margin-bottom: initial;
+        }
+
+        a {
+          grid-column: 5 / 6;
+          justify-self: end;
+          align-self: center;
+          margin-bottom: initial;
+        }
+
+        a::before {
+          content: '';
+          display: block;
+          height: 4px;
+          background-color: #fe320f;
+          width: 4ch;
+          margin-bottom: 1em;
+        }
+
+        img {
+          grid-column: 1 / 4;
+          grid-row: 1 / 4;
+        }
+
+        .location {
+          grid-column: 3 / 4;
+          grid-row: 3 / 4;
+          z-index: 2;
+          background: #fff;
+          text-align: center;
+          display: flex;
+        }
+
+        .location p {
+          margin: auto;
+        }
+
+        button {
+          grid-column: 2 / 3;
+          grid-row: 4 / 5;
+          position: initial;
+          padding: 0;
+        }
+      }
+      @media (min-width: 48em) and (min-height: 27em) {
+        hr {
+          opacity: 1;
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Tycho</h1>
+  <h2>Artist Spotlight</h2>
+  <hr>
+  <p class="about">Tycho is an American ambient music project led by Scott Hansen as primary composer, songwriter and
+    producer. Hailing from San Francisco, California, he is known as ISO50 for his photographic and design works. His
+    music is a combination of downtempo
+    vintage-style synthesizers and ambient melodies.</p>
+  <a href="javascript:void(0)">Read more</a>
+  <img src="https://www.chenhuijing.com/demos/grids-tycho/img/tycho-band.jpg" alt="Tycho Live at Toronto">
+  <div class="location">
+    <p>10.2.2010 Toronto<br>The Drake Hotel</p>
+  </div>
+  <button type="button">Tour dates</button>
+</main>
+</body>
+</html>

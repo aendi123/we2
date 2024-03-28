@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grid Placement - Auto-Placement (explicit/implicit Grid)</title>
+    <style>
+      article,
+      aside {
+        padding: 1em;
+        width: 18em;
+        margin: 1em 0;
+      }
+      header,
+      footer {
+        background-color: lightcoral;
+        margin-top: 1em;
+        padding: 1em;
+        width: 100%;
+      }
+
+      article {
+        background-color: #bada55;
+      }
+      aside {
+        background-color: lightblue;
+      }
+      main,
+      main ~ section {
+        display: contents;
+      }
+      #mainsection {
+        width: 90%;
+        margin: 40px auto;
+        display: grid;
+        justify-items: center;
+        grid-template-rows: auto auto;
+        /*01*/
+        /*grid-auto-flow: dense;*/
+        /*01 end*/
+        /*02b add*/
+        /*grid-template-rows: auto auto auto auto;*/
+        /*now explicit grid extends further down*/
+        /*02b end*/
+      }
+      header {
+        grid-column: 1 / 3;
+      }
+      article {
+        grid-column: 1 / 2;
+      }
+      aside {
+        grid-column: 2 / 3;
+      }
+      footer {
+        grid-column: 1 / 3;
+        /*02*/
+        /*grid-row: -2 / -1;*/
+        /*does not work - grid is created implicitly after 2 rows*/
+        /*02 end*/
+      }
+      button {
+        font-size: large;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grid Placement - Auto-Placement (explicit/implicit Grid)</h1>
+    <button id="add-article-button">Add Article</button>
+    <section id="mainsection">
+      <header><h1>Kopfbereich</h1></header>
+      <main>
+        <article>
+          <h2>Artikel 1</h2>
+          Artikel 1 - Inhalt: Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Aliquam culpa dignissimos earum est expedita fugit,
+          incidunt inventore laborum, laudantium quam quis quisquam rem sed.
+          Dolorem facilis possimus quaerat quibusdam rerum!
+        </article>
+        <article>
+          <h2>Artikel 2</h2>
+          Artikel 2 - Inhalt: laudantium quam quis quisquam rem sed. Dolorem
+          facilis possimus quaerat quibusdam rerum!
+        </article>
+      </main>
+      <section>
+        <aside>
+          <h2>Aside 1</h2>
+          Aside 1 Werbung
+        </aside>
+        <aside>
+          <h2>Aside 2</h2>
+          Aside 2 Noch viel viel viel mehr Werbung: liquam culpa dignissimos
+          earum est expedita fugit, incidunt inventore laborum, laudantium quam
+        </aside>
+      </section>
+      <footer>Fussbereich</footer>
+    </section>
+    <script>
+      let articleCount = 2;
+      const mainElement = document.querySelector("main");
+      function addArticle() {
+        articleCount++;
+        // not needed if --innerRows = 100
+        document.documentElement.style.setProperty('--innerRows', String(articleCount));
+        mainElement.insertAdjacentHTML("beforeend",
+            `<article>
+            <h2>Artikel ${articleCount}</h2>
+            ${articleCount}  - Inhalt: laudantium quam quis quisquam rem sed. Dolorem
+            facilis possimus quaerat quibusdam rerum!
+          </article>`)
+      }
+      const addArticleButton = document.getElementById("add-article-button");
+      addArticleButton.addEventListener('click', addArticle);
+    </script>
+
+  </body>
+</html>

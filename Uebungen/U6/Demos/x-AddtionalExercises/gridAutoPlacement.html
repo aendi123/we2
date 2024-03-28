@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Autoplacement Exercise</title>
+  <style>
+    .species {
+      margin: 3px;
+      height: 48px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    [data-country="africa"] {
+      background-color: lightpink;
+    }
+    [data-country="Europe"] {
+      background-color: lightgreen;
+    }
+    [data-country="Australia"] {
+      background-color: lightblue;
+    }
+    .container {
+      /*01*/
+      /*display: grid;*/
+      /*01 end*/
+      /*02*/
+      /*grid-template-columns: 1fr 1fr 1fr;*/
+      /*02 end*/
+
+      /*06*/
+      /*grid-auto-flow: dense*/
+      /*06 end*/
+    }
+    /*03*/
+    /*article {*/
+    /*  display: contents;*/
+    /*}*/
+    /*03 end*/
+    /*04*/
+    /*[data-kingdom="animal"] {*/
+    /*  grid-column: 1;*/
+    /*}*/
+    /*04 end*/
+    /*05*/
+    /*[data-kingdom="plant"] {*/
+    /*  grid-column: 2;*/
+    /*}*/
+    /*05 end*/
+
+
+  </style>
+</head>
+<body>
+<h1>Grid Autoplacement Exercise</h1>
+
+<section class="container">
+<article>
+  <div class="species" data-kingdom="animal" data-class="mamal" data-country="africa">
+    Zebra
+  </div>
+  <div class="species" data-kingdom="animal" data-class="mamal" data-country="africa">
+    Lion
+  </div>
+  <div class="species" data-kingdom="animal" data-class="bird" data-country="africa">
+    Pygmy-Kingfisher
+  </div>
+  <div class="species" data-kingdom="animal" data-class="bird" data-country="africa">
+    Secretary Bird
+  </div>
+  <div class="species" data-kingdom="plant" data-class="tree" data-country="africa">
+    African Prune
+  </div>
+  <div class="species" data-kingdom="plant" data-class="flower" data-country="africa">
+    Saintpaulia
+  </div>
+</article>
+<article>
+  <div class="species" data-kingdom="animal" data-class="mamal" data-country="Europe">
+    Wolf
+  </div>
+  <div class="species" data-kingdom="animal" data-class="mamal" data-country="Europe">
+    Cow
+  </div>
+  <div class="species" data-kingdom="animal" data-class="bird" data-country="Europe">
+    Robin
+  </div>
+  <div class="species" data-kingdom="animal" data-class="bird" data-country="Europe">
+    Sparrow
+  </div>
+  <div class="species" data-kingdom="plant" data-class="flower" data-country="Europe">
+    Edelweis
+  </div>
+  <div class="species" data-kingdom="plant" data-class="tree" data-country="Europe">
+    Olive
+  </div>
+</article>
+<article>
+  <div class="species" data-kingdom="animal" data-class="mamal" data-country="Australia">
+    Dingo
+  </div>
+  <div class="species" data-kingdom="animal" data-class="mamal" data-country="Australia">
+    Wombat
+  </div>
+  <div class="species" data-kingdom="animal" data-class="bird" data-country="Australia">
+    Emu
+  </div>
+  <div class="species" data-kingdom="animal" data-class="bird" data-country="Australia">
+    Bowerbird
+  </div>
+  <div class="species" data-kingdom="plant" data-class="flower" data-country="Australia">
+    Green Kangaroo Paw
+  </div>
+  <div class="species" data-kingdom="plant" data-class="tree" data-country="Australia">
+    Eukalyptus
+  </div>
+</article>
+</section>
+</body>
+</html>

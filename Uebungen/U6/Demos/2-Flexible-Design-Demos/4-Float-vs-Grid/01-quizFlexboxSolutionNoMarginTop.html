@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Quiz</title>
+  <style>
+    .demo * {
+      border: 2px black solid;
+    }
+    .row-container {
+      display: flex;
+      flex-direction: row;
+    }
+    .column-container {
+      display: flex;
+      flex-direction: column;
+      height: 150px;
+      justify-content: space-between;
+    }
+    .box {
+      flex-basis: 50px;
+    }
+    .margin-left-right-auto {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<h1>Flexbox Quiz</h1>
+<div class="demo">
+  <div class="row-container">
+    <div class="box margin-left-right-auto">1</div>
+    <div class="column-container box">
+      <div class="box">2</div>
+      <div class="box ">3</div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

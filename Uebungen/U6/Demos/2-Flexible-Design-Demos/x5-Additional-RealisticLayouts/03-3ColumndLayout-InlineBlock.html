@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-Column Layout - Inline-Block</title>
+    <style>
+        body {
+        }
+
+        header,
+        nav,
+        nav a,
+        article,
+        section,
+        aside,
+        footer {
+            border-radius: 0 0.5em 0.5em;
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        header {
+            background: #F1F3F4;
+            border-color: #d5d5d5;
+        }
+
+        nav,
+        nav ul,
+        nav li {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        nav li {
+            list-style-type: none;
+            margin: 1.3em 0;
+        }
+
+        nav a {
+            display: inline-block;
+            width: 80%;
+            background: #fffbf0;
+            border: 1px solid #dfac20;
+            margin: 0;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #dfac20;
+        }
+
+        footer p {
+            text-align: right;
+        }
+        nav li {
+            margin: 0 10px;
+        }
+        article {
+            background: #ffede0;
+            border-color: #df6c20;
+        }
+        aside {
+            background: #ebf5d7;
+            border-color: #8db243;
+        }
+        footer {
+            background: #e4ebf2;
+            border-color: #8a9da8;
+        }
+
+
+        nav {
+            display: inline-block;
+            width: calc(20% - 40px);
+            vertical-align: top;
+            margin: 10px;
+        }
+        section.articles {
+            display: inline-block;
+            width: calc(50% - 40px);
+            vertical-align: top;
+        }
+        section.asides {
+            display: inline-block;
+            width: calc(30% - 40px);
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>3-Column Layout - Inline-Block</h1>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><a href="#nav-one">Nav Point1</a>
+            <li><a href="#nav-two">Nav Point2</a>
+            <li><a href="#nav-three">Nav Point3</a>
+        </ul>
+    </nav>
+    <section class="articles">
+        <article>
+            <h2>Article 1</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.</p>
+        </article>
+        <article>
+            <h2>Article 2</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+                eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                dolor sit amet.</p>
+        </article>
+    </section>
+
+    <section class="asides">
+        <aside>
+            <h2>Aside 1</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem</p>
+        </aside>
+        <aside>
+            <h2>Aside 2</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem</p>
+        </aside>
+        <aside>
+            <h2>Aside 1</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem</p>
+        </aside>
+        <aside>
+            <h2>Aside 2</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem</p>
+        </aside>
+    </section>
+</main>
+
+<footer>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos
+</footer>
+
+</body>
+</html>

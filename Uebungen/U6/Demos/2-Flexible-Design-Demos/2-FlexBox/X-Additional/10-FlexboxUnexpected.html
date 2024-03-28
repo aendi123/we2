@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Unexpected</title>
+  <link rel="stylesheet" href="../normalize.css">
+  <style>
+    body{
+      padding-left: 1em;
+    }
+    .container {
+      width: 20rem;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .container > * {
+      border: black 2px solid;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Flexbox Unexpected</h1>
+
+<div class="container">
+  <p>
+    --1st-- some text before
+    <p>nested text</p>
+    some text after
+  </p>
+  <p>
+    --2nd-- some text before
+    <p>nested  text</p>
+    some text after
+  </p>
+</div>
+
+<div class="container">
+  <div>
+    --1st-- some text before
+    <div>nested  text</div>
+    some text after
+  </div>
+  <div>
+    --2nd-- some text before
+    <div>nested  text</div>
+    some text after
+  </div>
+</div>
+
+</body>
+</html>

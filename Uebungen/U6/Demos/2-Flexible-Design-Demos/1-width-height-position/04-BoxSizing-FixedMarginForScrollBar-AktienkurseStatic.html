@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Aktienkurse</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: arial, sans-serif;
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td{
+            padding: 5px;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(2n)
+        {
+            background: lightblue;
+        }
+
+        /*
+        tbody tr:nth-of-type(2n)
+        {
+            background: lightblue;
+        }*/
+
+        thead tr
+        {
+            font-weight: bold;
+        }
+
+        .quote.positive::before{
+            content: '▲';
+            display: inline-block;
+        }
+
+        .quote.negative::before{
+            content: '▼';
+            display: inline-block;
+        }
+
+        .quote.positive{
+            text-decoration: overline;
+        }
+
+        .quote.negative{
+            text-decoration: underline;
+        }
+
+        header, footer,thead tr{
+            background: blue;
+            color: white;
+        }
+
+        header, footer{
+            text-align: center;
+        }
+
+        footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;  /*Alternative: width: 100%*/
+            height: 1.9rem;
+            line-height: 1.9rem;
+        }
+
+        main{
+            margin-bottom: 10rem; /*Table kann vollständig hinter dem Footer hervorgescrolled werden */
+        }
+
+        form{
+            margin: 10px 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+<header class="banner">
+    <h1>Aktienkurs-Portal</h1>
+</header>
+<main>
+    <form>
+        <label>Anzahl Monate
+            <select id="number-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label>
+    </form>
+    <div id="container">
+        <!--Handlebars Template Sie die nächste Seite für das Handlebars-->
+        <table>
+            <thead>
+            <tr>
+                <th class="title-header">Firma</th>
+                <th>2020 Jan</th>
+                <th>2020 Feb</th>
+                <th>2020 Mar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Adobe</td>
+                <td class="quote negative">30</td>
+                <td class="quote negative">27</td>
+                <td class="quote positive">40.5</td>
+            </tr>
+            <tr>
+                <td>Alphabet Inc. (C)</td>
+                <td class="quote negative">623</td>
+                <td class="quote positive">872.2</td>
+                <td class="quote negative">697.76</td>
+            </tr>
+            <tr>
+                <td>Amazon.com</td>
+                <td class="quote positive">776.6</td>
+                <td class="quote negative">621.28</td>
+                <td class="quote positive">745.54</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td class="quote negative">623</td>
+                <td class="quote positive">872.2</td>
+                <td class="quote negative">697.76</td>
+            </tr>
+            <tr>
+                <td>Booking Holding</td>
+                <td class="quote positive">776.6</td>
+                <td class="quote negative">621.28</td>
+                <td class="quote positive">745.54</td>
+            </tr>
+            <tr>
+                <td>Broadcom</td>
+                <td class="quote negative">30</td>
+                <td class="quote negative">27</td>
+                <td class="quote positive">40.5</td>
+            </tr>
+            <tr>
+                <td>Cisco</td>
+                <td class="quote negative">99</td>
+                <td class="quote negative">80</td>
+                <td class="quote positive">82.5</td>
+            </tr>
+            <tr>
+                <td>Dell</td>
+                <td class="quote positive">776.6</td>
+                <td class="quote negative">621.28</td>
+                <td class="quote positive">745.54</td>
+            </tr>
+            <tr>
+                <td>Facebook</td>
+                <td class="quote negative">30</td>
+                <td class="quote negative">27</td>
+                <td class="quote positive">40.5</td>
+            </tr>
+            <tr>
+                <td>HP</td>
+                <td class="quote positive">776.6</td>
+                <td class="quote negative">621.28</td>
+                <td class="quote positive">745.54</td>
+            </tr>
+            <tr>
+                <td>IBM</td>
+                <td class="quote negative">623</td>
+                <td class="quote positive">872.2</td>
+                <td class="quote negative">697.76</td>
+            </tr>
+            <tr>
+                <td>Microsoft Corp.</td>
+                <td class="quote negative">30</td>
+                <td class="quote negative">27</td>
+                <td class="quote positive">40.5</td>
+            </tr>
+            <tr>
+                <td>Oracle</td>
+                <td class="quote negative">623</td>
+                <td class="quote positive">872.2</td>
+                <td class="quote negative">697.76</td>
+            </tr>
+            <tr>
+                <td>Twitter</td>
+                <td class="quote negative">623</td>
+                <td class="quote positive">872.2</td>
+                <td class="quote negative">697.76</td>
+            </tr>
+            <tr>
+                <td>Uber</td>
+                <td class="quote positive">776.6</td>
+                <td class="quote negative">621.28</td>
+                <td class="quote positive">745.54</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer>
+    <small>Copyright by Imaginary StoX</small>
+</footer>
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grid Auto Placement with Subgrid</title>
+    <style>
+      button {
+        font-size: large;
+        font-weight: bold;
+      }
+      :root {
+        --innerRows: 3;
+        /*alternative: enough empty rows -> no increase needd*/
+        /*--innerRows: 100;*/
+      }
+      article,
+      aside {
+        display: inline-block;
+        padding: 1em;
+        width: 18em;
+        margin: 1em 0;
+      }
+      article {
+        background-color: #bada55;
+      }
+      aside {
+        background-color: lightblue;
+      }
+      main,
+      main ~ section {
+        display: grid;
+        /*requires firefox 71.x (Oct19 = FF-Nightly)*/
+        grid-template-rows: subgrid;
+        justify-content: center;
+      }
+      #mainsection {
+        display: grid;
+        /*grid-auto-rows: 1fr ;*/
+        width: 80%;
+      }
+      main {
+        grid-row: span var(--innerRows);
+        grid-column: 1 / 2;
+        grid-template-columns: 1fr 1fr;
+      }
+      main ~ section {
+        grid-row: span var(--innerRows);
+        grid-column: 2 / 3;
+      }
+      header {
+        grid-column: 1 / 3;
+      }
+      footer {
+        grid-column: 1 / 3;
+      }
+
+      header,
+      footer {
+        background-color: lightcoral;
+        margin-top: 1em;
+        padding: 1em;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grid Auto Placement with Subgrid</h1>
+    <button id="add-article-button">Add Article</button>
+    <section id="mainsection">
+      <header><h1>Kopfbereich</h1></header>
+      <main>
+        <article>
+          <h2>Artikel 1</h2>
+          Artikel 1 - Inhalt: Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Aliquam culpa dignissimos earum est expedita fugit,
+          incidunt inventore laborum, laudantium quam quis quisquam rem sed.
+          Dolorem facilis possimus quaerat quibusdam rerum!
+        </article>
+        <article>
+          <h2>Artikel 2</h2>
+          Artikel 2 - Inhalt: Ab aperiam asperiores
+          beatae consequatur consequuntur debitis doloremque dolorum earum est,
+          ex excepturi exercitationem impedit ipsa iure labore natus
+          necessitatibus non numquam officiis optio placeat porro possimus qui
+          quis quod reiciendis repellat sed sequi sit voluptates? Aperiam beatae
+          earum excepturi iste libero nesciunt, quia ratione voluptas voluptate.
+        </article>
+        <article>
+          <h2>Artikel 3</h2>
+          Artikel 3 - Inhalt: Asperiores ducimus est magni, nisi nobis quasi
+          rerum saepe voluptates? Accusantium eveniet explicabo impedit incidunt
+          nisi odio odit perferendis quod recusandae, voluptatem!
+        </article>
+        <article>
+          <h2>Artikel 4</h2>
+          Artikel 4 - Inhalt: Accusamus, adipisci
+          asperiores aut debitis dolores doloribus eius et eum fugiat harum in
+          incidunt iusto magnam non nulla optio, praesentium quia ratione
+          sapiente veritatis vitae voluptas voluptatem. Ab aperiam asperiores
+          beatae consequatur consequuntur debitis doloremque dolorum earum est,
+          ex excepturi exercitationem impedit ipsa iure labore natus
+          necessitatibus non numquam officiis optio placeat porro possimus qui
+          quis quod reiciendis repellat sed sequi sit voluptates? Aperiam beatae
+          earum excepturi iste libero nesciunt, quia ratione voluptas voluptate.
+        </article>
+        <article>
+          <h2>Artikel 5</h2>
+          Artikel 5 - Inhalt: Aliquid animi aperiam at atque aut earum inventore
+          minima nesciunt non sint, tempore, veniam vero vitae.
+        </article>
+      </main>
+      <section>
+        <aside>
+          <h2>Aside 1</h2>
+          Aside 1 Werbung
+        </aside>
+        <aside>
+          <h2>Aside 2</h2>
+          Aside 2 Noch viel viel viel mehr Werbung: liquam culpa dignissimos
+          earum est expedita fugit, incidunt inventore laborum, laudantium quam
+        </aside>
+      </section>
+      <footer>Fussbereich</footer>
+    </section>
+    <script>
+      let articleCount = 5;
+      const mainElement = document.querySelector("main");
+      function addArticle() {
+        articleCount++;
+        // not needed if --innerRows = 100
+        document.documentElement.style.setProperty('--innerRows', String(1 + Math.floor(articleCount/2)));
+        mainElement.insertAdjacentHTML("beforeend",
+          `<article>
+            <h2>Artikel ${articleCount}</h2>
+            ${articleCount}  - Inhalt: laudantium quam quis quisquam rem sed. Dolorem
+            facilis possimus quaerat quibusdam rerum!
+          </article>`)
+      }
+      const addArticleButton = document.getElementById("add-article-button");
+      addArticleButton.addEventListener('click', addArticle);
+    </script>
+  </body>
+</html>

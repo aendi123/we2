@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid-Advanced</title>
+  <style>
+    .frame {
+      padding: 15px;
+      background-color: lightgreen;
+    }
+
+    .gallery {
+      display: grid;
+      grid-gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-auto-rows: 200px;
+      grid-auto-flow: dense;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .wide {
+      grid-column: span 2;
+      width: 400px;
+    }
+
+    .tall {
+      grid-row: span 2;
+      height: 400px;
+    }
+
+
+  </style>
+</head>
+<body>
+<h1>Responsive Grid Styling using <code>repeat(autofit, minimax(…px, 1fr))</code></h1>
+<p>Example inspired by <a href="https://gedd.ski/post/tile-layouts/">Geddski</a></p>
+
+<h2>Example Photo Galery</h2>
+<div class="frame">
+  <div class="gallery">
+    <img src="cats/cat1.jpeg" alt="cat">
+    <img src="cats/cat2.jpeg" alt="cat">
+    <img src="cats/catWide1.jpeg" alt="cat" class="wide">
+    <img src="cats/catWide2.png" alt="cat" class="wide">
+    <img src="cats/catLarge1.jpeg" alt="cat" class="tall wide">
+    <img src="cats/catTall1.jpeg" alt="cat" class="tall">
+    <img src="cats/catTall2.jpeg" alt="cat" class="tall">
+    <img src="cats/catLarge2.jpeg" alt="cat" class="tall wide">
+    <img src="cats/cat3.jpeg" alt="cat">
+    <img src="cats/cat4.jpeg" alt="cat">
+    <img src="cats/cat5.jpeg" alt="cat">
+    <img src="cats/catWide3.jpeg" alt="cat" class="wide">
+    <img src="cats/catWide4.jpeg" alt="cat" class="wide">
+    <img src="cats/catTall3.jpeg" alt="cat" class="tall">
+    <img src="cats/catTall4.jpeg" alt="cat" class="tall">
+    <img src="cats/catLarge3.jpeg" alt="cat" class="tall wide">
+  </div>
+</div>
+
+</body>
+</html>

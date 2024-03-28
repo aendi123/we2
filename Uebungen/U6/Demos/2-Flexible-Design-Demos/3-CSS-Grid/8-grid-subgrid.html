@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grid Placement - Named Areas Demo (with Subgrid)</title>
+    <style>
+      article,
+      aside {
+        display: inline-block;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      article {
+        width: 16em;
+        background-color: #bada55;
+      }
+      aside {
+        width: 13em;
+        background-color: lightblue;
+      }
+      main,
+      main ~ section {
+        display: grid;
+        /*requires firefox 71.x (Oct19 = FF-Nightly)*/
+        grid-template-rows: subgrid;
+        justify-items: center;
+      }
+      main {
+        grid-template-columns: 1fr 1fr;
+      }
+      #mainsection {
+        width: 90%;
+        margin: 40px auto;
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "articles asides"
+          "articles asides"
+          "articles asides"
+          "footer footer";
+        /*02 -> error*/
+        /*grid-template-areas: "header header" "articles asides" "articles asides" "footer footer";*/
+        /*02 end*/
+      }
+      main {
+        grid-area: articles;
+      }
+      main ~ section {
+        grid-area: asides;
+      }
+      header {
+        grid-area: header;
+      }
+      footer {
+        grid-area: footer;
+      }
+
+      header,
+      footer {
+        background-color: lightcoral;
+        margin-top: 1em;
+        padding: 1em;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grid Placement - Named Areas Demo (with Subgrid)</h1>
+    <section id="mainsection">
+      <header><h1>Kopfbereich</h1></header>
+      <main>
+        <article>
+          <h2>Artikel 1</h2>
+          Artikel 1 - Inhalt: Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Aliquam culpa dignissimos earum est expedita fugit,
+          incidunt inventore laborum, laudantium quam quis quisquam rem sed.
+          Dolorem facilis possimus quaerat quibusdam rerum!
+        </article>
+        <article>
+          <h2>Artikel 2</h2>
+          Artikel 2 - Inhalt: Ab aperiam asperiores
+          beatae consequatur consequuntur debitis doloremque dolorum earum est,
+          ex excepturi exercitationem impedit ipsa iure labore natus
+          necessitatibus non numquam officiis optio placeat porro possimus qui
+          quis quod reiciendis repellat sed sequi sit voluptates? Aperiam beatae
+          earum excepturi iste libero nesciunt, quia ratione voluptas voluptate.
+        </article>
+        <article>
+          <h2>Artikel 3</h2>
+          Artikel 3 - Inhalt: Asperiores ducimus est magni, nisi nobis quasi
+          rerum saepe voluptates? Accusantium eveniet explicabo impedit incidunt
+          nisi odio odit perferendis quod recusandae, voluptatem!
+        </article>
+        <article>
+          <h2>Artikel 4</h2>
+          Artikel 4 - Inhalt: Accusamus, adipisci
+          asperiores aut debitis dolores doloribus eius et eum fugiat harum in
+          incidunt iusto magnam non nulla optio, praesentium quia ratione
+          sapiente veritatis vitae voluptas voluptatem. Ab aperiam asperiores
+          beatae consequatur consequuntur debitis doloremque dolorum earum est,
+          ex excepturi exercitationem impedit ipsa iure labore natus
+          necessitatibus non numquam officiis optio placeat porro possimus qui
+          quis quod reiciendis repellat sed sequi sit voluptates? Aperiam beatae
+          earum excepturi iste libero nesciunt, quia ratione voluptas voluptate.
+        </article>
+        <article>
+          <h2>Artikel 5</h2>
+          Artikel 5 - Inhalt: Aliquid animi aperiam at atque aut earum inventore
+          minima nesciunt non sint, tempore, veniam vero vitae.
+        </article>
+      </main>
+      <section>
+        <aside>
+          <h2>Aside 1</h2>
+          Aside 1 Werbung
+        </aside>
+        <aside>
+          <h2>Aside 2</h2>
+          Aside 2 Noch viel viel viel mehr Werbung: liquam culpa dignissimos
+          earum est expedita fugit, incidunt inventore laborum, laudantium quam
+        </aside>
+      </section>
+      <footer>Fussbereich</footer>
+    </section>
+  </body>
+</html>

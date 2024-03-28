@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Properties Simple</title>
+  <style>
+    :root {
+      /*colors*/
+      --color-light-red: #ffeaea;
+      --color-dark-violet: #47027e;
+
+      /*variables*/
+      --color: var(--color-dark-violet);
+      --bg-color: var(--color-light-red);
+    }
+    /*applying variables*/
+    body {
+      color: var(--color);
+      background-color: var(--bg-color);
+    }
+    code {
+      font-size: x-large;
+    }
+  </style>
+</head>
+<body>
+<h1>CSS Custom Properties / CSS Variables in Action</h1>
+<pre>
+<code>
+      /*colors*/
+      --color-light-red: #ffeaea;
+      --color-dark-violet: #47027e;
+
+      /*variables*/
+      --color: var(--color-dark-violet);
+      --bg-color: var(--color-light-red);
+    }
+    /*applying variables*/
+    body {
+      color: var(--color);
+      background-color: var(--bg-color);
+    }
+</code>
+</pre>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BoxSizing-RelativeHeight+Overflow</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    .box {
+      box-sizing: border-box;
+      border: black solid 2px;
+      width: 50%;
+      height: 30%;
+      /* makes the content stay in box*/
+      /*1*/
+      /*overflow: scroll;*/
+    }
+  </style>
+</head>
+<body>
+<h1>BoxSizing Relative Height+Overflow</h1>
+<div class="box box1">box1
+  Text (or any sub-elements) that is too long will drop out of the box vertivally, except if overflow scroll is set.
+  <br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+</div>
+<div class="box box2">box2</div>
+
+</body>
+</html>

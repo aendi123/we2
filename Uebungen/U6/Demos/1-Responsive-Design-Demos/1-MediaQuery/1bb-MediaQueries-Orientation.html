@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Media Queries Orientation Demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" href="normalize.css" />
+
+    <style>
+      @media screen and (orientation: landscape) {
+        body {
+          background: skyblue;
+        }
+        #orientation::before {
+          content: "@@@@@ landscape @@@@@"
+        }
+      }
+      @media screen and (orientation: portrait) {
+        body {
+          background: coral;
+        }
+        #orientation::before {
+          content: "@@@@@@ portrait @@@@@"
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Media Query Orientation Demo</h1>
+    <h2 id="orientation"></h2>
+    <script src="x-showSize.js"></script>
+  </body>
+</html>

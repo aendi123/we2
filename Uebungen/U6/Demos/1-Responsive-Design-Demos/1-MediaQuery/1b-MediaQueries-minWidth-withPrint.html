@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Media Queries Demo</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="normalize.css">
+
+  <style>
+
+    @media screen and
+    (min-width: 30em /*480px*/
+    ) {
+      body::before {
+        top: 30vh;
+        left: 20vw;
+        position: absolute;
+        content: "480px+";
+        background: lightpink;
+        font-size: 3em;
+      }
+    }
+    @media screen and
+    (min-width: 600px
+    ) {
+      body:before {
+        content: "600px+";
+      }
+    }
+    @media print {
+      div::after {
+        top: 150px;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        position: absolute;
+        font-size: 2em;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        background-color: lightgreen;
+        content: "This is the Print-Optimized ";
+          /*-webkit-print-color-adjust: exact;*/
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Media Query Min-Width Demo</h1>
+<h2>The element below is 30em (480px) wide</h2>
+<div style="width: 30em; height: 20px; border: black solid 1px; background-color: lightgoldenrodyellow">
+</div>
+
+<script src="x-showSize.js"></script>
+</body>
+</html>
+
+

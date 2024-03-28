@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex-direction</title>
+  <style>
+    body {
+      background-color: lightgoldenrodyellow;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .box {
+      background: powderblue;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      border: black solid 1px;
+    }
+
+    .container {
+      background-color: #a87796;
+      display: flex;
+      height: 80vh;
+      /*1*/
+      /*flex-direction: column;*/
+      /*2*/
+      /*flex-direction: column-reverse;*/
+      /*3.2*/
+      /*flex-direction: column-reverse;*/
+      /*flex-wrap: wrap;*/
+    }
+
+    .box {
+      /*3.1*/
+      /*flex: 1 1 3em;*/
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+  <div class="box box3">3</div>
+  <div class="box box4">4</div>
+  <div class="box box5">5</div>
+  <div class="box box6">6</div>
+  <div class="box box7">7</div>
+  <div class="box box8">8</div>
+  <div class="box box9">9</div>
+</div>
+</body>
+</html>
+
+<!--
+   flex-direction: row;
+   flex-direction: column;
+            height: 80vh;
+   flex-direction: row-reverse;
+-->

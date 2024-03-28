@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Asia Noodles Online</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/noodles.css">
+</head>
+<body>
+<header>
+    <h1>Asia Noodles Online</h1>
+    <h2>Ihr freundlicher Online Store</h2>
+</header>
+<main>
+    <h2>Unsere Auswahl für Sie</h2>
+    <section id="productsSection">
+    </section>
+</main>
+<aside>
+    <div id="header-h1-match"></div>
+    <div id="main-h2-match"></div>
+    <section>
+        <h2>Warenkorb</h2>
+        <div id="shoppingCartDiv"></div>
+    </section>
+</aside>
+<script>
+  // Data
+  const productsArray = [
+    {name: "Asia Noodles Chicken (Becher)", price: 3.5, img: "img/ASIA_NOODLES_CHICKEN.png"},
+    {name: "Asia Noodles Green Curry (Becher)", price: 3.75, img: "img/ASIA_NOODLES_GREEN_CURRY.png"},
+    {name: "Asia Noodles Tom Khe Gai (Becher)", price: 4.25, img: "img/ASIA_NOODLES_TOM_KHA.png"},
+    {name: "Asia Noodles Chili Lemangrass", price: 2.5, img: "img/ASIA_NOODLES_CHILI_LEMONGRASS.png"},
+    {name: "Asia Noodles Teriyaki", price: 2.75, img: "img/ASIA_NOODLES_TERIYAKI.png"},
+    {name: "Asia Noodles Tandoori", price: 3.00, img: "img/ASIA_NOODLES_TANDOORI.png"},
+    {name: "Asia Noodles Beef", price: 3.25, img: "img/ASIA_NOODLES_BEEF.png"},
+    {name: "Asia Noodles Vegetable", price: 3.50, img: "img/ASIA_NOODLES_VEGETABLE.png"},
+    {name: "Asia Noodles Chicken", price: 3.60, img: "img/ASIA_NOODLES_CHICKEN_BAG.png"},
+    {name: "Asia Noodles Curry", price: 3.70, img: "img/ASIA_NOODLES_CURRY.png"},
+  ];
+
+  // Model
+  const shoppingCart = new Map();
+
+
+  function addProductToShopingCart(product) {
+    let count = shoppingCart.get(product) || 0;
+    shoppingCart.set(product, count + 1);
+  }
+
+  // viewRefs
+
+  const shoppingCartDiv = document.querySelector("#shoppingCartDiv");
+  const productsSection = document.querySelector("#productsSection");
+
+  // rendering
+
+  function getShoppingCartHtmlString() {
+    let shoppingCartHtmlString = "";
+    let totalPrice = 0;
+    for (const product of shoppingCart.keys()) {
+      let lineItemPrice = product.price * shoppingCart.get(product);
+      totalPrice += lineItemPrice;
+      shoppingCartHtmlString +=
+        `<article>
+            <div>${shoppingCart.get(product)} x ${product.name}</div>
+            <div>Einzelpreis CHF ${product.price}</div>
+            <div>Summe: CHF ${lineItemPrice}</div>
+         </article><br>`
+    }
+    shoppingCartHtmlString = shoppingCartHtmlString || 'Ihr Wahrenkorb ist leer';
+    shoppingCartHtmlString += `<h3>Rechnungspreis: CHF ${totalPrice}</h3>`;
+    return shoppingCartHtmlString;
+  }
+
+  function getProductsHtmlString() {
+    let productsHtmlString = "";
+    for (let i = 0; i < productsArray.length; i++) {
+      let product = productsArray[i];
+      productsHtmlString +=
+        `<article>
+            <h3>${product.name}</h3>
+            <img class="prodImg" src="${product.img}" alt="${product.name}">
+            <div class="price">Preis CHF ${product.price}</div>
+            <button data-prod-index="${i}">1x in den Warenkorb</button>
+         </article>`
+    }
+    return productsHtmlString;
+  }
+
+  function renderUI() {
+    shoppingCartDiv.innerHTML = getShoppingCartHtmlString();
+    productsSection.innerHTML = getProductsHtmlString();
+  }
+
+  // controller / attach EventListeners
+
+  function addToShoppingCartEventListener(event) {
+    let prodIndex = parseInt(event.target.dataset.prodIndex);
+    addProductToShopingCart(productsArray[prodIndex]);
+    renderUI();
+  }
+
+  productsSection.addEventListener('click', addToShoppingCartEventListener);
+
+  renderUI();
+
+</script>
+</body>
+</html>

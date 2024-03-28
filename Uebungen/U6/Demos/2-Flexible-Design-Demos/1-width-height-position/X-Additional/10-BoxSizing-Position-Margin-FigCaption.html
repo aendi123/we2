@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Position Aufgabe</title>
+  <style>
+    figure {
+      position: relative;
+      margin: 0;
+      height: 240px;
+      width: 3200px;
+    }
+
+    img {
+      height: 240px;
+      width: 320px;
+    }
+
+    .overlay {
+      position: absolute;
+      color: red;
+    }
+
+    .genf {
+      left: 0;
+      top: 160px;
+    }
+
+    .stGallen {
+      left: 240px;
+      top: 40px;
+    }
+
+    .bern {
+      margin-top: -170px;
+      margin-left: 100px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+Overlay of Text for Images: Two approaches: Using negative margin or absolut positioning (within a relative container)
+<figure>
+  <img src="../img/kantone_karte_ueberblick.gif">
+  <figcaption class="genf overlay">
+    Genf
+  </figcaption>
+  <figcaption class="bern marginMove">
+    Bern
+  </figcaption>
+  <figcaption class="stGallen overlay">
+    St Gallen
+  </figcaption>
+</figure>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Differences in 2D Layout with unnested Flexbox and Grid</title>
+  <style>
+    h2 {
+      margin: 0;
+      margin-top: 20px;
+    }
+    pre {
+      margin: 0;
+      margin-bottom: 5px;
+    }
+    p {
+      margin: 0;
+      margin-bottom: 3px;
+    }
+    span {
+      border: darkblue solid 2px;
+      background-color: #e0e0e0;
+      border-radius: 32px;
+      font-size: 13px;
+      padding-left: 12px;
+      line-height: 15px;
+    }
+
+    /* start remove button (optional)*/
+    span {
+      position: relative;
+      padding-right: 25px;
+    }
+    span:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      margin-left: 10px;
+      padding-left: 6px;
+      width: 12px;
+      border-radius: 50%;
+      color: #e0e0e0;
+      background-color: #999;
+      content: 'x';
+    }
+
+    /*chip layout with flexbox*/
+    span{
+      display: flex;
+      padding-right: 1px;
+      /*align-self: center;*/
+    }
+    span:after {
+      position: static;
+      margin-left: auto;
+      align-self: center;
+    }
+    /*end optional remove button*/
+
+    .flex-wall {
+      width: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      border: black solid 2px;
+    }
+
+    .justify-content-stretch > span {
+      flex-grow: 1;
+    }
+
+    .grid-wall {
+      display: grid;
+      width: 300px;
+      border: black solid 2px;
+    }
+
+    .two-column-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .three-column-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .three-max-column-grid {
+      grid-template-columns: max-content max-content max-content;
+      /*width: fit-content;*/
+    }
+
+    .equal-height-rows {
+      grid-auto-rows: 1fr;
+    }
+
+    .equal-height-rows > span {
+      /*padding: 10px;*/
+      /*margin: 10px;*/
+    }
+
+    .styled-second-colum > span:nth-of-type(3n + 2) {
+      background: lightblue;
+    }
+
+    .styled-alternating-rows > span:nth-of-type(6n + 1),
+      /* alternate styling of rows */
+    .styled-alternating-rows > span:nth-of-type(6n + 2),
+    .styled-alternating-rows > span:nth-of-type(6n + 3) {
+      background: lightblue;
+    }
+
+    .grid-brick-wall {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      width: 300px;
+      border: black solid 2px;
+    }
+
+    .grid-brick-wall > span:nth-of-type(4n + 1) {
+      grid-column: 2/4;
+    }
+    .grid-brick-wall > span:nth-of-type(4n + 2) {
+      grid-column: 4/6;
+    }
+    .grid-brick-wall > span:nth-of-type(4n + 3) {
+      grid-column: 1/3;
+    }
+    .grid-brick-wall > span:nth-of-type(4n + 4) {
+      grid-column: 3/5;
+    }
+
+
+  </style>
+</head>
+<body>
+<h1>Differences in 2D Layout with unnested Flexbox and Grid</h1>
+<h2>General HTML Structure</h2>
+<pre>
+  &lt;div class=&quot;flex-wall&quot;&gt;
+    &lt;span&gt;Element 1&lt;/span&gt;
+    &lt;span&gt;Elem. 2&lt;/span&gt;
+    ...
+  &lt;/div&gt;
+</pre>
+
+<h2>Flexbox: Unjustfied Wall</h2>
+<p>elements by default without flex-grow</p>
+<pre>
+  .flex-wall {
+      width: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      border: black solid 2px;
+  }
+</pre>
+<div class="flex-wall">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+<h2>Flexbox: Justfied Wall</h2>
+<p>elements with flex-grow definition</p>
+<pre>
+  .justify-content-stretch > span {
+      flex-grow: 1;
+  }
+</pre>
+<div class="flex-wall justify-content-stretch">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+
+<h2>Grid: Plain Grid (implicit single column) </h2>
+<pre>
+  .grid-wall {
+      display: grid;
+      width: 300px;
+      border: black solid 2px;
+  }
+</pre>
+<div class="grid-wall">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+
+<h2>Grid: Two Column </h2>
+<pre>
+  .two-column-grid {
+     grid-template-columns: 1fr 1fr;
+  }
+</pre>
+<div class="grid-wall two-column-grid">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+<h2>Grid: Tree Column</h2>
+<pre>
+  .three-column-grid {
+     grid-template-columns: 1fr 1fr 1fr;
+  }
+</pre>
+<div class="grid-wall three-column-grid">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+<h2>Grid: Tree Column. Content on one line </h2>
+<pre>
+  .three-max-column-grid {
+     grid-template-columns: max-content max-content max-content;
+     /*width: fit-content;*/
+  }
+</pre>
+<div class="grid-wall three-max-column-grid">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+<h2>Grid: Tree Column. Equal-height rows</h2>
+<pre>
+  .equal-height-rows {
+     grid-auto-rows: 1fr;
+  }
+
+</pre>
+<div class="grid-wall three-column-grid equal-height-rows">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+<h2>Grid: Three Column. Styled 2nd column</h2>
+<pre>
+  .styled-second-colum > span:nth-of-type(3n + 2) {
+     background: lightblue;
+  }
+</pre>
+<div class="grid-wall three-column-grid styled-second-colum">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+
+<h2>Grid: Three Column. Styled alternating rows</h2>
+<pre>
+  .styled-alternating-rows > span:nth-of-type(6n + 1),
+      /* alternate styling of rows */
+  .styled-alternating-rows > span:nth-of-type(6n + 2),
+  .styled-alternating-rows > span:nth-of-type(6n + 3) {
+      background: lightblue;
+  }
+</pre>
+<div class="grid-wall three-column-grid styled-alternating-rows">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+<h2>Grid: Grid Brick Wall (five column grid) </h2>
+<pre>
+    .grid-brick-wall > span:nth-of-type(4n + 1) {
+      grid-column: 2/4;
+    }
+    .grid-brick-wall > span:nth-of-type(4n + 2) {
+      grid-column: 4/6;
+    }
+    .grid-brick-wall > span:nth-of-type(4n + 3) {
+      grid-column: 1/3;
+    }
+    .grid-brick-wall > span:nth-of-type(4n + 4) {
+      grid-column: 3/5;
+    }
+</pre>
+<div class="grid-brick-wall">
+  <span>Element 1</span>
+  <span>Elem. 2</span>
+  <span>Element 3 is very very long</span>
+  <span>E 4</span>
+  <span>Element 5 is long</span>
+  <span>El 6</span>
+  <span>El 7</span>
+  <span>El 8</span>
+  <span>Elem 9</span>
+  <span>Elem 10</span>
+  <span>Elem 11</span>
+</div>
+
+
+</body>
+</html>

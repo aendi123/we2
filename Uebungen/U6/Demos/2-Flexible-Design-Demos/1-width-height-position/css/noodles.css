@@ -1,0 +1,67 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, #header-h1-match {
+    font-family: "Papyrus", sans-serif;
+    font-size: larger;
+    background-color: lightseagreen;
+    color: white;
+    padding: 10px;
+    height: 7em;
+}
+
+header {
+    margin-right: 10pt;
+}
+
+main > h2, #main-h2-match {
+    background-color: darkseagreen;
+    color: white;
+    height: 3em;
+    margin-top: 0;
+}
+
+main > h2 {
+    padding: 10px;
+    height: 1.2em;
+    margin-right: 10pt;
+}
+
+.prodImg {
+    height: 150px;
+}
+
+.product {
+    background-color: #eeeeee;
+    border: solid #f9f9f9 6px;
+    width: 30em;
+    padding: 10px;
+}
+
+.product button {
+    font-size: x-large;
+    background-color: beige;
+    margin: 10px;
+    display: block;
+}
+
+.price {
+    margin: 10px;
+    display: block;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 8px;
+    width: 200px;
+    background-color: #cccccc;
+    overflow-y: scroll;
+}
+
+aside > section, #productsSection {
+    margin: 10px;
+}

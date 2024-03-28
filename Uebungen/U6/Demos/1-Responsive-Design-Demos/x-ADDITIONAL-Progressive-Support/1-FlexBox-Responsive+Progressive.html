@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body > * {
+      border: black solid 1px;
+    }
+
+    @supports (flex-wrap: wrap) {
+
+      @media screen and (min-width: 500px) {
+        /* both assides above main */
+        body {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        header {
+          order: -2;
+        }
+
+        aside {
+          flex: 1 1 auto;
+          order: -1;
+        }
+
+        main {
+          flex: 1 1 100%;
+        }
+
+        header, footer {
+          flex: 1 1 100%;
+        }
+      }
+
+      @media screen and (min-width: 700px) {
+        header, aside {
+          order: inherit;
+        }
+
+        aside {
+          flex: 0 0 200px;
+        }
+
+        main {
+          flex: 1;
+        }
+
+      }
+    }
+  </style>
+</head>
+<body>
+<header>header</header>
+<aside>aside 1</aside>
+<main>main<br>main</main>
+<aside>aside 2</aside>
+<footer>footer</footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo of Custom Property Evaluation "not working"</title>
+  <style>
+    .demo-root {
+      --color-1: red;
+      --color-2: blue;
+
+      --bg: linear-gradient(to right, var(--color-1), var(--color-2));
+    }
+
+    .box {
+      width: 200px;
+      height: 70px;
+      background: var(--bg);
+      color: white;
+    }
+
+    .variant {
+      --color-1: blue;
+      --color-2: red;
+    }
+
+    .solution-root .variant {
+      --bg: linear-gradient(to right, var(--color-1), var(--color-2));
+    }
+  </style>
+</head>
+<body>
+<h1>Demo of Custom Property Evaluation "not working"</h1>
+<p>Custom Properties are evaluated (set) in the DOM cascade from root to leafs</p>
+<h2>The Problem</h2>
+<p>If a custom property (a) is calculated based on another custom property (b) in a DOM-node,
+  and the value of (b) is changed in a child-node, then the value of (a) will not be updated
+  to reflect the changed value of (b)</p>
+<h3>Problem Demo</h3>
+<div class="demo-root">
+  <p>This root div (<code>class="demo-root"</code>) defines the custom properties --color-1: red and --color-2: blue.
+    It also defines the custom property <code>--bg</code> and the way it is calculated:
+    <code>--bg: linear-gradient(to right, var(--color-1), var(--color-2));</code></p>
+  <p>The .box div below directly (and successfully) uses the inherited value of <code>--bg</code>:
+    <code>.box { background: var(--bg); ...}</code></p>
+  <div class="box">
+    This is a .box (<code>class="box"</code>)
+  </div>
+  <p>On the other hand, the .box div below is a variation (<code>class="box variation"</code>).
+    The intention is that it uses an updated value of bg.
+    For this it changes the value of <code>--color-1</code> and <code>color-2</code>:
+    <code>--color-1: red; --color-2: blue;</code> but does not repeat the calculation
+    <code>--bg: linear-gradient(to right, var(--color-1), var(--color-2));</code>.
+    As a result, bg is not updated, despite the fact that <code>--color-1</code> and
+    <code>--color-2</code> changed</p>
+  <div class="box variant">
+    This is a variant of .box (<code>class="box variant"</code>)
+  </div>
+</div>
+<h2>Solution</h2>
+<p>Make sure that definition/calculation of variables is repeated in DOM-nodes that
+  change base-variables and want to apply derived (calculated) variables
+  (ATTENTION: This can have significanly negative effects on rendering efficiency</p>
+<h4>Solution Demo</h4>
+<div class="demo-root solution-root">
+  <p>The styles for the root div (<code>class="demo-root solution-root"</code>) remain unchanged</p>
+  <p>The styles for the .box div also remain unchanged</p>
+  <div class="box">
+    This is a .box (<code>class="box"</code>)
+  </div>
+  <div>For the variation .box below (<code>class="box variation"</code>)
+    we add the following rule
+    <pre><code>
+    .solution-root .variant {
+      --bg: linear-gradient(to right, var(--color-1), var(--color-2));
+    }</code></pre>
+    This ensures that bg is recalculated for this node
+  </div>
+  <div class="box variant">
+    This is a variant of .box (<code>class="box variant"</code>)
+  </div>
+</div>
+</body>
+</html>

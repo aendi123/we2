@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Container-Queries Exercise 1</title>
+  <style>
+    .demo-container {
+      border: solid black 1px;
+      resize: horizontal;
+      overflow: hidden;
+      width: 450px;
+      max-width: 700px;
+      min-width: 200px;
+    }
+    .styled-child {
+      height: 200px;
+      text-align: center;
+      line-height: 180px;
+    }
+    .styled-child::after {
+      content: "NO";
+    }
+    @container (min-inline-size: 500px) {
+      .styled-child {
+        background-color: lightpink;
+      }
+      .styled-child::after {
+        content: "YES";
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Container-Queries Exercise 1</h1>
+
+<p>Inspect the CSS. What is the intended behavior?</p>
+<p>what needs to be done to make it work?</p>
+
+<div class="demo-container">
+  <div class="intermediary">
+    <div class="styled-child">
+      Am I stylish?
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

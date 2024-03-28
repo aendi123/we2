@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex sizing</title>
+  <style>
+    body {
+      background-color: lightgoldenrodyellow;
+    }
+
+    .box {
+      background: powderblue;
+      font-size: 1rem;
+      text-align: center;
+      border: black solid 1px;
+      box-sizing: border-box;
+      height: 50px;
+      padding: 10px;
+
+      /*1 flex-grow=0; flex-shrink=0; flex-basis=150px */
+      /*flex: 0 0 150px;*/
+
+      /*2 flex-grow=1; flex-shrink=0; flex-basis=150px*/
+      /*flex: 1 0 150px;*/
+
+      /*3 flex-grow=0; flex-shrink=1; flex-basis=150px */
+      /*flex: 0 1 150px;*/
+
+      /*4 flex-grow=1; flex-shrink=1; flex-basis=150px*/
+      /*flex: 1 1 150px;*/
+
+      /*5.0 flex-grow=0; flex-shrink=0; flex-basis=150px*/
+      /*flex: 0 0 150px;*/
+
+
+    }
+
+    .box2 {
+      /*5.1*/
+      /*flex-grow: 10;*/
+      /*6.0 reset*/
+      /*flex: 0 0 150px;*/
+
+    }
+
+
+    .container {
+      background-color: #a87796;
+      display: flex;
+      border: black dotted 1px;
+      flex-direction: row; /*default*/
+
+      /*justify-content -> align in main-axis direction -- items must be non-flexing: flex-grow: 0 */
+
+      /*6.1 space-between -- no space at start and end */
+      /*justify-content: space-between;*/
+
+      /*6.2 space-around -- 1/2 space at start and end*/
+      /*justify-content: space-around;*/
+
+      /*6.3 space-evenly -- full space at start and end */
+      /*justify-content: space-evenly;*/
+
+      /*6.4 flex-end | end */
+      /*justify-content: end ;*/
+
+      /*6.5 */
+      /*justify-content: center ;*/
+
+      /*6.5 flex-start = default*/
+      /*justify-content: flex-start ;*/
+    }
+
+
+    .box {
+
+    }
+
+    .box1 {
+    }
+
+
+    .box3 {
+
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="box box1">11111111</div>
+  <div class="box box2">22222222</div>
+  <div class="box box3">333333333</div>
+</div>
+</body>
+</html>
+
+<!--
+
+    .box{
+        width:  100px;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    .box1{
+        flex-grow: 2;
+        flex-shrink: 1;
+        flex-basis: 400px;
+    }
+-->
