@@ -4,78 +4,84 @@
   <meta charset="UTF-8">
   <title>calc, min, max, clamp</title>
   <style>
-      dialog {
-          display: block;
-          box-sizing: content-box;
-          border: solid #6e1C50;
-          width: 50vw; /*half of the view-width*/
-      }
-
-      button {
-          width: 75px;
-      }
-
-      .button-ok {
-      }
-
-      .button-cancel {
-      }
-
-      .separator {
-      }
-
-      /*no changes below are needed*/
-      figure {
-          background: lightgrey;
-          display: inline-flex;
-          flex-direction: column;
-      }
-      img {
-          opacity: 0.7;
-      }
-
-      figcaption {
-          opacity: 0.9;
-          background-color: white;
-          text-align: center;
-      }
+    dialog {
+      display: block;
+      box-sizing: content-box;
+      border: solid #6e1C50;
+      /* width: max(160x, 50vw); /* task1a */
+      /* width: max(160px, min(50vw, 320px)); /* task2a */
+      width: clamp(160px, 50vw, 320px); /* task2ba */
+    }
+    
+    button {
+      width: 75px;
+    }
+    
+    .button-ok {
+    }
+    
+    .button-cancel {
+    }
+    
+    .separator {
+      display: inline-block; /* task1b */
+      /* width: max(0px, 50vw - 160px); /* task1b */
+      /* width: max(0px, min(50vw, 320px) - 160px); /* task2b */
+      width: clamp(0px, 50vw - 160px, 160px); /* task2bb */
+    }
+    
+    /*no changes below are needed*/
+    figure {
+      background: lightgrey;
+      display: inline-flex;
+      flex-direction: column;
+    }
+    img {
+      opacity: 0.7;
+    }
+    
+    figcaption {
+      opacity: 0.9;
+      background-color: white;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-<h1>Exercise: Dialog with static ok/cancel</h1>
-<h2>Task 1</h2>
-<p>a) Make sure the dialog window cannot get narrower than 160px in width</p>
-<p>b) Size the separator between the buttons so that the cancel button stays
-  at a fixed position in realtion to the right border of the dialog.
-</p>
-<p>see figures below</p>
-<h2>Task 2</h2>
-<p>a) Make sure the dialog window cannot get wider than 320px in width.
-Use only the min an max functions</p>
-<p>b) Make sure that the cancel button stays in place</p>
-<h2>Task 2b</h2>
-<p>a) Make sure the dialog window cannot get wider than 320px in width.
-  Use only the clamp function</p>
-<p>b) Make sure that the cancel button stays in place</p>
-<figure>
-  <img src="width320.png" width="320px" alt="Dialog shown at 320px window-width">
-  <figcaption>Dialog shown at 320px window-width</figcaption>
-</figure>
-<figure>
-  <img src="width410.png" width="410px" alt="Dialog shown at 410px window-width">
-  <figcaption>Dialog shown at 410px window-width</figcaption>
-</figure>
-<figure>
-  <img src="width640.png" width="640px" alt="Dialog shown at 640px window-width">
-  <figcaption>Dialog shown at 640px window-width</figcaption>
-</figure>
-<h2>Below: Your Turn</h2>
-<dialog>
-  <h2>I am a Dialog Window</h2>
-  <p>Hit Ok or Cancel</p>
-  <button class="button-ok">OK</button>
-  <span class="separator"></span>
-  <button class="button-cancel">Cancel</button>
-</dialog>
-</body>
-</html>
+  <h1>Exercise: Dialog with static ok/cancel</h1>
+  <h2>Task 1</h2>
+  <p>a) Make sure the dialog window cannot get narrower than 160px in width</p>
+  <p>b) Size the separator between the buttons so that the cancel button stays
+    at a fixed position in realtion to the right border of the dialog.
+  </p>
+  <p>see figures below</p>
+  <h2>Task 2</h2>
+  <p>a) Make sure the dialog window cannot get wider than 320px in width.
+    Use only the min an max functions</p>
+    <p>b) Make sure that the cancel button stays in place</p>
+    <h2>Task 2b</h2>
+    <p>a) Make sure the dialog window cannot get wider than 320px in width.
+      Use only the clamp function</p>
+      <p>b) Make sure that the cancel button stays in place</p>
+      <figure>
+        <img src="width320.png" width="320px" alt="Dialog shown at 320px window-width">
+        <figcaption>Dialog shown at 320px window-width</figcaption>
+      </figure>
+      <figure>
+        <img src="width410.png" width="410px" alt="Dialog shown at 410px window-width">
+        <figcaption>Dialog shown at 410px window-width</figcaption>
+      </figure>
+      <figure>
+        <img src="width640.png" width="640px" alt="Dialog shown at 640px window-width">
+        <figcaption>Dialog shown at 640px window-width</figcaption>
+      </figure>
+      <h2>Below: Your Turn</h2>
+      <dialog>
+        <h2>I am a Dialog Window</h2>
+        <p>Hit Ok or Cancel</p>
+        <button class="button-ok">OK</button>
+        <span class="separator"></span>
+        <button class="button-cancel">Cancel</button>
+      </dialog>
+    </body>
+    </html>

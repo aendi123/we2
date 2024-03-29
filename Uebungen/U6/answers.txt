@@ -1,0 +1,36 @@
+01-BoxSizing-BorderVsContent
+
+Mit Padding 10px, welche Box ist grösser eine 70x70 Box mit Box-Sizing=Content-Box oder Border-Box?
+Content Box ist grösser, die width/height entspricht nur der width/height des Inhalts, bei der Border Box entspricht es der width/height des Inhalts, des Paddings und der Border.
+
+Die gleiche Frage für 2 Boxen mit padding=0 und border=0
+Die 2 Boxen sind dann gleich gross.
+
+
+02-BoxSizing-FixedHeight+Overflow
+
+Berechnen Sie: Wie hoch (px) ist der graue Bereich?
+Border Box mit 200px height, padding oben und unten je 10px (ist aber auch grau), border oben und unten je 50px, somit 200px-50px-50px=100px
+
+Wie erreicht man, dass gesamte Text im grauen Bereich dargestellt werden kann?
+Bei .box die fixe height entfernen
+
+Wie erreicht man, dass der Text nicht über die Rand der Box mit fester Höhe hinausragt?
+Bei .box overflow auf hidden oder scroll setzen.
+
+
+04-BoxSizing-FixedMarginForScrollBar-AktienkurseStatic
+
+Was passiert wenn Sie beim main die margin-bottom auf 8rem setzen?
+Weisse Fläche zwischen Footer und Tabelle wird ein bisschen kleiner (10->8rem)
+
+Was passiert wenn Sie beim main die margin-bottom auf 0 setzen?
+Keine weisse Fläche zwichen Footer und Tabelle mehr, die unterste Tabellenzeile verschwindet hinter dem Footer
+
+
+06-BoxSizing-WidthDemo-Relative+AbsolutePosition+ComputedWidth
+
+Verändern Sie die Eigenschaft width der box1. Beobachten und erklären Sie was passiert
+.container, in dem box1 ist, hat 80% width vom html Element
+weil .container position relative gesetzt hat, bezieht sich die prozentuale width von box1 auf
+box11 verschiebt sich, weil die position relativ zum rechten rand von box1 berechnet wird
