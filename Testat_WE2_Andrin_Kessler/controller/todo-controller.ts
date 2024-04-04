@@ -17,13 +17,15 @@ export class TodoController {
             todoValues.duedate = todo.duedate.toISOString().slice(0, 16);
             if (todo.finished) todoValues.finished = "checked";
             todoValues.description = todo.description;
-        }
-
-        if (req.query.title || req.query.importance || req.query.duedate || req.query.finished || req.query.description) {
+            res.render("todo", {todoValues: todoValues, createOrUpdate : "Update"});
+        } 
+        else if (req.query.title || req.query.importance || req.query.duedate || req.query.finished || req.query.description) {
             todoStore.add(req.query.title, parseInt(req.query.importance), req.query.duedate, Boolean(req.query.finished), req.query.description);
+            res.render("todo", {todoValues: todoValues, createOrUpdate : "Create"});
         }
-
-        res.render("todo", {todoValues: todoValues});
+        else {
+            res.render("todo", {todoValues: todoValues, createOrUpdate : "Create"});
+        }
     }
 }
 

@@ -14,9 +14,8 @@
 
     <label for="description">Description</label><br>
     <input type="text" id="description-input" name="description" required value="{{description}}"><br>
-
-    <input type="submit" value="Create">
-    <input type="submit" value="Create & Overview">
-</form>
 {{/with}}
+    <input type="submit" value="{{createOrUpdate}}">
+    <input type="submit" value="{{createOrUpdate}} & Overview">
+</form>
 <a href="/"><button>Overview</button></a>
