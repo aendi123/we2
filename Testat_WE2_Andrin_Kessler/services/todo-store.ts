@@ -17,10 +17,12 @@ export class Todo {
 }
 
 export class TodoWithRelativeDueDate extends Todo {
+    id: string;
     relativeDueDate: string;
 
-    constructor(title: string, importance: number, duedate: Date, finished: boolean, description: string, relativeDueDate: string) {
+    constructor(id: string, title: string, importance: number, duedate: Date, finished: boolean, description: string, relativeDueDate: string) {
         super(title, importance, duedate, finished, description);
+        this.id = id;
         this.relativeDueDate = relativeDueDate;
     }
 }
@@ -47,8 +49,15 @@ export class TodoStore {
         return this.db.findOne({_id: id});
     }
 
-    async all() : Promise<Todo[]> {
-        return this.db.find({});
+    async all() : Promise<TodoWithRelativeDueDate[]> {
+        const allTodos : any[] = await this.db.find({});
+        const todoWithRelativeDueDateList = [];
+        for (const todo of allTodos) {
+            const daysDifference = Math.ceil((new Date(todo.duedate).getTime() - new Date().getTime()) / (1000 * 3600 * 24));
+            const relativeDueDate = new Intl.RelativeTimeFormat('en', { style: 'short' }).format(daysDifference, 'day');
+            todoWithRelativeDueDateList.push(new TodoWithRelativeDueDate(todo._id, todo.title, todo.importance, todo.duedate, todo.finished, todo.description, relativeDueDate));
+        }
+        return todoWithRelativeDueDateList;
     }
 }
 
