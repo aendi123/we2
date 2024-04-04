@@ -1,4 +1,4 @@
-import { todoStore } from "../services/todo-store.js";
+import { todoStore } from "../services/todo-store";
 
 export class TodoController {
     async todo(req: any, res: any) {

@@ -12,7 +12,7 @@
 <table>
     {{#each todoList}}
     <tr>
-        <td> {{this.duedate}} </td>
+        <td> {{this.relativeDueDate}} </td>
         <td> {{this.title}} </td>
         <td> {{this.importance}} </td>
         <td rowspan="2"><button data-todoid={{this._id}}>Edit</button></td>

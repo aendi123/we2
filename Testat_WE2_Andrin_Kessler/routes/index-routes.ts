@@ -1,8 +1,8 @@
 import express from 'express';
 
 const router = express.Router();
-import {indexController} from '../controller/index-controller.js';
-import {todoController} from '../controller/todo-controller.js';
+import { indexController } from '../controller/index-controller';
+import { todoController } from '../controller/todo-controller';
 
 router.get("/", indexController.index.bind(indexController));
 router.get("/todo", todoController.todo.bind(todoController));

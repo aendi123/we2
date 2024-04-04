@@ -2,23 +2,23 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 import session from 'express-session';
-import {indexRoutes} from './routes/index-routes.ts';
-import {helpers} from './utils/handlebar-util.ts'
+import { indexRoutes } from './routes/index-routes';
+import { helpers } from './utils/handlebar-util'
 
 
 import exphbs from 'express-handlebars';
-import {sessionUserSettings, Settings} from "./utils/session-middleware.ts";
+import { sessionUserSettings } from "./utils/session-middleware.index";
 
 declare module 'express-session' {
     interface SessionData {
-        settings: Settings;
+        settings: typeof sessionUserSettings;
     }
 }
 
 declare global {
     namespace Express {
         interface Request {
-            settings: Settings;
+            settings: typeof sessionUserSettings;
         }
     }
 }

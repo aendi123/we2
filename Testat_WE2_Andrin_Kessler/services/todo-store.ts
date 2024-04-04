@@ -16,6 +16,15 @@ export class Todo {
     }
 }
 
+export class TodoWithRelativeDueDate extends Todo {
+    relativeDueDate: string;
+
+    constructor(title: string, importance: number, duedate: Date, finished: boolean, description: string, relativeDueDate: string) {
+        super(title, importance, duedate, finished, description);
+        this.relativeDueDate = relativeDueDate;
+    }
+}
+
 export class TodoStore {
     db: Datastore;
 
