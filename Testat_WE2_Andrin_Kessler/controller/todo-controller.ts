@@ -12,7 +12,6 @@ export class TodoController {
 
         if (req.query.id) {
             const todo = await todoStore.get(req.query.id);
-            console.log(todo);
             todoValues.title = todo.title;
             todoValues.importance = todo.importance;
             todoValues.duedate = todo.duedate.toISOString().slice(0, 16);

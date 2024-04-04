@@ -35,7 +35,7 @@ export class TodoStore {
     }
 
     async add(title: string, importance: number, duedate: Date, finished: boolean, description: string) : Promise<Todo> {
-        const todo = new Todo(title, importance, duedate, finished, description);
+        const todo = new Todo(title, importance, new Date(duedate), finished, description);
         const storedTodo = await this.db.insert(todo);
         return storedTodo;
     }
