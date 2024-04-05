@@ -2,8 +2,8 @@ import { todoStore } from "../services/todo-store";
 
 export class IndexController {
     async index(req: any, res: any) {
-        const todoWithRelativeDueDateList = await todoStore.all();
-        res.render("index", {todoList: todoWithRelativeDueDateList});
+        const todoList = await todoStore.all();
+        res.render("index", {todoList: todoList});
     }
 }
 

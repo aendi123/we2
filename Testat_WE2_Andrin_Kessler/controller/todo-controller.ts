@@ -2,29 +2,17 @@ import { todoStore } from "../services/todo-store";
 
 export class TodoController {
     async todo(req: any, res: any) {
-        const todoValues = {
-            title: "",
-            importance: 0,
-            duedate: "",
-            finished: "",
-            description: ""
-        };
 
+        // User clicks Edit button of existing todo
         if (req.query.id) {
             const todo = await todoStore.get(req.query.id);
-            todoValues.title = todo.title;
-            todoValues.importance = todo.importance;
-            todoValues.duedate = todo.duedate.toISOString().slice(0, 16);
-            if (todo.finished) todoValues.finished = "checked";
-            todoValues.description = todo.description;
-            res.render("todo", {todoValues: todoValues, createOrUpdate : "Update"});
+            res.render("todo", {todoValues: todo, createOrUpdate : "Update"});
         } 
-        else if (req.query.title || req.query.importance || req.query.duedate || req.query.finished || req.query.description) {
-            todoStore.add(req.query.title, parseInt(req.query.importance), req.query.duedate, Boolean(req.query.finished), req.query.description);
-            res.render("todo", {todoValues: todoValues, createOrUpdate : "Create"});
-        }
+
+        // User clicks Create new todo button
         else {
-            res.render("todo", {todoValues: todoValues, createOrUpdate : "Create"});
+            const todo = {};
+            res.render("todo", {todoValues: todo, createOrUpdate : "Create"});
         }
     }
 }
