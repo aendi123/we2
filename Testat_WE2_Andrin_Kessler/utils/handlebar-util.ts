@@ -9,5 +9,13 @@ export const helpers = {
     'get_relative_date': function (date: string) {
         const daysDifference = Math.ceil((new Date(date).getTime() - new Date().getTime()) / (1000 * 3600 * 24));
         return new Intl.RelativeTimeFormat('en', { style: 'short' }).format(daysDifference, 'day');
+    },
+
+    'get_nof_lightnings': function (n: number) {
+        let lightnings = '';
+        for (let i = 0; i < n; i++) {
+            lightnings += '⚡';
+        }
+        return lightnings;
     }
 }

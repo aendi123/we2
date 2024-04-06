@@ -14,7 +14,7 @@
     <tr>
         <td> {{get_relative_date this.duedate}} </td>
         <td> {{this.title}} </td>
-        <td> {{this.importance}} </td>
+        <td> {{get_nof_lightnings this.importance}} </td>
         <td rowspan="2"><a href="/todo?id={{this._id}}"><button>Edit</button></a></td>
     </tr>
         <td> {{this.finished}} </td>
