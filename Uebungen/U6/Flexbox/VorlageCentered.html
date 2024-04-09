@@ -14,36 +14,19 @@
 			padding-bottom: 10px;
 		}	
         .container{
+			display: flex;
+			justify-content: space-between;
+			margin: 10px;
+			padding: 10px;
+			border: 2px solid black;
         }
-
-		/*Variante a: ohne auto-placement algorithm*/
-        .container-a > .a{
-        }
-
-		.container-a > .b{
-       }
-		.container-a > .c{
-		}
-
-		/*Variante b: auto-placement algorithm*/
-		.container-b > .b{
-		}
-		 
     </style>
 </head>
 <body>
-	<h1>Lösung Version 1</h1>		
-	<div class="container container-a">
-		<input  type="submit" class="a"/>
-		<div class="b">CENTER</div>
-		<input type="submit" class="c"/>
-	</div>
-
-	<h1>Lösung Version 2</h1>
-	<div class="container container-b">
-		<input  type="submit" class="a"/>
-		<div class="b">CENTER</div>
-		<input type="submit" class="c"/>
+	<div class="container">
+		<input  type="submit"/>
+		<div>CENTER</div>
+		<input type="submit"/>
 	</div>
 </body>
 </html>

@@ -2,37 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flexbox Margin</title>
+  <title>GridPseudo</title>
   <style>
-    .element {
-      width: 100%
+    .container {
+      display: grid;
+      grid-template-columns: 100px 100px  auto 100px 100px ;
+      grid-template-areas: "left1 left2 . right1 right2";
     }
     .element {
       border: 1px solid black;
     }
-
-    @media (min-width: 400px){
-      .container {
-       }
-      .element {
-      }
+    .element:nth-child(1) {
+      grid-area: left1;
     }
-    @media (min-width: 600px){
-      .element {
-      }
-      .element:nth-child(2) {
-      }
+    .element:nth-child(2) {
+      grid-area: left2;
     }
-
+    .element:nth-child(3) {
+      grid-area: right1;
+    }
+    .element:nth-child(4) {
+      grid-area: right2;
+    }
   </style>
 </head>
 <body>
-<h1>Flexbox Stretch with Margin</h1>
+
 <div class="container">
-  <div class="element">One</div>
-  <div class="element">Two</div>
-  <div class="element">Three</div>
-  <div class="element">Four</div>
+  <div class="element">one</div>
+  <div class="element">two</div>
+  <div class="element">tree</div>
+  <div class="element">four</div>
 </div>
 
 </body>

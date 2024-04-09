@@ -32,20 +32,30 @@
 
 		/*Lösung1: auto-placement algorithm + positioning*/
 		#c1 > .header, #c1 > .footer{
+			grid-column: 1 / 4;
 		}
 		#c1 > .content{
+			overflow-y: scroll;
+			height: 100px;
 		}
 
 		/*Lösung2: named areas*/
 		#c2 > .header {
+			grid-area: header;
 		}
 		#c2 > .footer {
+			grid-area: footer;
 		}
 		#c2 > .aside1 {
+			grid-area: aside1;
 		}		
 		#c2 > .aside2 {
+			grid-area: aside2;
 		}
 		#c2 > .content{
+			grid-area: main;
+			overflow-y: scroll;
+			height: 100px;
 		}
     </style>
 </head>

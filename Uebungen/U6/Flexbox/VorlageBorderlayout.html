@@ -10,61 +10,34 @@
 			margin: 0;
 		}
 
-		h1{
-			padding-top: 20px;
-			padding-bottom: 10px;
-		}
-
 		div{
 			border: 1px solid blue;
 			min-height: 0;  /*firefox bug*/
 		}
 
 		.container{
-			display: grid;
-			grid-template-columns: auto 1fr auto ;
-			grid-template-rows: auto 1fr auto;
-			grid-template-areas: 
-				"header  header header"
-				"aside1  main   aside2"
-				"footer  footer footer";
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
 		}
 
-		/*Lösung1: auto-placement algorithm + positioning*/
-		#c1 > .header, #c1 > .footer{
-		}
-		#c1 > .content{
+		.aside{
+			flex: 0 0 auto;
 		}
 
-		/*Lösung2: named areas*/
-		#c2 > .header {
+		.content{
+			flex : 3 1 50%;
+			overflow-y: scroll;
+			height: 100px;
 		}
-		#c2 > .footer {
-		}
-		#c2 > .aside1 {
-		}		
-		#c2 > .aside2 {
-		}
-		#c2 > .content{
+
+		.header, .footer {
+			flex: 1 1 100%;
 		}
     </style>
 </head>
 <body>
-	<h1>Lösung 1</h1>
 	<div id="c1" class="container">
-		<div class="header">header</div>
-
-		<div class="aside">aside 1</div>
-		<div class="content">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</div>
-		<div class="aside">aside 2</div>
-
-		<div class="footer">footer</div>
-	</div>
-	<h1>Lösung 2</h1>
-	<div id="c2" class="container">
 		<div class="header">header</div>
 
 		<div class="aside">aside 1</div>
