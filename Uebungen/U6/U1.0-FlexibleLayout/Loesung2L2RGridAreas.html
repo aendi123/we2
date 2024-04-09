@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GridPseudo</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 100px 100px  auto 100px 100px ;
+      grid-template-areas: "left1 left2 . right1 right2";
+    }
+    .element {
+      border: 1px solid black;
+    }
+    .element:nth-child(1) {
+      grid-area: left1;
+    }
+    .element:nth-child(2) {
+      grid-area: left2;
+    }
+    .element:nth-child(3) {
+      grid-area: right1;
+    }
+    .element:nth-child(4) {
+      grid-area: right2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="element">one</div>
+  <div class="element">two</div>
+  <div class="element">tree</div>
+  <div class="element">four</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		h1{
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}
+		.container{
+			display: grid;
+			grid-template-columns: 100px 100px auto 100px;
+			grid-template-areas: "left1 left2 . right";
+			padding: 10px;
+			border: 2px solid black;
+		}
+		/*Variante 1: ohne auto-placement algorithm*/
+		/*nichts*/
+		/*Variante 2: auto-placement algorithm*/
+
+		#sol-2 > .container-item-1
+		{
+			grid-column: 1/2;
+		}
+
+		#sol-2 > .container-item-2
+		{
+			grid-column: 2/3;
+		}
+
+		#sol-2 > .container-item-3
+		{
+			grid-column: 4/5;
+		}
+
+		/*Variante 3: named areas */
+
+		#sol-3 > .container-item-1
+		{
+			grid-area: left1;
+		}
+
+		#sol-3 > .container-item-2
+		{
+			grid-area: left2;
+		}
+
+		#sol-3 > .container-item-3
+		{
+			grid-area: right;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Lösung Version 1</h1>
+	<div class="container">
+		<input type="submit"/>
+		<input type="submit"/>
+		<div></div>
+		<input type="submit"/>
+	</div>
+
+	<h1>Lösung Version 2</h1>
+	<div class="container" id="sol-2">
+		<input type="submit" class="container-item-1"/>
+		<input type="submit" class="container-item-2"/>
+		<input type="submit" class="container-item-3"/>
+	</div>
+
+	<h1>Lösung Version 3</h1>
+	<div class="container" id="sol-3">
+		<input type="submit" class="container-item-1"/>
+		<input type="submit" class="container-item-2"/>
+		<input type="submit" class="container-item-3"/>
+	</div>
+
+</body>
+</html>

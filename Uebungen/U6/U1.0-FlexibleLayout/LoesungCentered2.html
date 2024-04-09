@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+		*{
+		    box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}	
+		h1{
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}	
+        .container{
+            display: grid;
+			grid-template-columns: 100px auto 100px;
+			padding: 10px;
+			border: 2px solid black;
+        }
+
+		/*Variante a: ohne auto-placement algorithm*/
+        .container-a > .a{
+            grid-column: 1/2;
+        }
+
+		.container-a > .b{
+			grid-column: 2/3;
+			justify-self: center;
+        }
+		.container-a > .c{
+			grid-column: 3/4;
+		}
+
+		/*Variante b: auto-placement algorithm*/
+		.container-b > .b{
+			justify-self: center;
+		}
+		 
+    </style>
+</head>
+<body>
+	<h1>Lösung Version 1</h1>		
+	<div class="container container-a">
+		<input  type="submit" class="a"/>
+		<div class="b">CENTER</div>
+		<input type="submit" class="c"/>
+	</div>
+
+	<h1>Lösung Version 2</h1>
+	<div class="container container-b">
+		<input  type="submit" class="a"/>
+		<div class="b">CENTER</div>
+		<input type="submit" class="c"/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XX-Sol: calc, min, max, clamp</title>
+  <style>
+    dialog {
+        display: block;
+        box-sizing: content-box;
+        border: solid #6e1C50;
+        /*width: 50vw; !*half of the view-width*!*/
+        /*width: max(160px, 50vw); !*to do 1: not smaller than 160px*!*/
+        /*width: max(160px, min(50vw, 320px)); !*to do 2: between 160px and 320px*!*/
+        width: clamp(160px, 50vw, 320px); /*to do 3: with clamp*/
+    }
+    button {
+        width: 75px;
+    }
+    .button-ok {
+    }
+    .button-cancel {
+    }
+    .separator {
+        display: inline-block;
+        /*width: calc(50vw - 160px) !*to do 1 *!*/
+        /*width: calc(min(320px, 50vw) - 160px) !* do do 2 *!*/
+        width: clamp(0px, 50vw - 160px, 160px); /* do do 3 */
+    }
+
+  </style>
+</head>
+<body>
+<h1>Exercise: Dialog with static ok/cancel</h1>
+<p>Answer to Task-3: Simulation of the seperator element by introducing an ::after pseudo-element is not
+  possible because the ::after element of the ok-button still resides INSIDE of the button-element,
+  just after the content of the button, but not after the button. Thus, it is only possible to increase
+  the size of the button.
+</p>
+<dialog>
+  <h2>I am a Dialog Window</h2>
+  <p>Hit Ok or Cancel</p>
+  <button class="button-ok">OK</button>
+  <span class="separator"></span>
+  <button class="button-cancel">Cancel</button>
+</dialog>
+<script src="showSize.js"></script>
+</body>
+</html>

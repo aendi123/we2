@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Flexible Layout </title>
+
+    <link  rel="icon" href="../resources/icon-document.png" type="image/png"/>
+	<link rel="stylesheet" type="text/css" href="../resources/documentStyle.css">
+	<script src="../resources/solutions.js"></script>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+
+<body>
+	<h1>
+		<a class="backlink" href="../index.html">⇦</a>
+		Flexible Layout
+		<button id="showSolutions">Lösungen anzeigen/ausblenden</button>
+	</h1>
+
+
+
+	<h2>Theorie</h2>
+
+	<h3>Box Model: Angaben in Prozent</h3>
+	<p>Gehen Sie die Beispiele im Beitrag 
+		<a href="https://wattenberger.com/blog/css-percents">
+			What does 100% mean in CSS?</a> 
+		durch und machen Sie sich Notizen für Ihren Prüfungs-"Spick".
+	</p>
+
+	<h3>Box Model, Inline Block</h3>
+	<p>Gehen Sie die in der Vorlesung gezeigten Beispiele (Demos) im Folder width-height-position durch Beantworten Sie
+		dabei die
+		folgenden Fragen zu den Files. Nutzen sie die passenden Folien um die Fragen zu beantworten.</p>
+		<ul>
+			<li>01-BoxSizing-BorderVsContent - Mit Padding 10px, welche Box ist grösser eine 70x70 Box mit
+				Box-Sizing=Content-Box oder
+				Border-Box?;
+				<span class="solution">Content Box: Padding kommt hinzu</span>
+				Die gleiche Frage für 2 Boxen mit padding=0 und border=0
+				<span class="solution">Beide sind gleich gross</span>
+			</li>
+			<li>02-BoxSizing-FixedHeight+Overflow - Berechnen Sie: Wie hoch (px) ist der graue Bereich?
+				<span class="solution">100px: Der graue Bereich ist content+padding; content+padding+border=200px; border=2*50</span>
+				Wie erreicht man, dass gesamte Text im grauen Bereich dargestellt werden kann?
+				<span class="solution">bei .box die fixe Höhe (height) entfernen</span>
+				Wie erreicht man, dass der Text nicht über die Rand der Box mit fester Höhe hinausragt?
+				<span class="solution">.box overflow hidden oder scroll setzen. Schauen Sie auch was passiert wenn Sie overflow:
+					hidden auf dem Container setzen
+					und dann zusätzlich noch die Margin von box auf -25px setzen </span>
+			</li>
+			<li>04-BoxSizing-FixedMarginForScrollBar-AktienkurseStatic - Was passiert wenn Sie beim main die margin-bottom auf
+				8rem setzen?
+				<span class="solution">Es ist möglich mehr "white space" am Ende der Liste in den View zu scrollen</span>
+				Was passiert wenn Sie beim main die margin-bottom auf 0 setzen?
+				<span class="solution">Die untere Zeile der Tabelle lässt sich nicht hinter dem Footer hervorscrollen</span>
+			</li>
+			<li>06-BoxSizing-WidthDemo-Relative+AbsolutePosition+ComputedWidth - Verändern Sie die Eigenschaft width der box1.
+				Beobachten
+				und erklären Sie was passiert
+				<span class="solution">box11 verschiebt sich, da sie ihre Position relativ zum rechten Rand der box1 berechnet</span>
+			</li>
+		</ul>
+
+		<h3>Box Model: calc min max clamp</h3>
+		<p>Bearbeiten Sie die 
+			<a href="01-Exercise-BoxSizing-CalcMinMaxClamp.html">
+				Aufgaben zu calc min max clamp</a>
+		</p>	
+		<div class="solution">
+			<a href="xx-01-Solution-BoxSizing-CalcMinMaxClampSolution.html">
+				Lösung zu calc min max clamp</a>
+		</div>
+
+		<h3>FlexBox</h3>
+		<p>Lesen Sie den Artikel
+			<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">
+				https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>. oder
+			<a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank">
+				https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties </a>
+		</p>
+		<p>Experimentieren Sie parallel dazu
+			<a href="https://codepen.io/enxaneta/pen/adLPwv" target="_blank"> https://codepen.io/enxaneta/pen/adLPwv</a> .</p>
+
+		<h3>CSS Grid</h3>
+		<p>Lesen Sie den Artikel
+			<a href="https://yoksel.github.io/grid-cheatsheet/" target="_blank">
+				https://yoksel.github.io/grid-cheatsheet/</a>. oder			
+			<a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">
+				https://css-tricks.com/snippets/css/complete-guide-grid/</a>. oder
+			<a href="https://css-tricks.com/getting-started-css-grid/" target="_blank">
+				https://css-tricks.com/getting-started-css-grid/</a>
+		</p>
+	</p>
+
+	<h2>Boxmodel Prüfungsaufgabe 2021</h2>
+	Ergänzen Sie den folgenden Code der linken Seite, so dass die entsprechende Darstellung auf der rechten Seite resultiert.
+	Hinweis: grid.png ist ein 250x250px grosses Bild mit einem Grid mit 5 x 5 Grid. Jede Zelle ist 50x50px gross
+
+	<div style="display: flex;">
+		<div>
+	<code>
+	<pre>
+		&lt;style&gt;
+			.container {
+			  margin: 10px;
+			  background-image: url(&quot;grid.png&quot;);
+			  background-size: 250px;
+			}
+			.content {
+			  width: 50px;
+			  height: 50px;
+			  background-color: black;
+			}
+			.container-large {
+			  width: 250px;
+			  height: 250px;
+			}
+			.container-small {
+			  width: 125px;
+			  height: 125px;
+			  background-size: 125px
+			}
+			.content-1 {
+			  /*insert code*/
+		
+			}
+			.container-2 {
+			  /*insert code*/
+			  
+		
+			}
+			.content-2 {
+			  position: absolute;
+			  /*insert code*/
+		
+		
+		
+		
+			}
+		  &lt;/style&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+		&lt;h2&gt;Box Model 1&lt;/h2&gt;
+		&lt;div class=&quot;container container-large&quot;&gt;
+		  &lt;div class=&quot;content content-1&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class=&quot;container container-small&quot;&gt;
+		  &lt;div class=&quot;content content-1&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;h2&gt;Box Model 2&lt;/h2&gt;
+		&lt;div class=&quot;container container-large container-2&quot;&gt;
+		  &lt;div class=&quot;content content-2&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class=&quot;container container-small container-2&quot;&gt;
+		  &lt;div class=&quot;content content-2&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;		
+	</pre>
+	</code>
+</div>
+<div>
+	<img src="boxmodel.jpg" alt="">
+</div>
+</div>
+<div class="solution">
+	<code>
+		<pre>
+			.content-1 {
+				margin: 0 auto; /*ok margin: auto*/
+			}
+			.container-2 {
+				position: relative;
+			}
+			.content-2 {
+			  	position: absolute;
+				left: calc(50% - 25px);
+				top: calc(50% - 25px);
+			}		
+		</pre>
+	</code>
+</div>
+
+	<h2>FlexBox üben</h2>
+	<p>Lösen Sie die folgenden CSS Layout Aufgaben zur Platzierung des Frosches:
+		<a href="http://flexboxfroggy.com/" target="_blank">http://flexboxfroggy.com/</a>
+	</p>
+	<p>Danach sind Sie parat Flexbox Defense (Tower-Defense mit FlexBox Positionierung) zu spielen:
+		<a href="http://www.flexboxdefense.com/">http://www.flexboxdefense.com/</a>
+	<p>Wer noch immer nicht genug hat, kann bei Flexboxzombies weiter machen (Registrierung nötig, aber Mail-Adresse wird nicht überprüft):
+		<a href="https://mastery.games/flexboxzombies/">https://mastery.games/flexboxzombies/</a>
+	<p>Und dann zum Abschluss noch <a href="https://knightsoftheflexboxtable.com/">Knights of the Flexbox Table</a></p>
+	
+	<h2>Flexbox Prüfungsaufgabe 2021</h2>
+	Der folgende Code einer Webseite ist gegeben. Ergänzen Sie den Code bei den Platzhalten (☛…☚) so, dass die Darstellung der Seite unten rechts resultiert (je 1 Punkt)
+	<div style="display: flex;">
+		<code>
+			<pre>
+	&lt;style&gt;
+	.box-1 {
+		display: flex;
+		margin-top: 10px;
+	}
+	.box-1-1 {
+		width: 250px;
+	}
+	.box-1-2 {
+		width: 160px;
+	}
+	.button-1 {
+		flex: ☛&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;☚
+	}
+	.box-2 {
+		display: flex;
+		margin-top: 10px;
+		justify-content: ☛&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;☚
+	}
+	.box-2-1 {
+		width: 250px;
+	}
+	.box-2-2 {
+		width: 160px;
+	}
+	.button-2 { }
+	.box-3 {
+		display: flex;
+		width: 250px;
+	}
+	#save-3 { }
+	#cancel-3 { }
+	#help-3 {     ☛&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;☚ 
+	}
+	.box-4-1 {
+		width: 250px;
+		height: 250px;
+		background-image: url(&quot;grid.png&quot;);
+		background-size: 250px;
+	}
+	.box-4-1 {
+		display: flex;
+
+		☛&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;☚
+
+	}
+	.box-4-2 {
+		display: flex;      
+		☛&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;☚
+		☛&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;☚
+
+	}
+	.content-4 {
+		background-color: black;
+		width: 50px;
+		height: 50px;
+	}
+	&lt;/style&gt;			
+			</pre>
+		</code>
+		<div>
+			<code>
+				<pre>
+&lt;body&gt;
+&lt;h2&gt;Flexbox 1&lt;/h2&gt;
+&lt;div class=&quot;box-1 box-1-1&quot;&gt;
+  &lt;button class=&quot;button-1&quot; autofocus&gt;save&lt;/button&gt;
+  &lt;button class=&quot;button-1&quot;&gt;cancel&lt;/button&gt;
+  &lt;button class=&quot;button-1&quot;&gt;help&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;box-1 box-1-2&quot;&gt;
+  &lt;button class=&quot;button-1&quot; autofocus&gt;save&lt;/button&gt;
+  &lt;button class=&quot;button-1&quot;&gt;cancel&lt;/button&gt;
+  &lt;button class=&quot;button-1&quot;&gt;help&lt;/button&gt;
+&lt;/div&gt;
+&lt;h2&gt;Flexbox 2&lt;/h2&gt;
+&lt;div class=&quot;box-2 box-2-1&quot;&gt;
+  &lt;button class=&quot;button-2&quot; autofocus&gt;save&lt;/button&gt;
+  &lt;button class=&quot;button-2&quot;&gt;cancel&lt;/button&gt;
+  &lt;button class=&quot;button-2&quot;&gt;help&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;box-2 box-2-2&quot;&gt;
+  &lt;button class=&quot;button-2&quot; autofocus&gt;save&lt;/button&gt;
+  &lt;button class=&quot;button-2&quot;&gt;cancel&lt;/button&gt;
+  &lt;button class=&quot;button-2&quot;&gt;help&lt;/button&gt;
+&lt;/div&gt;
+&lt;h2&gt;Flexbox 3&lt;/h2&gt;
+&lt;div class=&quot;box-3&quot;&gt;
+  &lt;button id=&quot;save-3&quot; autofocus&gt;save&lt;/button&gt;
+  &lt;button id=&quot;cancel-3&quot;&gt;cancel&lt;/button&gt;
+  &lt;button id=&quot;help-3&quot;&gt;help&lt;/button&gt;
+&lt;/div&gt;
+&lt;h2&gt;Flexbox 4&lt;/h2&gt;
+&lt;div class=&quot;box-4-1&quot;&gt;
+  &lt;div class=&quot;box-4-2&quot;&gt;
+    &lt;div class=&quot;content-4&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+				</pre>
+			</code>
+			<div>
+				<img src="flexbox.jpg" alt="">
+			</div>
+		</div>
+	</div>
+
+	<code class="solution">
+		<pre>
+&lt;style&gt;
+.box-1 {
+	display: flex;
+	margin-top: 10px;
+}
+.box-1-1 {
+	width: 250px;
+}
+.box-1-2 {
+	width: 160px;
+}
+.button-1 {
+	flex: 1 1 auto;
+}
+.box-2 {
+	display: flex;
+	margin-top: 10px;
+	justify-content: space-between;
+}
+.box-2-1 {
+	width: 250px;
+}
+.box-2-2 {
+	width: 160px;
+}
+.button-2 { }
+.box-3 {
+	display: flex;
+	width: 250px;
+}
+#save-3 { }
+#cancel-3 { }
+#help-3 {
+	margin-left: auto;
+}
+.box-4-1 {
+	width: 250px;
+	height: 250px;
+	background-image: url(&quot;grid.png&quot;);
+	background-size: 250px;
+}
+.box-4-1 {
+	display: flex;
+	justify-content: center; /*or space-around */
+}
+.box-4-2 {
+	display: flex;  
+	flex-direction: column;
+	justify-content: center;
+}
+.content-4 {
+	background-color: black;
+	width: 50px;
+	height: 50px;
+}
+&lt;/style&gt;			
+		</pre>
+	</code>
+
+	<h2>CSS Grid üben: Grid Garten.</h2>
+	<p>Lösen Sie die folgenden Aufgaben zum CSS Grid:
+		<a href="http://cssgridgarden.com/" target="_blank">http://cssgridgarden.com/</a>
+	</p>
+
+	<h2>Layout erstellen.</h2>
+	<p>Versuchen Sie mit FlexBox
+		<strong>und</strong> CSS-Grid folgende Layouts nachzubauen:</p>
+	<ol>
+		<li>Gewisse Button links und andere Rechts bündig z.B.:
+			<br>
+			<img src="BoxLayout.png" style="border: 2px solid blue;">
+			<br><a href="VorlageSwingBoxLayout.html">Vorlage</a>
+			<div class="solution">
+				<a href="LoesungSwingBoxLayout.html">Flexbox</a>
+				<a href="LoesungSwingBoxLayout2.html">CSS Grid</a>
+			</div>
+			<p></p>
+		</li>
+		<li>Text soll zentriert sein z.B.:
+			<br>
+			<img src="Centered.png" style="border: 2px solid blue;">
+			<br><a href="VorlageCentered.html">Vorlage</a>
+			<div class="solution">
+				<a href="LoesungCentered.html">Flexbox</a>
+				<a href="LoesungCentered2.html">CSS Grid</a>
+			</div>
+			<p></p>
+		</li>
+		<li>"Holy Grail Layout":
+			<br>
+			<img src="Borderlayout2.png">
+			<br><a href="VorlageBorderlayout.html">Vorlage</a>
+			<div class="solution">
+				<a href="LoesungBorderlayout.html">Flexbox</a>
+				<a href="LoesungBorderlayout2.html">CSS Grid</a>
+			</div>
+			<p></p>
+		</li>
+		<li>"4 Button 2left2right Layout":
+			<br>
+			<img src="2left2right.jpg" style="width: 80vW; border: 3px solid blue">
+			<br><a href="VorlageL2R.html">Vorlage</a>
+			<div class="solution">
+				<ul>
+					<li><a href="Loesung2L2RFlexMargin.html">Flexbox mit Element mit Margin</a></li>
+					<li><a href="Loesung2L2RGridAreas.html">CSS Grid mit Named Grid Areas</a></li>
+					<li><a href="Loesung2L2RGridAuto.html">CSS Grid mit Auto-Sized Column</a></li>
+					<li><a href="Loesung2L2RGridMargin.html">CSS Grid mit mit Element mit Margin</a></li>
+				</ul>
+			</div>
+			<p></p>
+		</li>
+
+
+	</ol>
+
+	<h2>CSS Grid Prüfungsaufgabe 2021</h2>
+	Der folgende Code einer Webseite ist gegeben. Zeichnen Sie in der Abbildung für jedes Grid die 
+	Platzierung der schwarzen Content-Elemente ein 
+	
+	<div style="display: flex;">
+		<code>
+			<pre>
+		&lt;style&gt;
+		.grid {
+			display: grid;
+			width: 250px;
+			height: 250px;
+			margin: 10px;
+			grid-template-columns: 20% 20% 20% 20% 20%;
+			grid-template-rows: 20% 20% 20% 20% 20%;
+			background-image: url(&quot;grid.png&quot;);
+			background-size: 250px;
+			grid-template-areas:
+			  &quot;. . b b . &quot; 
+			  &quot;. . b b . &quot; ;
+		}
+		.black {
+			background-color: black;
+		}
+		#content-1 {
+			grid-column: 2;
+			grid-row: 2;
+		}
+		#content-2 {
+			grid-column: 2/4;
+			grid-row: 2/4;
+		}
+		#content-3 {
+			grid-column: 2/-2;
+			grid-row: 2/-2;
+		}
+		#content-4 {
+			grid-area: 2/3/4/5;
+		}
+		#content-5 {
+			grid-area: b;
+		}
+		#content-6-1 {
+			grid-column: 2/4;
+		}
+		#content-6-2 {
+			grid-column: 3/5;
+		}
+		#content-6-3 {
+			grid-column: 2/4;
+		}
+		#content-7 {
+			grid-column: 2/4;
+			width: 25px;
+			height: 25px;
+			justify-self: end;
+		}
+		#content-8 {
+			grid-column: 2/4;
+			width: 25px;
+			height: 25px;
+			align-self: end;
+		}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;h2&gt;Grid 1&lt;/h2&gt;
+	&lt;div class=&quot;grid&quot;&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-1&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;							
+			</pre>
+		</code>
+		<div>
+			<code>
+				<pre>
+	&lt;h2&gt;Grid 2&lt;/h2&gt;&lt;!&mdash; ACHTUNG Grid1 links unten --&gt;
+	&lt;div class=&quot;grid&quot;&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-2&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;h2&gt;Grid 3&lt;/h2&gt;
+	&lt;div class=&quot;grid&quot;&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-3&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;h2&gt;Grid 4&lt;/h2&gt;
+	&lt;div class=&quot;grid&quot;&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-4&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;h2&gt;Grid 5&lt;/h2&gt;
+	&lt;div class=&quot;grid&quot;&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-5&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;h2&gt;Grid 6&lt;/h2&gt;
+	&lt;div class=&quot;grid&quot;&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-6-1&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-6-2&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-6-3&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;h2&gt;Grid 7&lt;/h2&gt;
+	&lt;div class=&quot;grid&quot;&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-7&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;h2&gt;Grid 8&lt;/h2&gt;
+	&lt;div class=&quot;grid&quot;&gt;
+		&lt;div class=&quot;black&quot; id=&quot;content-8&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;/body&gt;					
+				</pre>
+			</code>
+			<div>
+				<img src="grid.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="solution">
+		<img src="gridSolution.jpg" alt="">
+	</div>
+	
+	<h2>Layout vorhersagen</h2>
+	<p>Das folgende <a href="gridAutoPlacement.html">HTML File</a> ist gegeben. 
+		Nachdem Sie das File im Browser angeschaut haben ist Ihre Aufgabe die 
+		<a href="gridAutoPlacement.html.txt">Text Version des Files</a> zu inspizieren.			 
+		Sagen Sie nun für jeden der im File auskommenierten Schritte (01 - 06) voraus 
+		(z.B. Handzeichnung) wie sich das Layout/Darstellung der Inhalte im Browser 
+		ändern wird wenn der Code des Schrittes aktiviert wird (nicht mehr auskommentiert)
+		Sie können hierbei die Farben ignorieren.
+	</p>
+	<p>Zur Überprüfung sollten Sie das <a href="gridAutoPlacement.html">HTML File</a> 
+		im Broweser und Editor öffnen und die Schritte nachspielen.</p>
+
+</body>
+
+</html>
