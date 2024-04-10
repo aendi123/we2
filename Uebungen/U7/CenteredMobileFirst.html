@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <style>
 		*{
@@ -19,7 +20,16 @@
 			margin: 10px;
 			padding: 10px;
 			border: 2px solid black;
+			flex-direction: column;
+			align-items: center;
+			height: 50vh;
         }
+		@media (min-width: 800px){
+			.container{
+				flex-direction: row;
+				height: 2em;
+			}
+		}
     </style>
 </head>
 <body>
