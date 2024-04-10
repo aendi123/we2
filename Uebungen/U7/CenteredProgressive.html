@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <style>
 		*{
@@ -9,24 +10,56 @@
 			margin: 0;
 			padding: 0;
 		}	
-		h1{
-			padding-top: 20px;
-			padding-bottom: 10px;
-		}	
-        .container{
-			display: flex;
-			justify-content: space-between;
-			margin: 10px;
-			padding: 10px;
-			border: 2px solid black;
+        button {
+            margin-block: 10px;;
+            padding-inline: 5px;
         }
+
+        #container{
+            height: 50vh;
+            margin-top: 10vh;
+            margin-inline: 1em;
+            border: 1px solid blue;          
+        }
+
+        #a, #c{
+            display: block;
+            height: 1.5em;
+            width: 100%;            
+        }        
+        #b{
+            height: calc(100% - 5em);
+            line-height: calc(50vh - 3.5em); /* needed to center text*/
+            /* line-height: calc(100% - 3.5em);   not working because % is %-of-font-size */
+            width: min-content;
+            margin: auto;
+        }
+
+ 
+        @media (min-width: 320px) {
+            #container{
+                height: 3em;
+                display: flex;
+                flex-direction: row;    
+                justify-content: space-between; /*layout direction*/
+                padding: 3px;
+            }
+            #b{
+                line-height: initial;
+                height: initial;
+
+            }
+            #a, #c{
+                width: initial;
+            }          
+        }        
     </style>
 </head>
 <body>
-	<div class="container">
-		<input  type="submit"/>
-		<div>CENTER</div>
-		<input type="submit"/>
-	</div>
+	<div id="container">	
+		<button  id="a">Submit Query</button>
+		<div id="b">CENTER</div>
+		<button id="c">Submit Query</button>
+	</div>		 
 </body>
 </html>
