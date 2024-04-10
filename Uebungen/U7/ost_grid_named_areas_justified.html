@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ResponsiveGridSolution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    <style>
+        body {
+            width: 200;
+            height: 200;
+            background-color: purple;
+        }
+        #container{
+            display: grid;
+            margin: 10vh 10vw;
+            width: 367px;
+            height: 367px;
+            background-color: palevioletred;
+            grid-template-rows: repeat(7, 50px);
+            grid-template-columns: repeat(7, 50px);
+        }
+        #container > div {
+            background-color: white;
+            grid-area: 2/2/3/3; /*hide*/
+            width: 0;
+            height: 0;
+        }
+
+        #container > div:nth-of-type(1) {
+            grid-area: 2/2/7/3;
+            width: 10%;
+            height: auto;
+            justify-self: start;
+        }
+        #container > div:nth-of-type(2){
+            grid-area: 2/2/3/7;
+            width: auto;
+            height: 10%;
+            align-self: start;
+
+        }
+        #container > div:nth-of-type(3){
+            grid-area: 2/6/7/7;
+            width: 10%;
+            height: auto;
+            justify-self: end;
+        }
+        #container > div:nth-of-type(4){
+            grid-area: 7/2/7/7;
+            width: auto;
+            height: 10%;
+            align-self: start;
+
+        }
+
+        @media (min-width: 400px)
+        {
+            #container > div:nth-of-type(1) {
+                grid-area: 2/2/3/7;
+                height: 10%;
+                width: initial;
+                justify-self: initial;
+                align-self: start;
+            }
+            #container > div:nth-of-type(2){
+                grid-area: 2/2/4/3;
+                width: 10%;
+                height: auto;
+                align-self: initial;
+                justify-self: left;
+            }
+            #container > div:nth-of-type(3){
+                grid-area: 4/2/5/7;
+                height: 10%;
+                width: initial;
+                justify-self: initial;
+                align-self: start;
+            }
+
+            #container > div:nth-of-type(4){
+                grid-area: 4/6/7/7;
+                width: 10%;
+                height: auto;
+                align-self: initial;
+                justify-self: right;
+            }
+            #container > div:nth-of-type(5){
+                grid-area: 6/2/7/7;
+                height: 10%;
+                width: initial;
+                justify-self: initial;
+                align-self: end;
+            }
+            #container > div:nth-of-type(6){
+                grid-area: 2/2/5/3;
+            }
+
+        }
+        @media (min-width: 600px)
+        {
+            #container > div:nth-of-type(2) {
+                grid-area: 2/2/3/7;
+                height: 10%;
+                width: initial;
+                justify-self: initial;
+                align-self: end;
+            }
+            #container > div:nth-of-type(2) {
+                grid-area: 2/4/7/5;
+                width: 10%;
+                height: auto;
+                align-self: initial;
+                justify-self: center;
+            }
+            #container > div:nth-of-type(3){
+                grid-area: none;
+            }
+
+            #container > div:nth-of-type(4){
+                grid-area: none;
+            }
+            #container > div:nth-of-type(5){
+                grid-area: none;
+            }
+            #container > div:nth-of-type(6){
+                grid-area: none;
+            }
+        }
+   </style>
+</head>
+<body>
+	<div id="container">	
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+	</div>		 
+</body>
+</html>
