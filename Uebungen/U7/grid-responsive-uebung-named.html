@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile First Grid Layout Übung</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+      body {
+          margin: 5px;
+      }
+
+      body > * {
+          border: hotpink solid 1px;
+          padding: 5px;
+      }
+
+      header, footer {
+          background-color: lightblue;
+      }
+
+      aside {
+          background-color: lightgreen;
+      }
+
+      aside > h2, aside > p {
+          margin: 0;
+      }
+
+      @media /*todo*/ {
+          body {
+              /*todo*/
+          }
+
+          header {
+              grid-area: hero;
+          }
+
+          aside:nth-of-type(1) {
+              grid-area: advert1;
+          }
+
+          aside:nth-of-type(2) {
+              grid-area: advert2;
+          }
+
+          main {
+              grid-area: content;
+          }
+
+          footer {
+              grid-area: footer;
+          }
+      }
+
+      @media /*todo*/ {
+          body {
+              /*todo*/
+          }
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1>hero title</h1>
+  <p>hero text hero text</p>
+</header>
+<aside><h2>advert1 title</h2>
+  <p>advert1 text advert1 text advert1 text</p></aside>
+<main>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Fuga fugiat itaque nihil omnis tempore vitae, voluptas
+  voluptate? Aut doloremque error nam. Accusantium aliquam
+  autem dolores natus porro quisquam similique voluptate.
+</main>
+<aside><h2>advert2 title</h2>
+  <p>advert2 text advert2 text advert2 text</p></aside>
+<footer>footer footer footer footer footer</footer>
+<script src="showSize.js"></script>
+</body>
+</html>
