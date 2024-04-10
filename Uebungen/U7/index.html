@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Responsive Layout: Media Queries + Container Queries</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../HSR.Template.Exercises/documentStyle.css"
+    />
+    <script src="../HSR.Template.Exercises/solutions.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  </head>
+  <body>
+    <h1>
+      <a class="backlink" href="../index.html">⇦</a>
+      Media Queries
+      <button id="showSolutions">Lösungen anzeigen/ausblenden</button>
+    </h1>
+
+    <h2>Theorie</h2>
+    <p>
+      Weitere Informationen:
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries"
+        target="_blank"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries/</a
+      >.
+    </p>
+
+    <h2>Aufgabenbeschreibung</h2>
+    <p class="description">
+      Lösen Sie folgende Aufgaben. BEACHTEN SIE: Für die Aufgaben in diesem
+      Abschnitt sollten Sie zum Testen in Ihrem Brwoser NICHT die Chrome Device
+      Simulation ("Responsive View" oder spezifische Geräte) nutzen. Da ohne die
+      Spezifikation des Viewport Meta-Tags (nächster Abschnitt) die Seitenbreite
+      nicht korrekt ausgelesen wird. Alternativ können Sie schon für diese
+      Übungen die folgende Zeile im Head einfügen. Details in der nächsten
+      Übung.
+      <code>
+        <pre class="prettyprint">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre
+        >
+      </code>
+    </p>
+
+    <h2>Media Queries verstehen</h2>
+    <p>
+      Vollziehen sie die Nutzung von Media Queries in den Vorlesungs-Demos
+      (Folder Responsive-Design-Demos/1-MediaQuery und
+      Responsive-Design-Demos/3-Progressive-Support) nach. Beachten Sie, dass
+      hierfür ein gutes Verständnis der Eigenschaft "order" von Flexbox-Items
+      wichtig ist (siehe z.B. 1-FlexBox-Responsive+Progressive.html). Beim CSS
+      Grid ist die Funktionsweise von Area-Spezifikationen wichtig (siehe z.B.
+      2-Grid-responsive+progressive-alpha.html)
+    </p>
+
+    <h2>Media Queries anwenden.</h2>
+    <p>Nutzen Sie ihr Layout aus der Aufgabe "Flexible Layout > Layout erstellen"</p>
+    <img src="Centered.png" style="border: 2px solid blue;">
+    <p>
+      Dieses Layout soll für Smartphones wie folgt aussehen. 
+      Nutzen Sie dafür Media-Queries.
+      <ul>
+        <li>1) Desktop First Design d.h. zusätzliches CSS in einer Query die nur bei Mobile-Screens aktiv ist</li>
+        <li>2) Mobile First Design mit Flexbox d.h. das Basis CSS ist für Mobile-Screens optimiert. 
+          Bei breiteren Screens wird das zusätzliche CSS aktiv</li>
+        <li>3) Mobile First mit Progressive Enhancement Design: Basis-Design: Mobile Design ohne Flexbox 
+          d.h. das Basis-CSS ist für Mobile-Screens und Screens ohne Flexbox-Support optimiert. 
+          Bei breiteren Screens wird das zusätzliche CSS mit Flexbox aktiv. 
+          (optional: enstprechende @supports query)</li>
+        </ul>
+    </p>
+    <img src="CenteredLoesung.png" style="border: 2px solid blue" />
+    <div class="solution">
+      <ul>
+        <li>1) <a href="./solutions/LoesungCenteredDeskFirst2Flex.html">Desktop First mit Flexbox bei Desktop und Mobile</a>
+        </li>
+        <li>2) <a href="./solutions/LoesungCenteredMobFirst2xFlex.html">Mobile First mit Flexbox bei Mobile und Desktop</a>
+        </li>
+        <li>3a) <a href="./solutions/LoesungCenteredMobFirstEnhancing.html">Mobile First Progressive Enhanced: Mobile = Box-Layout, Desktop=Flexbox.</a> 
+          Vertikale Zentrierung von "Center" mittels line-height.
+        </li>
+        <li>3b) <a href="./solutions/LoesungCenteredMobFirstEnhancing2.html">V2: Mobile First Progressive Enhanced: Mobile = Box-Layout Desktop=Flexbox.</a> 
+          Vertikale Zentrierung von "Center" mittels ::before block. Nutzt @supports.
+          Für Test, dass @supports funktioniert, eigent sich das Chrome Plugin 
+          <a href="https://github.com/keithclark/css-feature-toggle-devtools-extension">CSS Feature Toggles</a> 
+        </li>
+      </ul>
+    </div>
+    <p>
+      <b
+        >Ist Ihre Lösung / bzw. die Muster Lösung Mobile First? Begründen
+        Sie.</b
+      >
+    </p>
+    <div class="solution">
+      Nein - Begründung: Erst durch die Media Queries wird die Mobile Ansicht
+      sichtbar. Dies wiederspricht Mobile First - Es könnte sein, das Media
+      Queries nicht unterstützt werden wiederspricht dem "Progressive
+      Enhancement"-Prinzip.
+    </div>
+
+    <h2>Container Queries (1)</h2>
+    <p>Die Container Query im folgenden File 
+      <a href="container-ex-1.html">container-ex-1.html</a>
+      "funkioniert nicht"</p>
+    <p>Aufgabe: Das Problem lösen</p>
+
+    <div class="solution">
+      Das erwartete Verhalten wäre, dass das .demo-container Div vom Nutzer grösser gemacht werden 
+      kann (resize: horizontal; overflow: hidden;) Ab der Grösse 500px sollte dann durch 
+      die container query (@container) das .styled-child div die Farbe und den Text ändern.  
+      Hierbei spielt keine Rolle, dass das .styled-child kein direktes Kind von .demo-container ist.
+      Das Problem ist, dass bei .demo-container container-type: inline-size 
+      nicht gesetzt ist. Container Queries funkionieren nur wenn container-type auf 
+      inline-size oder size gesetzt ist.
+      In diesem File <a href="solutions/container-ex-1-solution.html">container-ex-1-solution.html</a> 
+      ist es korrigiert
+    </div>
+
+    <h2>Container Queries (2)</h2>
+    <p>Die Container Query im folgenden File 
+      <a href="container-ex-2.html">container-ex-2.html</a>
+      "funkioniert nicht"</p>
+    <p>Aufgabe: Das Problem lösen</p>
+
+    <div class="solution">
+      Das erwartete Verhalten wäre, dass das .demo-container Div vom Nutzer in der Höhe 
+      grösser gemacht werden kann (resize: vertical; overflow: hidden;). 
+      Ab der Höhe von 300px sollte dann durch die container query (@container) das 
+      .styled-child div die Farbe und den Text ändern.  
+      Das Problem ist, dass bei .demo-container container-type: inline-size gesetzt ist.
+      Dies erlaubt keine Container-Query welche die Höhe abfragt (nur width bzw inline-size).
+      In diesem File <a href="solutions/container-ex-2-solution.html">container-ex-2-solution.html</a> 
+      ist es korrigiert
+    </div>
+
+    <h2>Media Queries mit Grid anwenden (1)</h2>
+    <p>Komplettieren Sie das CSS im File 
+      <a href="grid-responsive-uebung-start.html">grid-responsive-uebung-start.html</a>,
+      so dass die folgenden responsive Layouts entstehen. 
+      Erstellen Sie zwei Lösungen:      </p>
+      <ul>
+        <li>(1) Lösung unter Nutzung des Grid "Named Areas" Syntax</li>
+        <li>(2) Lösung unter Nutzung des Grid Element Eigenschaften grid-row und grid-column (sowie (2b) grid-area shortcut)</li>        
+      </ul>
+    <img src="files/respGrid1.jpg" width="399px" alt="layout bis 399px">
+    <img src="files/respGrid2.jpg" width="599px" alt="layout bis 599px">
+    <img src="files/respGrid3.jpg" width="600px" alt="layout ab 600px">
+
+    <div class="solution">
+      <ul>
+      <li><a href="solutions/grid-responsive-uebung-solution-area.html">Lösung Grid Areas</a></li>
+      <li><a href="solutions/grid-responsive-uebung-solution-lines.html">Lösung Grid Lines</a></li>
+    </ul>
+    </div>
+
+    <h2>Media Queries mit Grid anwenden (2)</h2>
+    <p>
+      "Schreiben" Sie "HSR" in ein Grid. Zuerst soll nur H angezeigt werden,
+      dann nach dem nächsten Breakpoint S, dann R
+    </p>
+    <img src="gridLoesung.png" style="border: 2px solid blue;" />
+    <div class="solution">
+      <a href="LoesungGrid.html">LoesungGrid.html</a>
+    </div>
+    <p>Nutzen Sie für das Layout "named areas" z.B. l1, l2, l3, ...</p>
+    <div class="solution">
+      <a href="LoesungGridNamed.html">LoesungGridNamed.html</a>
+    </div>
+
+    <p>
+      Machen Sie die Linien in den Buchstaben schmaler indem Sie die
+      Eigenschaften Justification und Alignment nutzen.
+    </p>
+    <div class="solution">
+      <a href="LoesungGridNarrow.html">LoesungGridNarrow.html</a>
+    </div>
+  </body>
+</html>
