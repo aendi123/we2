@@ -45,8 +45,12 @@ export class TodoStore {
         return this.db.findOne({_id: id});
     }
 
-    async all(orderBy: string, orderDirection: number) : Promise<any> {
-        return this.db.find({}).sort({[orderBy]: orderDirection});
+    async all(orderBy: string, orderDirection: number, filterCompleted: boolean) : Promise<any> {
+        if (filterCompleted) {
+            return this.db.find({finished: false}).sort({[orderBy]: orderDirection});
+        } else {
+            return this.db.find({}).sort({[orderBy]: orderDirection});
+        }
     }
 }
 

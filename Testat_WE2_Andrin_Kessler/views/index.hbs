@@ -43,7 +43,14 @@
             {{/if_eq}}
         {{/if_eq}}
     </button></a>
-    <button>Filter Completed</button>
+    <a href="/filter-completed"><button>Filter Completed
+        {{#if_eq filterCompleted true}}
+            &#10003;
+        {{/if_eq}}
+        {{#if_eq filterCompleted false}}
+            &#10005;
+        {{/if_eq}}
+    </button></a>
 </div>
 <table>
     {{#each todoList}}
