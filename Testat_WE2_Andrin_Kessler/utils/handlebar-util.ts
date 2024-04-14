@@ -17,9 +17,5 @@ export const helpers = {
             lightnings += '&#8623;';
         }
         return lightnings;
-    },
-
-    'get_other_theme': function (theme: string) {
-        return theme === 'dark' ? 'light' : 'dark';
     }
 }

@@ -7,10 +7,7 @@ export class IndexController {
     }
 
     async toggleTheme(req: any, res: any) {
-        const { theme } = req.body;
-        if (theme && ['dark', 'light'].includes(theme)) {
-            req.session.userSettings.theme = theme;
-        }
+        req.session.userSettings.theme = req.session.userSettings.theme === 'dark' ? 'light' : 'dark';
         res.redirect("/");
     }
 
