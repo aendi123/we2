@@ -14,7 +14,7 @@ export const helpers = {
     'get_nof_lightnings': function (n: number) {
         let lightnings = '';
         for (let i = 0; i < n; i++) {
-            lightnings += '⚡';
+            lightnings += '&#8623;';
         }
         return lightnings;
     },

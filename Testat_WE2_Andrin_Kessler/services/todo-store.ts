@@ -6,6 +6,7 @@ export class Todo {
     duedate: string;
     finished: boolean;
     description: string;
+    creationdate: string;
 
     constructor(title: string, importance: number, duedate: string, finished: boolean, description: string) {
         this.title = title;
@@ -13,6 +14,7 @@ export class Todo {
         this.duedate = duedate;
         this.finished = finished;
         this.description = description
+        this.creationdate = new Date().toISOString();
     }
 }
 
@@ -43,8 +45,8 @@ export class TodoStore {
         return this.db.findOne({_id: id});
     }
 
-    async all() : Promise<Todo[]> {
-        return this.db.find({});
+    async all(orderBy: string, orderDirection: number) : Promise<any> {
+        return this.db.find({}).sort({[orderBy]: orderDirection});
     }
 }
 

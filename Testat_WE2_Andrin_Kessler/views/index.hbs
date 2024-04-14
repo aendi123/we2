@@ -6,10 +6,46 @@
     </form>
 </div>
 <div>
-    <button>Name</button>
-    <button>By Due Date</button>
-    <button>By Creation Date</button>
-    <button>By Importance</button>
+    <a href="/sort?by=title"><button>Name
+        {{#if_eq orderBy "title"}}
+            {{#if_eq orderDirection 1}}
+                &#9650;
+            {{/if_eq}}
+            {{#if_eq orderDirection -1}}
+                &#9660;
+            {{/if_eq}}
+        {{/if_eq}}
+    </button></a>
+    <a href="/sort?by=duedate"><button>By Due Date
+        {{#if_eq orderBy "duedate"}}
+            {{#if_eq orderDirection 1}}
+                &#9650;
+            {{/if_eq}}
+            {{#if_eq orderDirection -1}}
+                &#9660;
+            {{/if_eq}}
+        {{/if_eq}}
+    </button></a>
+    <a href="/sort?by=creationdate"><button>By Creation Date
+        {{#if_eq orderBy "creationdate"}}
+            {{#if_eq orderDirection 1}}
+                &#9650;
+            {{/if_eq}}
+            {{#if_eq orderDirection -1}}
+                &#9660;
+            {{/if_eq}}
+        {{/if_eq}}
+    </button></a>
+    <a href="/sort?by=importance"><button>By Importance
+        {{#if_eq orderBy "importance"}}
+            {{#if_eq orderDirection 1}}
+                &#9650;
+            {{/if_eq}}
+            {{#if_eq orderDirection -1}}
+                &#9660;
+            {{/if_eq}}
+        {{/if_eq}}
+    </button></a>
     <button>Filter Completed</button>
 </div>
 <table>
@@ -17,7 +53,7 @@
     <tr>
         <td> {{get_relative_date this.duedate}} </td>
         <td> {{this.title}} </td>
-        <td> {{get_nof_lightnings this.importance}} </td>
+        <td> {{{get_nof_lightnings this.importance}}} </td>
         <td rowspan="2"><a href="/todo?id={{this._id}}"><button>Edit</button></a></td>
     </tr>
         <td> {{this.finished}} </td>
