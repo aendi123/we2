@@ -1,6 +1,9 @@
 <div>
     <a href="/todo"><button>Create new todo</button></a>
-    <button>Toggle Style</button>
+    <form action="/toggle-theme" method="post">
+        <input type="hidden" name="theme" value="{{get_other_theme theme}}">
+        <button type="submit">Toggle Style</button>
+    </form>
 </div>
 <div>
     <button>Name</button>

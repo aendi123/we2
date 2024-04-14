@@ -17,5 +17,9 @@ export const helpers = {
             lightnings += '⚡';
         }
         return lightnings;
+    },
+
+    'get_other_theme': function (theme: string) {
+        return theme === 'dark' ? 'light' : 'dark';
     }
 }
