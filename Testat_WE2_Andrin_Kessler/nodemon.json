@@ -1,0 +1,16 @@
+{
+    "watch" : [
+       ".env-testing",
+       ".env",
+       "app.ts",
+       "controller", 
+       "index.ts",
+       "routes",
+       "services",
+       "utils",
+       "views"
+    ], 
+    "ext":"js,ts,json", 
+    "ignore": [],
+    "exec": "ts-node index.ts"
+}
