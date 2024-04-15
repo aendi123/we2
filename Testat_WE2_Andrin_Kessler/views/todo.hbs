@@ -1,23 +1,23 @@
 {{#with todoValues}}
 <form action="/todo" method="post">
-    <label for="title">Title</label><br>
-    <input type="text" id="title-input" name="title" required value="{{title}}"><br>
+    <label for="title">Title</label>
+    <input type="text" name="title" required value="{{title}}">
 
-    <label for="importance">Importance</label><br>
-    <input type="number" id="importance-input" name="importance" min="1" max="5" required value="{{importance}}"><br>
+    <label for="importance">Importance</label>
+    <input type="number" name="importance" min="1" max="5" required value="{{importance}}">
 
-    <label for="duedate">Due Date</label><br>
-    <input type="date" id="duedate-input" name="duedate" required value="{{duedate}}"><br>
+    <label for="duedate">Due Date</label>
+    <input type="date" id="duedate-input" name="duedate" required value="{{duedate}}">
 
-    <label for="finished">Finished</label><br>
-    <input type="checkbox" id="finished-input" name="finished" {{#if finished}}checked{{/if}}><br>
+    <input type="checkbox" name="finished" {{#if finished}}checked{{/if}}>
+    <label for="finished">Finished</label>
 
-    <label for="description">Description</label><br>
-    <input type="text" id="description-input" name="description" required value="{{description}}"><br>
+    <label for="description">Description</label>
+    <textarea id="description-input" name="description">{{description}}</textarea>
 
-    <input type="text" id="id" name="id" hidden value="{{_id}}">
+    <input type="text" name="id" hidden value="{{_id}}">
 {{/with}}
     <input type="submit" name="action" value="{{createOrUpdate}}">
     <input type="submit" name="action" value="{{createOrUpdate}} & Overview">
 </form>
-<a href="/"><button>Overview</button></a>
+<a href="/" class="overview-button"><button class="overview-button">Overview</button></a>
