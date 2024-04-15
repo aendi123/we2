@@ -52,8 +52,21 @@ export class TodoStore {
             return this.db.find({}).sort({[orderBy]: orderDirection});
         }
     }
+
+    async todoExists(title: string, importance: number, duedate: string, finished: boolean, description: string) : Promise<boolean> {
+        console.log(await this.db.find({title: title, importance: importance, duedate: duedate, finished: finished, description: description}));
+        return (await this.db.find({title: title, importance: importance, duedate: duedate, finished: finished, description: description})).length > 0;
+    }
 }
 
 export const todoStore = new TodoStore(undefined);
-todoStore.add("Do exercises (Default entry)", 1, "2024-06-17", false, "Web Engineering 2");
-todoStore.add("Take exam (Default entry)", 5, "2024-01-23", true, "Web Engineering 1");
+todoStore.todoExists("Do exercises (Default entry)", 1, "2024-06-17", false, "Web Engineering 2").then(r => {
+    if (!r) {
+        todoStore.add("Do exercises (Default entry)", 1, "2024-06-17", false, "Web Engineering 2");
+    }
+});
+todoStore.todoExists("Take exam (Default entry)", 5, "2024-01-23", true, "Web Engineering 1").then(r => {
+    if (!r) {
+        todoStore.add("Take exam (Default entry)", 5, "2024-01-23", true, "Web Engineering 1");
+    }
+});
