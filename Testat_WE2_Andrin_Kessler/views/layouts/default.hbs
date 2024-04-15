@@ -42,6 +42,51 @@
         button.selected {
             background-color: #005ac2;
         }
+        .todo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 70px;
+            grid-template-rows: auto;
+            grid-template-areas: "duedate title importance"
+                                 "finished description description"
+                                 "edit edit edit";
+        }
+        .duedate-field {
+            grid-area: duedate;
+        }
+        .title-field {
+            grid-area: title;
+        }
+        .importance-field {
+            grid-area: importance;
+        }
+        .finished-field {
+            grid-area: finished;
+            color: gray;
+        }
+        .description-field {
+            grid-area: description;
+        }
+        .edit-button {
+            grid-area: edit;
+            grid-column: 1 / 4;
+            width: 99%;
+            margin-left: auto;
+        }
+        @media (min-width: 768px) {
+            .sort-container button {
+                width: auto;
+            }
+            .todo-container {
+                grid-template-columns: 2fr 6fr 1fr 100px;
+                grid-template-rows: auto;
+                grid-template-areas: "duedate title importance edit"
+                                     "finished description description edit";
+            }
+            .edit-button {
+                grid-column: 4;
+                width: auto;
+            }
+        }
     </style>
     {{#if_eq theme 'dark'}}
         <style>

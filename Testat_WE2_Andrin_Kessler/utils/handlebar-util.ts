@@ -17,5 +17,13 @@ export const helpers = {
             lightnings += '&#8623;';
         }
         return lightnings;
+    },
+
+    'visualize_finished': function (finished: boolean) {
+        if (finished) {
+            return `<input type="checkbox" checked disabled> Completed`;
+        } else {
+            return `<input type="checkbox" disabled> Open`;
+        }
     }
 }

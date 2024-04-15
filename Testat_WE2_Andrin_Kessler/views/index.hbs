@@ -72,18 +72,14 @@
         {{/if_eq}}
     </button></a>
 </div>
-<table>
-    {{#each todoList}}
-    <tr>
-        <td> {{get_relative_date this.duedate}} </td>
-        <td> {{this.title}} </td>
-        <td> {{{get_nof_lightnings this.importance}}} </td>
-        <td rowspan="2"><a href="/todo?id={{this._id}}"><button>Edit</button></a></td>
-    </tr>
-        <td> {{this.finished}} </td>
-        <td> {{this.description}} </td>
-        <td></td>
-        <td></td>
-    <tr>
-    {{/each}}
-</table>
+{{#each todoList}}
+<div class="todo-container">
+    <span class="duedate-field">{{get_relative_date this.duedate}}</span>
+    <span class="title-field">{{this.title}}</span>
+    <span class="importance-field">{{{get_nof_lightnings this.importance}}}</span>
+    <span class="finished-field">{{{visualize_finished this.finished}}}</span>
+    <span class="description-field">{{this.description}}</span>
+    <a href="/todo?id={{this._id}}" class="edit-button"><button class="edit-button">Edit</button></a>
+</div>
+<hr>
+{{/each}}
