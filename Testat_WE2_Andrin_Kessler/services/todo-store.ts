@@ -54,7 +54,6 @@ export class TodoStore {
     }
 
     async todoExists(title: string, importance: number, duedate: string, finished: boolean, description: string) : Promise<boolean> {
-        console.log(await this.db.find({title: title, importance: importance, duedate: duedate, finished: finished, description: description}));
         return (await this.db.find({title: title, importance: importance, duedate: duedate, finished: finished, description: description})).length > 0;
     }
 }
