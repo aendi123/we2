@@ -1,9 +1,13 @@
-<div>
+<div class="header">
     <a href="/todo"><button>Create new todo</button></a>
     <a href="/toggle-theme"><button>Toggle Style</button></a>
 </div>
-<div>
-    <a href="/sort?by=title"><button>Name
+<div class="sort-container">
+    <a href="/sort?by=title"><button class="
+        {{#if_eq orderBy "title"}}
+            selected
+        {{/if_eq}}
+    ">Name
         {{#if_eq orderBy "title"}}
             {{#if_eq orderDirection 1}}
                 &#9650;
@@ -13,7 +17,11 @@
             {{/if_eq}}
         {{/if_eq}}
     </button></a>
-    <a href="/sort?by=duedate"><button>By Due Date
+    <a href="/sort?by=duedate"><button class="
+        {{#if_eq orderBy "duedate"}}
+            selected
+        {{/if_eq}}
+    ">By Due Date
         {{#if_eq orderBy "duedate"}}
             {{#if_eq orderDirection 1}}
                 &#9650;
@@ -23,7 +31,11 @@
             {{/if_eq}}
         {{/if_eq}}
     </button></a>
-    <a href="/sort?by=creationdate"><button>By Creation Date
+    <a href="/sort?by=creationdate"><button class="
+        {{#if_eq orderBy "creationdate"}}
+            selected
+        {{/if_eq}}
+    ">By Creation Date
         {{#if_eq orderBy "creationdate"}}
             {{#if_eq orderDirection 1}}
                 &#9650;
@@ -33,7 +45,11 @@
             {{/if_eq}}
         {{/if_eq}}
     </button></a>
-    <a href="/sort?by=importance"><button>By Importance
+    <a href="/sort?by=importance"><button class="
+        {{#if_eq orderBy "importance"}}
+            selected
+        {{/if_eq}}
+    ">By Importance
         {{#if_eq orderBy "importance"}}
             {{#if_eq orderDirection 1}}
                 &#9650;
@@ -43,7 +59,11 @@
             {{/if_eq}}
         {{/if_eq}}
     </button></a>
-    <a href="/filter-completed"><button>Filter Completed
+    <a href="/filter-completed" id="filter-completed-button"><button class="
+        {{#if_eq filterCompleted true}}
+            selected
+        {{/if_eq}}
+    ">Filter Completed
         {{#if_eq filterCompleted true}}
             &#10003;
         {{/if_eq}}

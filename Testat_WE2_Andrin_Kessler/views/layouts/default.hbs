@@ -6,6 +6,43 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .sort-container {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .sort-container button {
+            width: 300px;
+        }
+        #filter-completed-button {
+            margin-left: auto;
+        }
+        button {
+            background-color: #0276FF;
+            border-radius: 8px;
+            border-style: none;
+            box-sizing: border-box;
+            color: #fff;
+            padding: 10px 21px;
+            margin: 5px;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #1C84FF;
+        }
+        button.selected {
+            background-color: #005ac2;
+        }
+    </style>
     {{#if_eq theme 'dark'}}
         <style>
             body {
