@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inaccessible Star Rating</title>
+  <style>
+      /*
+      inspired by https://css-tricks.com/star-ratings/
+      */
+      .rating {
+          display: inline-block;
+          unicode-bidi: bidi-override;
+          direction: rtl; /*trick: right to left context*/
+          text-align: center;
+          width: 100px;
+      }
+
+      .rating > span {
+          display: inline-block;
+          position: relative;
+          width: 1.1em;
+          cursor: pointer;
+      }
+
+      .rating > span.selected:before,
+      .rating > span.selected ~ span:before {
+          /*trick: due to right to left context colors stars to the left gold*/
+          content: "★";
+          position: absolute;
+          left: 0;
+          color: gold;
+      }
+  </style>
+</head>
+<body>
+<h1>Inaccessible Star Rating</h1>
+Rating: <div class="rating"></div>
+<script>
+  function starClickHandler(event) {
+    const starSpan = event.target;
+    const ratingDiv = starSpan.parentElement;
+    if (starSpan.classList.contains("selected")) {
+      //toggle
+      starSpan.classList.remove("selected");
+      ratingDiv.dataset.selected = undefined;
+    } else {
+      for (const starSpan of ratingDiv.children) {
+        starSpan.classList.remove("selected");
+      }
+      starSpan.classList.add("selected");
+      ratingDiv.dataset.selected = starSpan.dataset.index;
+    }
+    console.log("selected: ", ratingDiv.dataset.selected);
+  }
+  function initRatingComponents() {
+    const pageRatingElements = document.querySelectorAll(".rating");
+    for (const pageRatingElement of pageRatingElements) {
+      pageRatingElement.innerHTML =
+        "<span>☆</span><span>☆</span><span>☆</span> <span>☆</span><span>☆</span>";
+      pageRatingElement.addEventListener("click", starClickHandler);
+      let index = 4; //count backwards as displayed right to left
+      for (const starSpan of pageRatingElement.children) {
+        starSpan.dataset.index = String(index--);
+      }
+    }
+  }
+  initRatingComponents();
+</script>
+</body>
+</html>

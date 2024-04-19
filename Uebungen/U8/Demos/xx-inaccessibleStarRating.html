@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inaccessible Star Rating</title>
+  <style>
+      /*
+      CSS Adapted from https://css-tricks.com/star-ratings/
+      Extended with JS
+      */
+      .rating {
+          unicode-bidi: bidi-override;
+          direction: rtl;
+          text-align: left;
+      }
+
+      .rating > span {
+          display: inline-block;
+          position: relative;
+          width: 1.1em;
+      }
+
+      .rating > span:hover,
+      .rating > span:hover ~ span {
+          color: transparent;
+      }
+
+      .rating > span:hover:before,
+      .rating > span:hover ~ span:before,
+      .rating > span.selected:before,
+      .rating > span.selected ~ span:before {
+          content: "\2605";
+          position: absolute;
+          left: 0;
+          color: gold;
+      }
+
+      output {
+          display: block;
+      }
+
+      body {
+          padding: 100px;
+      }
+  </style>
+</head>
+<body>
+<h1>Inaccessible Star Rating</h1>
+<p>Do not use this code.</p>
+<p>This an example how a star-rating-widget should NOT be done</p>
+<div class="rating">
+  <span data-stars="5">☆</span>
+  <span data-stars="4">☆</span>
+  <span data-stars="3">☆</span>
+  <span data-stars="2">☆</span>
+  <span data-stars="1">☆</span>
+</div>
+<output>0 Stars</output>
+<script>
+  const starDisplay = document.querySelector('output');
+  const ratingDiv = document.querySelector('.rating');
+  function unselectAllStars() {
+    [...ratingDiv.children].forEach(spanElement => spanElement.classList.remove("selected"));
+  }
+  ratingDiv.addEventListener('click', event => {
+    unselectAllStars();
+    const spanElement = event.target;
+    spanElement.classList.add("selected");
+    const stars = spanElement.dataset.stars || 0;
+    starDisplay.value = `${stars} Stars`;
+    console.log(stars);
+  })
+</script>
+
+</body>
+</html>

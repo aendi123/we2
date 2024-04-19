@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>@@@TODO@@@ Accessible Styled Checkboxes WITH APPEARENCE: NONE</title>
+  <style>
+    /*region decoration part 1 */
+    :root {
+      --color-fountain-blue: #56B4BE;
+    }
+
+    html,
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      margin: 0;
+    }
+
+    h1, h2 {
+      color: var(--color-fountain-blue);
+      text-align: center;
+    }
+
+    /*endregion*/
+
+    /*region main styling for accessible checkboxes*/
+    .checkbox-group {
+      font-size: 2rem;
+      width: 33%;
+      max-width: 25rem;
+      min-width: 16rem;
+      margin-inline: auto;
+    }
+
+    fieldset {
+      border: 0 none;
+    }
+
+    legend {
+      color: var(--color-fountain-blue);
+      margin-bottom: 1.8rem;
+    }
+
+    .labeled-checkbox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-wrapper {
+      height: 3rem;
+      width: 3rem;
+      position: relative;
+    }
+
+    .checkbox-wrapper > [type=checkbox] {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      z-index: 0;
+
+      opacity: 0; /* visually hidden */
+      cursor: pointer;
+    }
+
+    .checkbox-wrapper > [type=checkbox] + span {
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+
+      border: 0.2rem solid var(--color-fountain-blue);
+      border-radius: 4px;
+      box-sizing: border-box;
+      box-shadow: 0 0 0 0 transparent;
+      transition: box-shadow 300ms ease-in-out;
+    }
+
+    .checkbox-wrapper > [type=checkbox] + span:after {
+      position: absolute;
+      top: -0.1em;
+      left: 0.07em;
+
+      color: var(--color-fountain-blue);
+      content: "✔";
+      font-size: 2.7rem;
+
+      opacity: 0; /* visually hidden if checkbox is unchecked */
+      transform: scale(0); /* animate from size 0 */
+      transition: all 300ms ease-in-out;
+    }
+
+    .checkbox-wrapper > [type=checkbox]:checked + span:after {
+      opacity: 1; /* show when checkbox is checked */
+      transform: scale(1); /* grow to full size when checkbox is checked */
+    }
+
+    .checkbox-wrapper > [type=checkbox]:focus + span,
+    .checkbox-wrapper > [type=checkbox]:hover + span {
+      box-shadow: 0 0 2px 2px var(--color-fountain-blue);
+    }
+
+    /*endregion*/
+
+    /*region decoration part 2*/
+    footer {
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+      transition: all 300ms ease-in-out;
+    }
+
+    footer a:focus, footer a:hover {
+      color: var(--color-fountain-blue);
+      outline: none;
+      text-decoration: underline transparent;
+    }
+
+    /*endregion*/
+  </style>
+</head>
+<body>
+<h1 id="main-heading"><span>Accessible</span> styled checkboxes</h1>
+
+<main>
+  <fieldset class="checkbox-group">
+    <legend>Your Choice?</legend>
+    <div class="labeled-checkbox">
+      <label for="check-1">Styled:</label>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="check-1"/>
+        <span aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="labeled-checkbox">
+      <label for="check-2">Inclusive:</label>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="check-2"/>
+        <span aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="labeled-checkbox">
+      <label for="check-3">HTML & CSS:</label>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="check-3"/>
+        <span aria-hidden="true"></span>
+      </div>
+    </div>
+
+  </fieldset>
+</main>
+<footer>
+  <a href="https://www.evinced.com/blog/creating-accessible-styled-checkboxes/" target="_blank">
+    Adapted from https://www.evinced.com/blog/creating-accessible-styled-checkboxes/</a>
+</footer>
+</body>
+</html>

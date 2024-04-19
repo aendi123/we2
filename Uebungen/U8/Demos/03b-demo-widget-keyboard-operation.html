@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03-demo-widget-keyboard-operation</title>
+  <style>
+    fieldset {
+      display: flex;
+      border-color: #003366;
+    }
+    fieldset:focus-within {
+      border-width: 3px;
+    }
+    input[type="text"] {
+      display: block;
+    }
+    #text-input fieldset div {
+      padding-right: 20px;
+    }
+    button {
+      margin: 10px
+    }
+  </style>
+</head>
+<body>
+<h1>Widget Keyboard Operation</h1>
+<form id="fav-color" action="">
+  <h2>Radio-Button Group with one Element Selected</h2>
+  <p>Radio Buttons: When the radio-button-group (same name) receives focus the checked
+    button in group receives the actual fokus then left/right cursor key move check.
+    When no element in the group is yet checked the first radio button is focused but
+    not yet checked. The space-key then checks the focused element.
+    Also using the cursor key will check the item selected next.
+    Return key might activate the forms submit button.
+  </p>
+  <fieldset>
+    <legend>What is your favorite color?</legend>
+    <div>
+      <input type="radio" id="fav-color-red" name="fav-color" value="red" >
+      <label for="fav-color-red">Red</label>
+    </div>
+    <div>
+      <input type="radio" id="fav-color-blue" name="fav-color" value="blue" checked>
+      <label for="fav-color-blue">Blue</label>
+    </div>
+    <div>
+      <input type="radio" id="fav-color-green" name="fav-color" value="green">
+      <label for="fav-color-green">Green</label>
+    </div>
+  </fieldset>
+  <button>submit</button>
+</form>
+<form id="fav-fruit" action="">
+  <h2>Radio-Button Group with NO Element Selected</h2>
+  <fieldset>
+    <legend>What is your favorite fruit?</legend>
+    <div>
+      <input type="radio" id="fav-fruit-apple" name="fav-fruit" value="apple">
+      <label for="fav-fruit-apple">Apple</label>
+    </div>
+    <div>
+      <input type="radio" id="fav-fruit-orange" name="fav-fruit" value="orange">
+      <label for="fav-fruit-orange">Orange</label>
+    </div>
+    <div>
+      <input type="radio" id="fav-fruit-banana" name="fav-fruit" value="banana">
+      <label for="fav-fruit-banana">Banana</label>
+    </div>
+  </fieldset>
+  <button>submit</button>
+</form>
+<form id="fav-flavor" action="">
+  <h2>Checkboxes</h2>
+  <p>Always first element in group will receive focus, tab will then move to the next.
+    Space-key will check/uncheck the currently focused checkbox.
+    Cursor-keys will have no effect.
+    Return key might activate the default button.
+  </p>
+  <fieldset>
+    <legend>What ice cream flavors do you like?</legend>
+    <div>
+      <input type="checkbox" id="fav-flavor-vanilla" name="fav-flavor-vanilla" value="vanilla">
+      <label for="fav-flavor-vanilla">Vanilla</label>
+    </div>
+    <div>
+      <input type="checkbox" id="fav-flavor-coffee" name="fav-flavor-coffee" value="coffee">
+      <label for="fav-flavor-coffee">Coffee</label>
+    </div>
+    <div>
+      <input type="checkbox" id="fav-flavor-pistachio" name="fav-flavor-pistachio" value="pistachio">
+      <label for="fav-flavor-pistachio">Pistachio</label>
+    </div>
+  </fieldset>
+  <button>submit</button>
+</form>
+<form id="text-input" action="">
+  <h2>Text Input Fields</h2>
+  <p>Always the first text-input will receive focus, tab will then move to the next.
+    Cursor-keys will move within text (if applicable).
+    Return key might activate the default button.
+  </p>
+  <fieldset>
+    <legend>Tell us about you</legend>
+    <div>
+      <label for="family-name">Familie Name:</label>
+      <input type="text" id="family-name" name="first-name">
+    </div>
+    <div>
+      <label for="given-name">Given Name:</label>
+      <input type="text" id="given-name" name="given-name">
+    </div>
+  </fieldset>
+  <button>submit</button>
+</form>
+<form action="">
+  <h2>Buttons</h2>
+  <p>Always the first button will receive focus,
+    tab will then move to the next.
+    Space-key and return-key will activate button with current focus.
+    Cursor-keys will have no effect.
+  </p>
+  <fieldset>
+    <legend>Do you agree with the Terms & Conditions?</legend>
+    <button>Yes</button>
+    <button>No</button>
+    <button autofocus>Cancel</button>
+  </fieldset>
+</form>
+
+<form action="">
+  <h2>Drop Down</h2>
+  <p>
+    When focused a drop-down is opened with cursor up/down keys.
+    Current item from drop-down is selected with return-key or space-key
+  </p>
+  <label for="pet-select">Choose a pet:</label>
+  <select id="pet-select" name="pet">
+    <option value="">--Please choose an option--</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="hamster">Hamster</option>
+    <option value="parrot">Parrot</option>
+    <option value="spider">Spider</option>
+    <option value="goldfish">Goldfish</option>
+  </select>
+</form>
+
+
+
+</body>
+<script>
+  //needed for firefox
+  document.getElementById("fav-fruit").reset()
+  document.getElementById("fav-color").reset()
+</script>
+</html>

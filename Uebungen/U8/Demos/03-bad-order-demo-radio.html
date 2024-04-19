@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bad-tab-order-demo</title>
+  <style>
+    fieldset {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      border-color: #003366;
+    }
+    fieldset:focus-within {
+      border-width: 3px;
+    }
+  </style>
+</head>
+<body>
+<h1>Bad Tab-Order with Radio-Buttons</h1>
+<form action="">
+  <fieldset>
+    <legend>What is your favorite color?</legend>
+    <div>
+      <input type="radio" id="fav-color-red" name="fav-color" value="red" checked>
+      <label for="fav-color-red">Red</label>
+    </div>
+    <div>
+      <input type="radio" id="fav-color-blue" name="fav-color" value="blue">
+      <label for="fav-color-blue">Blue</label>
+    </div>
+    <div>
+      <input type="radio" id="fav-color-green" name="fav-color" value="green">
+      <label for="fav-color-green">Green</label>
+    </div>
+  </fieldset>
+</form>
+<p>Good: Fieldset increases border-width when focus is within</p>
+<p>Bad: Visual display of elements and cursor-key behaviour are out of sync due to flex-direction row-reverse</p>
+
+</body>
+</html>
