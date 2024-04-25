@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+Your Account Balance: {{balance}} ({{currency}})
+<form method="post">
+  <div>
+    <label for="toAccount"><span>To Account</span></label><input id="toAccount" name="toAccount" type="number">
+  </div>
+  <div>
+    <label for="currency"><span>Currency</span></label><input id="currency" name="currency">
+  </div>
+  <div>
+    <label for="amount"><span>Amount</span></label><input id="amount" name="amount" type="number">
+  </div>
+  <div><button type="submit">Transfer</button></div>
+</form>
