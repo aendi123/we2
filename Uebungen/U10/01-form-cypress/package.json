@@ -1,0 +1,16 @@
+{
+  "name": "cypress-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "form.js",
+  "scripts": {
+    "start-app": "npx serve",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "Markus Stolze",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.11.0"
+  }
+}
