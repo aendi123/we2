@@ -28,11 +28,11 @@ class NedbDouble {
 }
 NedbDouble["@global"] = true;
 
-const config = require("./config");
+const config = require("../src/config");
 
 const {
   ensureUserIdMiddleware,
-} = proxyquire("./mathTutorController", {nedb: NedbDouble});
+} = proxyquire("../src/mathTutorController", {nedb: NedbDouble});
 
 describe("ensureUserIdMiddleware", function() {
   // beforeEach(function() {
