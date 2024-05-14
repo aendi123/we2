@@ -21,9 +21,9 @@ export const helpers = {
 
     'visualize_finished': function (finished: boolean) {
         if (finished) {
-            return `<input type="checkbox" checked disabled> Completed`;
+            return `<input type="checkbox" aria-label="Completed" disabled checked> Completed`;
         } else {
-            return `<input type="checkbox" disabled> Open`;
+            return `<input type="checkbox" aria-label="Completed" disabled> Open`;
         }
     }
 }
