@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cash App</title>
+    <style>
+        fieldset.switch {
+            width: 11rem;
+            border: 2px solid green;
+            border-radius: 16px;
+            position: relative;
+            height: 3rem;
+        }
+        
+        fieldset.switch > label {
+            display: inline-block;
+            position: absolute;
+            width: 6rem;
+            height: 2rem;
+            line-height: 2rem;
+            top: 9px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        fieldset.switch > input {
+            appearance: none;
+        }
+
+        fieldset.switch > label:first-of-type, fieldset.switch > input:first-of-type {
+            left: 5px;
+        }
+
+        fieldset.switch > label:nth-of-type(2), fieldset.switch > input:nth-of-type(2) {
+            right: 5px;
+        }
+
+        fieldset.switch > input:first-of-type {
+            display: inline-block;
+            position: absolute;
+            width: 5.5rem;
+            height: 2rem;
+            border: 2px solid green;
+            border-radius: 16px;
+            transform: translateX(6rem);
+            transition: transform 1s;
+        }
+
+        fieldset.switch > input:first-of-type:checked {
+            transform: translateX(0);
+            content: "";
+        }
+    </style>
+</head>
+<body>
+    <h1>Better Cash App Switch</h1>
+    <fieldset class="switch">
+        <input type="radio" id="user-group-13+" name="user-group" value="13+" checked>
+        <label for="user-group-13+">13+</label>
+        <input type="radio" id="user-group-parent" name="user-group" value="parent">
+        <label for="user-group-parent">Parent</label>
+    </fieldset>
+</body>
+</html>
