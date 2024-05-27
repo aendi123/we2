@@ -1,0 +1,2 @@
+# Diskutieren Sie in der Übung mit Ihren Mitstudierenden: Wie wurden in bisherigen Projekten Wireframes eingesetzt: Eher zur Entwicklung der Vision oder auch zum Hallway Testing? Wie unterscheiden sich Vision Wireframes von Wireframes für Hallway Testing?
+Bei der Vision geht es darum, wie die Website optisch aussehen sollte ohne Technologie miteinzubeziehen. Ein Hallway Usability Test findet früh in der Entwicklung statt und man befragt zufällige Leute, wie sie die Usability einer Website finden.
