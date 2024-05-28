@@ -1,0 +1,2 @@
+# Sie machen einen Usability-Test der OST Informatik Webseiten. Erklären Sie: Wie bringen Sie die Test-Teilnehmenden dazu "Think Aloud" zu machen, was bedeutet dies, und warum ist dies nützlich?
+Man bringt die Leute dazu, indem man ihnen sagt, sie sollen alles sagen, was ihnen durch den Kopf geht. Man sollte auch selbst nicht wirklich reden. Es ist nützlich, weil man so quasi die Gedanken lesen kann. Man weiss dann an was die User denken und kann die Website dahingehend optimieren, wenn mehrere Personen das Gleiche denken. 

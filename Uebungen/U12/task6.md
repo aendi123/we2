@@ -1,0 +1,2 @@
+# Analysieren Sie die "UI Ausschilderung" dieser Seite. Was kann in diesem Zusammenhang mit dem Kofferraum-Test überprüft werden?
+Beim Kofferraum-Test wird geprüft, ob man sich zurechtfindet, wenn man auf einer Unterseite ausgesetzt wird. Es ist ziemlich gut gelöst auf der OST Website, denke ich. Man hat den Pfad der Unterseite direkt oben am Hauptinhalt und weiss sofort, wo man ist.
